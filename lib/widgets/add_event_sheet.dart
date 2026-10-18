@@ -87,7 +87,12 @@ class _EventFormState extends State<_EventForm> {
   @override
   void initState() {
     super.initState();
-    _parseNotes(widget.existing?.notes);
+    // Only Gym notes hold workout lines; parsing others would drop them.
+    if (widget.existing?.category == EventCategory.gym) {
+      _parseNotes(widget.existing?.notes);
+    } else {
+      _notesController.text = widget.existing?.notes ?? '';
+    }
   }
 
   /// Fills the form state from a notes blob written by [_composeNotes]

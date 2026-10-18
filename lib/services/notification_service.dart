@@ -49,18 +49,17 @@ class NotificationService {
     _initialized = true;
   }
 
-  /// Asks for the Android 13+ notification permission (and exact-alarm
-  /// access) the first time a reminder is actually scheduled, not at
-  /// app launch.
+  /// Asks for the Android 13+ notification permission the first time a
+  /// reminder is scheduled in this run — at launch too, when saved events
+  /// have upcoming reminders. Exact alarms need no prompt: the manifest's
+  /// USE_EXACT_ALARM is granted at install.
   Future<void> _ensurePermissions() async {
     if (_permissionsRequested) return;
     _permissionsRequested = true;
-    final android = _plugin.resolvePlatformSpecificImplementation<
-        AndroidFlutterLocalNotificationsPlugin>();
-    if (android != null) {
-      await android.requestNotificationsPermission();
-      await android.requestExactAlarmsPermission();
-    }
+    await _plugin
+        .resolvePlatformSpecificImplementation<
+            AndroidFlutterLocalNotificationsPlugin>()
+        ?.requestNotificationsPermission();
   }
 
   /// Stable 31-bit notification id for an event id like

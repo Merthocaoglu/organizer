@@ -41,6 +41,19 @@ void main() {
         (start: 9 * 60, end: 10 * 60 + 30));
   });
 
+  test('event ending exactly at midnight stays on its start day', () {
+    final e = Event(
+      id: '3',
+      date: DateTime(2026, 7, 22),
+      start: const TimeOfDay(hour: 22, minute: 0),
+      end: const TimeOfDay(hour: 0, minute: 0),
+      title: 'Party',
+    );
+    expect(e.durationMinutes, 2 * 60);
+    expect(e.isOn(DateTime(2026, 7, 22)), isTrue);
+    expect(e.isOn(DateTime(2026, 7, 23)), isFalse);
+  });
+
   test('weekly recurring overnight event has a tail every week', () {
     final e = sleep(repeats: true);
     expect(e.isOn(DateTime(2026, 7, 29)), isTrue); // next Wednesday

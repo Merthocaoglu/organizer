@@ -72,10 +72,13 @@ class Event {
   }
 
   /// Whether any part of this event falls on the given day — its start
-  /// day, plus the following morning for overnight events.
+  /// day, plus the following morning for overnight events (none when the
+  /// event ends exactly at midnight).
   bool isOn(DateTime day) =>
       startsOn(day) ||
-      (isOvernight && startsOn(DateTime(day.year, day.month, day.day - 1)));
+      (isOvernight &&
+          endMinutes > 0 &&
+          startsOn(DateTime(day.year, day.month, day.day - 1)));
 
   /// The part of the event on [day], in minutes from midnight: the
   /// evening segment on its start day (clipped at 24:00 when
