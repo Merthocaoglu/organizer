@@ -4,6 +4,28 @@
 
 "Organizer" is a mobile daily-schedule app (Flutter, Android + iOS). Long-term vision: the app knows the user's daily/hourly schedule (gym in the morning, meeting at noon, meeting friends in the evening) and reminds them what to do and where to be.
 
+## Next Direction: Personal Hub (agreed with the user 2026-10-18; nothing built yet)
+
+The user wants Organizer to become his single personal hub: see and manage what he did each day, how long he worked, his steps and his meetings; plan the week and look back; take a daily quiz on his master's courses; send voice notes to his "second brain" — "everything in one place". Hard constraints: **no paid APIs, no extra fees, no server.** A VPS was considered and dropped: notifications already work on the phone, step data can only be read on the phone, and the only VPS available is a shared work machine (personal data must not go there).
+
+**Context — the second brain:** a Markdown vault Claude Code maintains (`~/Desktop/second brain`, private repo `Merthocaoglu/second-brain`). It already takes phone notes as GitHub Issues in that repo and processes them at session start. Claude Code (the user's existing subscription) is the only AI in this design: it writes question banks and daily summaries into this repo. **The app never calls an LLM.**
+
+Planned features — build one per session; the user picks the order (proposed first: daily quiz):
+- **Daily quiz:** Claude Code writes multiple-choice questions from the course slides into `data/questions/`: question, 4 options (A–D), correct option, one-line explanation, course + slide number. The app shows 10–15 questions a day in spaced-repetition order (FSRS). Picking an option turns it **green (correct) or red (wrong)** and shows the explanation. A "bad question" flag reports broken questions back to Claude. **Every test is stored** (date, question id, chosen option, correct?) on the phone and in `data/results/`; a history screen shows results by day and by course. Daily reminder at a time the user picks. Courses this term: Probability & Statistics (DSM 5001), R (DSM 5003), Deep Learning (DSM 5014); slides are in `~/Desktop/dersler`. Check every question against its slide before adding it — LLM-written questions are often flawed.
+- **Voice notes to the brain:** a note box + send button. Speech-to-text comes from the phone keyboard's microphone (Turkish, free); add a speech package only if the user finds that clunky. Notes are posted as GitHub Issues to `Merthocaoglu/second-brain` — the existing inbox, so nothing changes on the brain side.
+- **Meetings:** read the phone's synced Google calendars on-device (no API). If the work account is not on the phone, use that calendar's secret iCal address.
+- **Steps:** Health Connect (Android) via the `health` package.
+- **Work/study time:** start/stop timer per category (Work, Study, Thesis); totals in the analysis screen.
+- **What I did today:** at the end of each brain session Claude writes a short daily summary into this repo; the Day view shows it.
+- **Sync:** the app reads/writes this repo through the GitHub REST API with a fine-grained token that **the user creates and enters in the app himself** (`Merthocaoglu/organizer`: contents read/write; `Merthocaoglu/second-brain`: issues write). Never commit the token.
+- **Dropped for now:** backend/VPS, web and desktop builds, instant AI grading (needs a paid API), automatic time tracking, iOS.
+
+**Phone:** Android (inferred from the 2026-07-22 notes about "the real Android phone"; the user has not confirmed).
+
+**Repo:** https://github.com/Merthocaoglu/organizer (private); initial commit `e5fd947` (2026-10-18). The folder moved to `~/Desktop/personal projects/organizer` the same day. The commit identity is set locally for this repo (`Mert Hocaoğlu <Merthocaoglu@users.noreply.github.com>`); this Mac's global git identity is a different account — keep the local one.
+
+**Working with the user:** chat in Turkish, plain language, one topic at a time; this file and the code stay in English. Agree on a feature's scope before building it, give one recommendation rather than a menu of options, ask before anything that costs money, and push to GitHub only with his OK.
+
 ## Current Status: v2 COMPLETE (v1: 2026-07-21, v2 + big UI/stats expansion: 2026-07-22)
 
 As of end of the 2026-07-22 session: `flutter analyze` clean, all 4 tests passing, `flutter build apk --debug` succeeds. **Only pending verification: reminders firing on the real Android phone** (web can't show them). **Note: the week of Jul 20–26 2026 contains 17 seeded DEMO events** (added so the user could try the analysis screen; guarded by prefs flag `demo_week_2026_07_20_seeded` in the browser's localStorage) — offer to clear them if they get in the way.
@@ -71,12 +93,11 @@ All v1 features built and verified (session of 2026-07-21):
 - **flutter create default test** references the demo `MyApp` counter — must be replaced when you replace main.dart, or `flutter test`/`analyze` break.
 - No other significant problems in v1 — kept dependency surface tiny on purpose.
 
-## Roadmap (do NOT build ahead — one version per session, in order)
+## Roadmap (do NOT build ahead — one feature per session)
 
-- **v2:** ~~local notifications~~ done 2026-07-22 (see above); still owed: verify notifications fire on the real Android phone
-- **v3:** ~~recurring events~~ weekly recurrence done (see above); remaining ideas: multi-day patterns (Mon/Wed/Fri in one event), per-occurrence edit/delete exceptions, end dates for series, frequency/count stats (user deferred)
-- **v4:** nicer UI polish (~~GC-style views~~ largely done 2026-07-22), dark mode (remember: category colors are raw hex — check contrast when theming)
-- **Later ideas:** device calendar sync, cross-device sync with a backend
+- **Now (2026-10-18):** the personal-hub features in "Next Direction" above, in the order the user picks.
+- **Still owed from v2:** verify notifications fire on the real Android phone.
+- **Older ideas (parked):** multi-day patterns (Mon/Wed/Fri in one event), per-occurrence edit/delete exceptions, end dates for series, frequency/count stats (user deferred); dark mode (category colors are raw hex — check contrast when theming). Device calendar sync moved into "Next Direction"; a backend was dropped.
 
 ## How to Run
 
