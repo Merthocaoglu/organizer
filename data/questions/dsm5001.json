@@ -1,0 +1,422 @@
+[
+  {
+    "id": "dsm5001-h1-01",
+    "course": "DSM 5001",
+    "source": "Hafta 1 sunumu, s. 10",
+    "question": "Bir e-ticaret veri setinde 'sepetteki ürün adedi' ve 'sayfada geçirilen süre (saniye)' değişkenleri bulunuyor. Bu iki değişken için hangisi doğrudur?",
+    "options": [
+      "İkisi de kesiklidir; süre saniyeye yuvarlanarak kaydedildiği için sayılabilir.",
+      "Ürün adedi süreklidir (ölçme ile elde edilir); süre kesiklidir (sayma ile elde edilir).",
+      "Ürün adedi kesiklidir (sayma ile elde edilir); süre süreklidir (ölçme ile elde edilir).",
+      "İkisi de süreklidir; ikisi de sayısaldır ve sıfırdan büyük değerler alır."
+    ],
+    "answer": 2,
+    "explanation": "Kesikli veri sayılabilir değerler alır ve genellikle sayma mekanizmasından doğar (ürün adedi); sürekli veri bir aralıkta teorik olarak çok sayıda değer alabilir ve ölçme mekanizmasından doğar (süre). Sürenin saniyeye yuvarlanarak kaydedilmesi onu kesikli yapmaz."
+  },
+  {
+    "id": "dsm5001-h1-02",
+    "course": "DSM 5001",
+    "source": "Hafta 1 sunumu, s. 19",
+    "question": "Bir hastanenin veri setinde her satır bir hastane ziyaretidir; aynı hasta yıl içinde birkaç kez gelebildiği için birden fazla satırda yer alabilir. Bu veri seti için hangisi doğrudur?",
+    "options": [
+      "Deney birimi ziyarettir; aynı hastaya ait satırlar birbirinden bağımsız olmayabilir.",
+      "Deney birimi hastadır; satırlar her durumda bağımsız kabul edilebilir.",
+      "Deney birimi hastanedir; aynı hastaya ait satırlar birbirinden bağımsız olmayabilir.",
+      "Deney birimi ziyarettir; satırlar tanım gereği birbirinden bağımsızdır."
+    ],
+    "answer": 0,
+    "explanation": "Deney birimi, satırın neyi temsil ettiğidir; burada her satır bir hastane ziyaretidir. Aynı hastanın ziyaretleri birbiriyle ilişkili olabileceğinden satırların bağımsız olduğu varsayımı ayrıca değerlendirilmelidir."
+  },
+  {
+    "id": "dsm5001-h1-03",
+    "course": "DSM 5001",
+    "source": "Hafta 1 sunumu, s. 45",
+    "question": "Bir sağlık uygulaması tüm kullanıcılarına günde kaç sigara içtiklerini soruyor. Kullanıcıların hepsi soruyu yanıtlıyor; ancak birçoğu daha sağlıklı görünmek için sayıyı bilerek olduğundan az bildiriyor. Bu durum hangi yanlılığa örnektir?",
+    "options": [
+      "Yanıt vermeme yanlılığı (non-response bias)",
+      "Kapsam / erişim yanlılığı (undercoverage bias)",
+      "Hatırlama yanlılığı (recall bias)",
+      "Sosyal beğenilebilirlik yanlılığı (social desirability bias)"
+    ],
+    "answer": 3,
+    "explanation": "Katılımcılar yanıt veriyor ama kendilerini olduğundan iyi göstermek için değeri sistematik olarak eksik bildiriyor; bu, bir ölçüm yanlılığı olan sosyal beğenilebilirlik yanlılığıdır. Herkes yanıtladığı ve tüm kullanıcılara sorulduğu için yanıt vermeme ya da kapsam yanlılığı, değer unutulduğu için değil bilerek az söylendiği için de hatırlama yanlılığı söz konusu değildir."
+  },
+  {
+    "id": "dsm5001-h1-04",
+    "course": "DSM 5001",
+    "source": "Hafta 1 sunumu, s. 36",
+    "question": "Bir telekom şirketinin elinde geçmiş dönemde gözlenen 5.000 müşterinin verisi var. Aşağıdaki sorulardan hangisi bir çıkarsama (inference) sorusudur?",
+    "options": [
+      "Bu 5.000 müşterinin aylık fatura tutarları nasıl dağılıyor?",
+      "Şirketin tüm aktif müşterilerinde aylık terk oranı hangi aralıkta olabilir?",
+      "Yarın kaydolacak bir müşterinin terk edip etmeyeceğini ne kadar iyi öngörebiliriz?",
+      "Bu 5.000 müşteriden kaçı geçen ay destek hattını beşten fazla aradı?"
+    ],
+    "answer": 1,
+    "explanation": "Çıkarsama, örneklemden kitle hakkında belirsizlikle birlikte sonuç üretir (parametre tahmini, güven aralığı, test); tüm aktif müşterilerin terk oranı için bir aralık vermek budur. Eldeki 5.000 müşteriyi özetlemek tanımlama, yeni bir müşterinin sonucunu öngörmek ise model ve doğrulama (validation) gerektiren tahmin sorusudur."
+  },
+  {
+    "id": "dsm5001-h1-05",
+    "course": "DSM 5001",
+    "source": "Hafta 1 sunumu, s. 9",
+    "question": "Bir regresyon modeline 'şehir' değişkeni İstanbul = 1, Ankara = 2, İzmir = 3 şeklinde kodlanıp tek bir sayısal sütun olarak veriliyor. Bu yaklaşım için hangisi doğrudur?",
+    "options": [
+      "Sorun yoktur; kodlar sayı olduğu için şehir artık nicel bir değişkendir.",
+      "Model kodlar arasında sahte bir sıra ve eşit mesafe varsayar; one-hot kodlama uygundur.",
+      "Kodlar 0'dan başlamadığı için model çalışmaz; 0, 1, 2 kodları kullanılmalıdır.",
+      "Şehir kesikli bir nicel değişken olduğu için ayrıca kodlamaya gerek yoktur."
+    ],
+    "answer": 1,
+    "explanation": "Şehir nominal bir değişkendir: kodlar yalnızca kategorileri temsil eder, aralarında sıra ya da mesafe yoktur. Tek bir sayısal sütun modele sahte bir sıra ve eşit aralık dayatır; nominal değişkenler one-hot kodlamayla her kategori için ayrı bir 0/1 sütununa dönüştürülür."
+  },
+  {
+    "id": "dsm5001-h1-06",
+    "course": "DSM 5001",
+    "source": "Hafta 1 sunumu, s. 45",
+    "question": "Bir e-ticaret şirketinde mobil uygulamayı kullanan müşterilerin daha çok harcadığı görülüyor. Ancak uygulama kullanıcılarının çoğu sadakat programı üyesi ve üyeler, uygulamayı kullanmasalar da daha çok harcıyor. Bu analizde sadakat programı üyeliği için hangisi doğrudur?",
+    "options": [
+      "Karıştırıcı değişkendir; dikkate alınmazsa uygulamanın harcamaya etkisi yanlış hesaplanabilir.",
+      "Yanıt (hedef) değişkenidir; modelde açıklanmak istenen değişken odur.",
+      "Bir veri giriş hatasıdır; harcama tutarlarının yanlış kaydedildiğini gösterir.",
+      "Önemsizdir; uygulama kullanımı ile harcama arasındaki ilişki zaten nedenseldir."
+    ],
+    "answer": 0,
+    "explanation": "Üyelik hem uygulama kullanımıyla hem de harcamayla ilişkili olduğu için karıştırıcı değişkendir; hesaba katılmazsa uygulamanın etkisi olduğundan büyük görünebilir. Gözlenen ilişki tek başına nedensellik göstermez."
+  },
+  {
+    "id": "dsm5001-h1-07",
+    "course": "DSM 5001",
+    "source": "Hafta 1 sunumu, s. 43",
+    "question": "Bir bankanın tüm bireysel müşterileri hakkında bir memnuniyet araştırması yapılacak. Katılımcılar, CRM sisteminde e-posta adresi kayıtlı müşterilerin listesinden rastgele seçilecek. Bu e-posta listesi hangi kavrama karşılık gelir?",
+    "options": [
+      "Hedef kitle; sonuçların genellenmek istendiği ana gruptur.",
+      "Örneklem; kitleden belirli bir yöntemle seçilmiş alt gruptur.",
+      "Deney birimi; üzerinde ölçüm yapılan en küçük tekil ögedir.",
+      "Çerçeve kitle; örneklemin seçildiği güncel ve erişilebilir listedir."
+    ],
+    "answer": 3,
+    "explanation": "Sonuçların genellenmek istendiği grup (tüm bireysel müşteriler) hedef kitle, örneklemin fiilen seçildiği erişilebilir liste ise çerçeve kitledir. E-postası kayıtlı olmayan müşteriler bu listeden seçilemeyeceği için çerçeve hedef kitleyi tam kapsamayabilir."
+  },
+  {
+    "id": "dsm5001-h1-08",
+    "course": "DSM 5001",
+    "source": "Hafta 1 sunumu, s. 43",
+    "question": "Bir üniversitede 4 fakülte ve toplam 20.000 lisans öğrencisi var; bunların 6.000'i mühendislik fakültesinde. 800 kişilik bir örneklem, fakültelere göre oranlı tabakalı rastgele örneklemeyle seçilecek. Mühendislik fakültesinden kaç öğrenci seçilmelidir?",
+    "options": [
+      "30 öğrenci",
+      "200 öğrenci",
+      "240 öğrenci",
+      "1.800 öğrenci"
+    ],
+    "answer": 2,
+    "explanation": "Oranlı tabakalı örneklemede her tabakadan, tabakanın kitledeki payı kadar birim seçilir: 800 × (6.000 / 20.000) = 800 × 0,30 = 240. 200, her fakülteye eşit pay vermekten (800 / 4) gelir."
+  },
+  {
+    "id": "dsm5001-h1-09",
+    "course": "DSM 5001",
+    "source": "Hafta 1 sunumu, s. 33",
+    "question": "Bir kargo firması ortalama teslim süresinin 48 saatten kısa olduğunu iddia ediyor; H₀: μ ≥ 48, H₁: μ < 48. Rastgele seçilen 100 gönderide x̄ = 46 saat ve s = 10 saat bulunuyor (n büyük olduğu için z kullanılıyor). α = 0,05 için sol kuyruk kritik değeri −1,645'tir. Test istatistiği ve karar nedir?",
+    "options": [
+      "z = −0,2; H₀ reddedilemez.",
+      "z = −2,0; H₀ reddedilemez.",
+      "z = −2,0; H₀ reddedilir.",
+      "z = −20; H₀ reddedilir."
+    ],
+    "answer": 2,
+    "explanation": "z = (x̄ − μ₀) / (s / √n) = (46 − 48) / (10 / √100) = −2 / 1 = −2,0 ve −2,0 < −1,645 olduğundan H₀ %5 düzeyinde reddedilir; iddiayı destekleyen yeterli kanıt vardır. −0,2, standart sapmayı √n'ye bölmeyi unutmaktan gelir."
+  },
+  {
+    "id": "dsm5001-h1-10",
+    "course": "DSM 5001",
+    "source": "Hafta 1 sunumu, s. 32",
+    "question": "Bir uygulamada kullanıcı başına günlük harcama şiddetli sağa çarpık dağılıyor. Bu kitleden rastgele 200 kullanıcı seçilip ortalama harcama hesaplanıyor ve işlem çok kez tekrarlanıyor. Merkezi Limit Teoremi'ne göre hangisi doğrudur?",
+    "options": [
+      "Her örneklemdeki harcama değerleri normal dağılır; çarpıklık ortadan kalkar.",
+      "Örneklem ortalamalarının dağılımı da kitle gibi şiddetli sağa çarpık kalır.",
+      "Teorem yalnızca kitle normal dağılıyorsa geçerlidir; bu veride kullanılamaz.",
+      "Örneklem ortalamalarının dağılımı yaklaşık normaldir; n = 200 yeterince büyüktür."
+    ],
+    "answer": 3,
+    "explanation": "Merkezi Limit Teoremi, örneklem hacmi yeterince büyük olduğunda (n ≥ 30) örneklem ortalamasının dağılımının normale yaklaştığını söyler; kitlenin normal olması gerekmez. Teorem tek tek gözlemleri değil ortalamaların dağılımını anlatır; her örneklemdeki harcamalar çarpık kalır."
+  },
+  {
+    "id": "dsm5001-h2-01",
+    "course": "DSM 5001",
+    "source": "Hafta 2 (EDA) sunumu, s. 31",
+    "question": "500 gözlemlik aynı veri için iki histogram çiziliyor: birinde 3, diğerinde 150 aralık (bin) kullanılıyor. Hangisi doğrudur?",
+    "options": [
+      "3 aralıklı grafik gürültülü olur; 150 aralıklı grafikte detaylar kaybolur ve aşırı genelleme yapılır.",
+      "3 aralıklı grafikte detaylar kaybolur; 150 aralıklı grafik gürültülü olur ve genel eğilim gözden kaçabilir.",
+      "Aralık sayısı histogramın şeklini etkilemez; iki grafik aynı dağılım şeklini gösterir.",
+      "150 aralıklı grafik her zaman daha doğrudur; daha çok aralık daha çok bilgi demektir."
+    ],
+    "answer": 1,
+    "explanation": "Histogramın şekli seçilen aralık (bin) sayısına doğrudan bağlıdır: çok az aralıkta verinin detayları kaybolur ve aşırı genelleme yapılır, çok fazla aralıkta grafik gürültülü hâle gelir ve genel eğilim gözden kaçabilir. Bu yüzden aralık sayısı bilinçli seçilmelidir."
+  },
+  {
+    "id": "dsm5001-h2-02",
+    "course": "DSM 5001",
+    "source": "Hafta 2 (EDA) sunumu, s. 17–18",
+    "question": "Bir yazılım ekibinin 400 hata kaydının kategorilere dağılımı: Ağ 60, Arayüz 180, Diğer 24, Güvenlik 36, Veritabanı 100. Pareto analizine göre hataların en az %80'ini kapsayan en küçük kategori grubu hangisidir?",
+    "options": [
+      "Arayüz ve Veritabanı",
+      "Ağ, Arayüz ve Diğer",
+      "Arayüz, Veritabanı ve Ağ",
+      "Arayüz, Veritabanı, Ağ ve Güvenlik"
+    ],
+    "answer": 2,
+    "explanation": "Pareto grafiğinde kategoriler en yüksek frekanstan en düşüğe sıralanır ve kümülatif yüzde izlenir: Arayüz %45, + Veritabanı %70, + Ağ %85; yani %80 eşiği üçüncü kategoride aşılır. Kategorilerin alfabetik sırası Pareto sırası değildir."
+  },
+  {
+    "id": "dsm5001-h2-03",
+    "course": "DSM 5001",
+    "source": "Hafta 2 (EDA) sunumu, s. 44–45",
+    "question": "6 sayısal değişkenli bir veri seti için Seaborn ile pair plot çiziliyor. Köşegen hücrelerinde ne gösterilir ve matris kaç farklı değişken çiftinin ilişkisini içerir?",
+    "options": [
+      "Köşegende her değişkenin histogramı veya KDE'si; 15 farklı değişken çifti",
+      "Köşegende her değişkenin histogramı veya KDE'si; 30 farklı değişken çifti",
+      "Köşegende serpme diyagramları; 15 farklı değişken çifti",
+      "Köşegende serpme diyagramları; 30 farklı değişken çifti"
+    ],
+    "answer": 0,
+    "explanation": "Köşegen hücreler bir değişkenin kendisiyle eşleştiği yerlerdir; burada tek değişkenli dağılım (histogram veya KDE), köşegen dışında ise serpme diyagramları çizilir. 6 değişkenden 6 · 5 / 2 = 15 farklı çift çıkar; köşegen dışındaki 30 hücrede her çift iki kez (simetrik olarak) yer alır."
+  },
+  {
+    "id": "dsm5001-h2-04",
+    "course": "DSM 5001",
+    "source": "Hafta 2 (EDA) sunumu, s. 57",
+    "question": "Bir değişken için, normal dağılımda yaklaşık 0 olacak şekilde hesaplanan basıklık (kurtosis) değeri 6,2 bulunuyor. Bu ölçü ve değer için hangisi doğrudur?",
+    "options": [
+      "Asimetriyi ölçer; dağılım şiddetli sağa çarpıktır.",
+      "Yayılımı ölçer; standart sapma ortalamanın yaklaşık 6 katıdır.",
+      "Sivrilik ve kuyruk yoğunluğunu ölçer; dağılım basık ve ince kuyrukludur, uç değer azdır.",
+      "Sivrilik ve kuyruk yoğunluğunu ölçer; dağılım sivri ve kalın kuyrukludur, uç değer eğilimi yüksektir."
+    ],
+    "answer": 3,
+    "explanation": "Basıklık sivriliği ve kuyruk yoğunluğunu ölçer; normal dağılımdaki 0'ın çok üzerindeki bir değer sivri, kalın kuyruklu (leptokurtic) ve aykırı değer eğilimi yüksek bir dağılım demektir. Asimetriyi ölçen ise çarpıklıktır (skewness)."
+  },
+  {
+    "id": "dsm5001-h2-05",
+    "course": "DSM 5001",
+    "source": "Hafta 2 (EDA) sunumu, s. 42",
+    "question": "İki sayısal değişkenin serpme diyagramında noktalar belirgin bir U şekli oluşturuyor; buna rağmen Pearson korelasyon katsayısı r ≈ 0 çıkıyor. Hangisi doğrudur?",
+    "options": [
+      "r ≈ 0 olduğu için iki değişken arasında hiçbir ilişki yoktur.",
+      "U şekli, değişkenler arasında güçlü ve negatif doğrusal bir ilişki olduğunu gösterir.",
+      "Pearson doğrusal ilişkinin gücünü ölçer; değişkenler arasında doğrusal olmayan güçlü bir ilişki olabilir.",
+      "Grafik ile katsayı çeliştiği için verilerde mutlaka bir kayıt hatası vardır."
+    ],
+    "answer": 2,
+    "explanation": "Pearson korelasyonu yalnızca doğrusal ilişkinin gücünü ölçer; noktalar U şeklinde (eğrisel) dizildiğinde ilişki güçlü olsa bile r sıfıra yakın çıkabilir. 'İlişki yok' denebilmesi için noktaların belirgin bir yön ya da şekil olmadan rastgele dağılması gerekir."
+  },
+  {
+    "id": "dsm5001-h2-06",
+    "course": "DSM 5001",
+    "source": "Hafta 2 (EDA) sunumu, s. 33",
+    "question": "Bir analist 'ödeme yöntemi' (kart, havale, kapıda ödeme, dijital cüzdan) değişkeninin frekanslarını ve 'sipariş tutarı' (TL) değişkeninin dağılımını grafikle göstermek istiyor. Hangisi doğrudur?",
+    "options": [
+      "Ödeme yöntemi çubuk grafiğiyle gösterilir; çubuklar arasında boşluk bulunur ve kategoriler istenen sırada dizilebilir.",
+      "Ödeme yöntemi histogramla gösterilir; kategoriler sürekli olduğu için sütunlar bitişik çizilir.",
+      "Sipariş tutarı çubuk grafiğiyle gösterilir; tutar aralıkları büyüklüklerine göre yeniden sıralanabilir.",
+      "Sipariş tutarı histogramla gösterilir; aralıklar alfabetik ya da isteğe bağlı bir sırayla dizilebilir."
+    ],
+    "answer": 0,
+    "explanation": "Nitel (kategorik) bir değişken çubuk grafiğiyle gösterilir: çubuklar arasında boşluk vardır ve kategoriler isteğe göre (ör. büyüklük sırasıyla) dizilebilir. Sürekli bir değişkenin histogramında ise sütunlar bitişiktir ve sayısal aralıklar mantıksal sıralarını korumak zorundadır."
+  },
+  {
+    "id": "dsm5001-h2-07",
+    "course": "DSM 5001",
+    "source": "Hafta 2 (EDA) sunumu, s. 47",
+    "question": "Müşterilerin yıllık harcaması ile sitede geçirdikleri süre arasındaki ilişki inceleniyor. İki değişken de şiddetli sağa çarpık ve birkaç aşırı uç değer içeriyor; ilişki monotonik görünüyor. Hangi korelasyon katsayısı ve gerekçesi uygundur?",
+    "options": [
+      "Pearson; iki değişken de sürekli olduğu için her durumda uygundur.",
+      "Pearson; aykırı değerlere karşı dirençli bir katsayıdır.",
+      "Spearman; sıralara dayandığı için aykırı değerlere karşı dirençlidir.",
+      "Spearman; yalnızca normal dağılan sürekli verilerde kullanılabilir."
+    ],
+    "answer": 2,
+    "explanation": "Spearman (ρ) monotonik ilişkiyi sıralar üzerinden ölçer; sıralı ya da çarpık verilerde kullanılır ve aykırı değerlere karşı dirençlidir. Pearson doğrusal ilişkinin gücünü ölçer ve sürekli, normal dağılan veri ister."
+  },
+  {
+    "id": "dsm5001-h2-08",
+    "course": "DSM 5001",
+    "source": "Hafta 2 (EDA) sunumu, s. 42",
+    "question": "8–16 yaş arası öğrencilerin yaş ve boy verisinde 12 yaşında, 175 cm boyunda bir öğrenci var. Yaş ve boy histogramlarında bu öğrenci sıradan görünüyor; ancak yaş–boy serpme diyagramında genel kalıbın çok dışında kalıyor. Hangisi doğrudur?",
+    "options": [
+      "Tek değişkenli grafiklerde sıradan göründüğü için aykırı değer sayılmaz.",
+      "Çok değişkenli bir aykırı değerdir; serpme diyagramı bu tür noktaları ortaya çıkarır.",
+      "Serpme diyagramı yalnızca doğrusal ilişkileri gösterdiği için bu yorum yapılamaz.",
+      "Yaş kesikli bir değişken olduğu için serpme diyagramında kullanılamaz."
+    ],
+    "answer": 1,
+    "explanation": "Serpme diyagramı, tek başına X ya da Y ekseninde normal görünen ama ikisi birlikte değerlendirildiğinde genel kalıptan uzak kalan çok değişkenli aykırı değerleri yakalar. Histogram gibi tek değişkenli grafikler bu tür noktaları göstermez."
+  },
+  {
+    "id": "dsm5001-h2-09",
+    "course": "DSM 5001",
+    "source": "Hafta 2 (EDA) sunumu, s. 48",
+    "question": "Bir veri setinde araç yaşı ile ikinci el satış fiyatı arasındaki Pearson korelasyon katsayısı r = −0,45 bulunuyor. Hangisi doğru yorumdur?",
+    "options": [
+      "Güçlü pozitif bir ilişki vardır; araç yaşı arttıkça fiyat da artar.",
+      "Araçların %45'inde yaş arttıkça fiyat düşer, geri kalanında düşmez.",
+      "Araç yaşı fiyatın düşmesine neden olur; etkinin büyüklüğü %45'tir.",
+      "Orta düzeyde negatif ilişki vardır; yaş arttıkça fiyat düşme eğilimindedir."
+    ],
+    "answer": 3,
+    "explanation": "Katsayının işareti ilişkinin yönünü, mutlak değeri gücünü gösterir: −0,45 orta düzeyde negatif doğrusal bir ilişkidir, yani yaş arttıkça fiyat düşme eğilimindedir. r bir yüzde değildir ve korelasyon tek başına nedensellik göstermez."
+  },
+  {
+    "id": "dsm5001-h2-10",
+    "course": "DSM 5001",
+    "source": "Hafta 2 (EDA) sunumu, s. 20",
+    "question": "Bir okuldaki 8 öğrenci kulübünün üye sayıları 48 ile 52 arasında değişiyor. Bu veri için Pareto grafiği hakkında hangisi doğrudur?",
+    "options": [
+      "En uygun grafik Pareto'dur; kategoriler her zaman frekansa göre sıralanabilir.",
+      "Pek anlamlı değildir; frekanslar birbirine çok yakındır ve kategoriler bir sorunu temsil etmez.",
+      "Kümülatif çizgi %80'e ilk iki kulüpte ulaşır; bu iki kulübe odaklanılmalıdır.",
+      "Kategori sayısı beşten fazla olduğu için Pareto grafiği çizilemez."
+    ],
+    "answer": 1,
+    "explanation": "Pareto grafiği, toplamın büyük kısmını oluşturan az sayıda kritik kategoriyi öne çıkarmak için kullanılır; frekanslar eşite yakınsa böyle kategoriler yoktur ve kategoriler (burada kulüpler) bir sorunu ya da nedeni temsil etmiyorsa kullanımı anlamlı değildir. Burada ilk iki kulüp toplamın ancak dörtte biri kadarını oluşturur."
+  },
+  {
+    "id": "dsm5001-h3-01",
+    "course": "DSM 5001",
+    "source": "Hafta 3 sunumu, s. 51",
+    "question": "Bir web sitesinin sayfa yüklenme sürelerinde P95 = 800 ms ölçülüyor. Bu değer için hangisi doğrudur?",
+    "options": [
+      "Yüklemelerin %95'i 800 ms veya daha kısa sürer; en yavaş %5'lik kesim bu sınırın üstündedir.",
+      "Yüklemelerin %95'i 800 ms'den uzun sürer; yalnızca en hızlı %5'lik kesim bu sınırın altındadır.",
+      "Ortalama yüklenme süresi 800 ms'dir; P95 ortalamanın diğer adıdır.",
+      "Yüklemelerin %95'i ortalamanın ±2 standart sapma yakınındadır; bu aralığın üst sınırı 800 ms'dir."
+    ],
+    "answer": 0,
+    "explanation": "Yüzdelikler sıralı veriyi 100 eşit parçaya böler: P95, gözlemlerin %95'inin altında kaldığı değerdir ve en yavaş %5'lik kesimin sınırını çizer (SLA hedefi). Ortalama değildir ve çan eğrisi varsayımı gerektirmez."
+  },
+  {
+    "id": "dsm5001-h3-02",
+    "course": "DSM 5001",
+    "source": "Hafta 3 sunumu, s. 8",
+    "question": "İki örneklem: X = {20, 20, 20, 40, 40, 40} ve Y = {20, 30, 30, 30, 30, 40}. İkisinin de ortalaması 30, açıklığı 20'dir. Örneklem standart sapmaları için hangisi doğrudur?",
+    "options": [
+      "Açıklıkları eşit olduğu için standart sapmaları da eşittir.",
+      "Y'nin standart sapması daha büyüktür; Y'de daha fazla farklı değer vardır.",
+      "Ortalamaları eşit olduğu için standart sapmaları karşılaştırılamaz.",
+      "X'in standart sapması daha büyüktür; X'teki her gözlem ortalamadan 10 birim uzaktadır."
+    ],
+    "answer": 3,
+    "explanation": "Açıklık yalnızca en büyük ve en küçük değeri kullanır ve dağılımın iç yapısını göz ardı eder; standart sapma ise tüm gözlemlerin ortalamadan sapmalarını hesaba katar. X'te s = √(600 / 5) ≈ 10,95, Y'de s = √(200 / 5) ≈ 6,32 olur."
+  },
+  {
+    "id": "dsm5001-h3-03",
+    "course": "DSM 5001",
+    "source": "Hafta 3 sunumu, s. 31",
+    "question": "Bir kahve makinesinin doldurduğu bardak hacmi çan eğrisi şeklinde dağılıyor; ortalama 250 ml, standart sapma 5 ml. Deneysel kurala göre bardakların yaklaşık yüzde kaçı 240 ml ile 255 ml arasında dolar?",
+    "options": [
+      "%68",
+      "%81,5",
+      "%84",
+      "%95"
+    ],
+    "answer": 1,
+    "explanation": "240 ml = μ − 2σ ve 255 ml = μ + σ'dır; çan eğrisinde μ − 2σ ile μ − σ arası ≈ %13,5, μ − σ ile μ arası ≈ %34, μ ile μ + σ arası ≈ %34'tür, toplam ≈ %81,5. %84, 255 ml'nin altında kalan bütün bardakları saymaktan gelir."
+  },
+  {
+    "id": "dsm5001-h3-04",
+    "course": "DSM 5001",
+    "source": "Hafta 3 sunumu, s. 58",
+    "question": "Bir grup kişinin günlük yürüyüş mesafeleri (km) gövde-yaprak gösterimiyle veriliyor; ondalık nokta | işaretinin yerindedir (ör. 0 | 8 = 0,8 km):\n0 | 8 9\n1 | 2 5 5 5 7\n2 | 0 3\n3 | 1\nBu verinin modu ve açıklığı (range) nedir?",
+    "options": [
+      "Mod = 5; açıklık = 2,3",
+      "Mod = 1; açıklık = 3",
+      "Mod = 1,5; açıklık = 2,3",
+      "Mod = 1,5; açıklık = 3"
+    ],
+    "answer": 2,
+    "explanation": "Değerler 0,8; 0,9; 1,2; 1,5; 1,5; 1,5; 1,7; 2,0; 2,3; 3,1 km'dir: en sık tekrar eden değer (mod) 1,5, açıklık 3,1 − 0,8 = 2,3 km'dir. Yaprak tek başına bir değer değildir; gövde-yaprak gösterimi ham değerleri korur."
+  },
+  {
+    "id": "dsm5001-h3-05",
+    "course": "DSM 5001",
+    "source": "Hafta 3 sunumu, s. 14",
+    "question": "Yayılımı ölçerken ortalama mutlak sapma (MAD) yerine varyansın (karesel sapmaların) tercih edilmesinin nedeni hangisidir?",
+    "options": [
+      "Varyans verinin kendi ölçü birimindedir; bu yüzden daha kolay yorumlanır.",
+      "Karesel sapmalar her noktada türevlenebilir; bu da analitik çözümlere uygundur.",
+      "Varyans aykırı değerlerden ortalama mutlak sapmaya göre daha az etkilenir.",
+      "Varyans yalnızca ortadaki %50'lik dilimi kullandığı için daha dirençlidir."
+    ],
+    "answer": 1,
+    "explanation": "Mutlak değer içeren ortalama mutlak sapma türev almaya elverişsizdir; karesel sapma (x − x̄)² her noktada türevlenebildiği için cebirsel ve analitik çözümlere uygundur. Varyansın birimi verinin biriminin karesidir ve kareler aykırı değerlerin etkisini büyütür."
+  },
+  {
+    "id": "dsm5001-h3-06",
+    "course": "DSM 5001",
+    "source": "Hafta 3 sunumu, s. 64",
+    "question": "Bir fabrikada üretilen 2.000 parçanın ağırlıklarında gözlemlerin %67'si x̄ ± 1s, %96'sı x̄ ± 2s ve %99,8'i x̄ ± 3s aralığında kalıyor. Bu oranlar dağılımın şekli hakkında ne söyler?",
+    "options": [
+      "Dağılım şiddetli sağa çarpıktır; oranlar 68–95–99,7'den farklıdır.",
+      "Veride çok sayıda aykırı değer vardır; parçaların %4'ü ±2s dışındadır.",
+      "Bir şey söylemez; kapsama oranları yalnızca kitle verisiyle hesaplanabilir.",
+      "Oranlar 68–95–99,7'ye çok yakındır; dağılımın yaklaşık normal olduğunu destekler."
+    ],
+    "answer": 3,
+    "explanation": "Çan eğrisi şeklindeki verilerde gözlemlerin yaklaşık %68'i ±1, %95'i ±2, %99,7'si ±3 standart sapma içinde kalır; gerçek oranların bunlara çok yakın olması dağılımın yaklaşık normal olduğunu destekler. ±2s dışındaki %4, normal dağılımda beklenen %5'ten bile azdır."
+  },
+  {
+    "id": "dsm5001-h3-07",
+    "course": "DSM 5001",
+    "source": "Hafta 3 sunumu, s. 38",
+    "question": "50 öğrencinin girdiği bir sınavda 40 öğrenci Selin'den daha düşük puan aldı. Yüzdelik tanımına göre Selin'in puanı kaçıncı yüzdeliktedir?",
+    "options": [
+      "10. yüzdelik",
+      "20. yüzdelik",
+      "40. yüzdelik",
+      "80. yüzdelik"
+    ],
+    "answer": 3,
+    "explanation": "Bir değerin yüzdeliği, verinin ne kadarının o değerin altında kaldığını gösterir: 40 / 50 = %80, yani Selin'in puanı 80. yüzdeliktedir. 20, Selin ile ondan yüksek puan alanların payıdır; 40 ise yüzde değil kişi sayısıdır."
+  },
+  {
+    "id": "dsm5001-h3-08",
+    "course": "DSM 5001",
+    "source": "Hafta 3 sunumu, s. 61",
+    "question": "İki farklı yöntemle eğitilen iki grubun sınav puanları yan yana kutu grafikleriyle çiziliyor. Medyan çizgileri neredeyse aynı hizada, kutuların (IQR) genişlikleri benzer ve kutular büyük ölçüde örtüşüyor. Bu görsel karşılaştırmaya göre hangisi doğrudur?",
+    "options": [
+      "İki grubun aritmetik ortalamaları kesinlikle eşittir.",
+      "Gruplar arasında istatistiksel olarak anlamlı bir fark vardır.",
+      "Merkezler ve yayılımlar benzer; yöntemin belirgin bir etkisi görünmüyor.",
+      "Medyanlar aynı olduğu için iki grubun en yüksek puanları da aynıdır."
+    ],
+    "answer": 2,
+    "explanation": "Yan yana kutu grafikleri medyanları ve yayılımları karşılaştırmayı kolaylaştırır; medyanlar ve kutu genişlikleri benzerse grupların merkezi ve yayılımı benzerdir, grup değişkeninin belirgin bir etkisi görünmez. Kutu grafiği ortalamayı göstermez ve görsel benzerlik bir anlamlılık testinin yerini tutmaz."
+  },
+  {
+    "id": "dsm5001-h3-09",
+    "course": "DSM 5001",
+    "source": "Hafta 3 sunumu, s. 6",
+    "question": "İki makinenin ürettiği parçaların ortalama uzunlukları arasındaki fark iki senaryoda da 2 mm. Senaryo A'da iki makinenin standart sapması 0,2 mm, senaryo B'de 3 mm. Dağılımlar çan eğrisi şeklindeyse hangisi doğrudur?",
+    "options": [
+      "Ortalama farkı aynı olduğu için iki senaryoda ürünler aynı ölçüde ayrışır.",
+      "A'da iki makinenin dağılımları belirgin biçimde ayrışır; B'de büyük ölçüde örtüşür.",
+      "B'de dağılımlar daha belirgin ayrışır; değişkenlik arttıkça fark da büyür.",
+      "Standart sapma büyüdükçe iki makinenin ortalamaları birbirine yaklaşır."
+    ],
+    "answer": 1,
+    "explanation": "Merkezler arasındaki fark aynı kalsa da değişkenlik küçükken eğriler dar olduğu için birbirinden ayrılır, değişkenlik büyükken genişleyip örtüşür. A'da 2 mm'lik fark 10 standart sapmaya, B'de 1 standart sapmadan azına karşılık gelir; ortalamalar ise değişmez."
+  },
+  {
+    "id": "dsm5001-h3-10",
+    "course": "DSM 5001",
+    "source": "Hafta 3 sunumu, s. 51",
+    "question": "Bir API'nin yanıt sürelerinde ortalama 70 ms, medyan (P50) 30 ms ve P99 = 3.000 ms ölçülüyor. Bu ölçümler için hangisi doğrudur?",
+    "options": [
+      "Ortalama düşük olduğu için hiçbir kullanıcı ciddi bir gecikme yaşamaz.",
+      "Ortalama, uç değerlerden etkilenmediği için tipik deneyimi en iyi özetleyen ölçüdür.",
+      "P99 ortalamanın çok üzerinde olduğu için ölçümlerde mutlaka hata vardır.",
+      "Ortalama, en yavaş %1'lik kesimdeki çok uzun yanıtları gizler; medyan ve P99 birlikte izlenmelidir."
+    ],
+    "answer": 3,
+    "explanation": "P99 = 3.000 ms, en yavaş %1'lik isteklerin 3 saniye veya daha uzun sürdüğünü gösterir; düşük ortalama bu kuyruğu gizler. Bu yüzden tipik deneyim için uç değerlerden etkilenmeyen medyan ile uç durumlar için P99 birlikte değerlendirilir."
+  }
+]

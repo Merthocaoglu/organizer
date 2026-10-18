@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../services/event_store.dart';
+import '../services/quiz_store.dart';
 import '../widgets/add_event_sheet.dart';
+import 'quiz_screen.dart';
 import 'stats_screen.dart';
 import '../widgets/day_view.dart';
 import '../widgets/month_view.dart';
@@ -11,9 +13,10 @@ import '../widgets/year_view.dart';
 enum CalendarView { day, week, month, year }
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key, required this.store});
+  const HomeScreen({super.key, required this.store, required this.quiz});
 
   final EventStore store;
+  final QuizStore quiz;
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -82,6 +85,13 @@ class _HomeScreenState extends State<HomeScreen> {
         title: const Text('Organizer'),
         centerTitle: false,
         actions: [
+          IconButton(
+            icon: const Icon(Icons.quiz_outlined),
+            tooltip: 'Daily quiz',
+            onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+              builder: (_) => QuizScreen(store: widget.quiz),
+            )),
+          ),
           IconButton(
             icon: const Icon(Icons.insights),
             tooltip: 'Analysis',

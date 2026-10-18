@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart' show TimeOfDay;
 import 'package:flutter/services.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_timezone/flutter_timezone.dart';
@@ -16,6 +17,7 @@ import '../models/event.dart';
 /// on a real device).
 class NotificationService {
   final _plugin = FlutterLocalNotificationsPlugin();
+  static const _quizReminderId = -1; // event ids (idFor) are never negative
   bool _initialized = false;
   bool _permissionsRequested = false;
 
@@ -105,34 +107,50 @@ class NotificationService {
       return; // Reminder time already passed.
     }
 
-    await _ensurePermissions();
     final startLabel =
         '${event.start.hour.toString().padLeft(2, '0')}:${event.start.minute.toString().padLeft(2, '0')}';
     final body = minutes == 0
         ? 'Starting now ($startLabel)'
         : 'Starts in $minutes min ($startLabel)';
+    await _schedule(idFor(event.id), event.title, body, when,
+        event.repeatsWeekly ? DateTimeComponents.dayOfWeekAndTime : null);
+  }
+
+  /// Daily quiz reminder at [time]; null turns it off.
+  Future<void> scheduleQuizReminder(TimeOfDay? time) async {
+    if (kIsWeb || !_initialized) return;
+    await _plugin.cancel(id: _quizReminderId);
+    if (time == null) return;
+    final now = tz.TZDateTime.now(tz.local);
+    var when = tz.TZDateTime(
+        tz.local, now.year, now.month, now.day, time.hour, time.minute);
+    if (!when.isAfter(now)) {
+      when = tz.TZDateTime(
+          tz.local, now.year, now.month, now.day + 1, time.hour, time.minute);
+    }
+    await _schedule(_quizReminderId, 'Daily quiz',
+        "Today's questions are waiting", when, DateTimeComponents.time);
+  }
+
+  Future<void> _schedule(int id, String title, String body,
+      tz.TZDateTime when, DateTimeComponents? repeat) async {
+    await _ensurePermissions();
+    Future<void> zoned(AndroidScheduleMode mode) => _plugin.zonedSchedule(
+          id: id,
+          title: title,
+          body: body,
+          scheduledDate: when,
+          notificationDetails: _details,
+          androidScheduleMode: mode,
+          matchDateTimeComponents: repeat,
+        );
     try {
-      await _schedule(event, when, body, AndroidScheduleMode.exactAllowWhileIdle);
+      await zoned(AndroidScheduleMode.exactAllowWhileIdle);
     } on PlatformException {
       // Exact alarms not permitted on this device — inexact is close
       // enough (may be delayed a few minutes).
-      await _schedule(
-          event, when, body, AndroidScheduleMode.inexactAllowWhileIdle);
+      await zoned(AndroidScheduleMode.inexactAllowWhileIdle);
     }
-  }
-
-  Future<void> _schedule(Event event, tz.TZDateTime when, String body,
-      AndroidScheduleMode mode) {
-    return _plugin.zonedSchedule(
-      id: idFor(event.id),
-      title: event.title,
-      body: body,
-      scheduledDate: when,
-      notificationDetails: _details,
-      androidScheduleMode: mode,
-      matchDateTimeComponents:
-          event.repeatsWeekly ? DateTimeComponents.dayOfWeekAndTime : null,
-    );
   }
 
   /// Drops every pending notification and schedules from [events] —

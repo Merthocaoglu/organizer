@@ -1,0 +1,562 @@
+[
+  {
+    "id": "dsm5003-h1-01",
+    "course": "DSM 5003",
+    "source": "Hafta 1 sunumu, s. 10 ve 12",
+    "question": "R ile RStudio arasındaki ilişki için hangisi doğrudur?",
+    "options": [
+      "RStudio, R'ın yerini alan ayrı bir dildir; kurulunca R'a gerek kalmaz.",
+      "R kodu yalnızca RStudio içinde çalışır; başka editörlerle kullanılamaz.",
+      "R ayrıca kurulur; RStudio ise R ile çalışmak için kullanılan bir editördür.",
+      "RStudio yalnızca paket kurmaya yarar; kod R konsolunda yazılmak zorundadır."
+    ],
+    "answer": 2,
+    "explanation": "R, dilin ve çalışma ortamının kendisidir ve ayrıca kurulur; RStudio ise R ile çalışmayı kolaylaştıran bir editördür. R, VS Code ya da Jupyter Notebook (IRkernel) gibi başka araçlarla da kullanılabilir."
+  },
+  {
+    "id": "dsm5003-h1-02",
+    "course": "DSM 5003",
+    "source": "Hafta 1 sunumu, s. 17",
+    "question": "Veri bilimini üç alanın kesişimi olarak gösteren Venn diyagramında alanlar bilgisayar bilimi/BT, matematik ve istatistik ile alan/iş bilgisidir. Bilgisayar bilimi ile matematik ve istatistiğin kesiştiği, ama alan/iş bilgisinin dışında kalan bölge hangisidir?",
+    "options": [
+      "Yazılım geliştirme",
+      "Geleneksel araştırma",
+      "Veri bilimi",
+      "Makine öğrenmesi"
+    ],
+    "answer": 3,
+    "explanation": "Üç alanın ortak bölgesi veri bilimidir. İkili kesişimlerde bilgisayar bilimi ile matematik-istatistik makine öğrenmesini, bilgisayar bilimi ile alan bilgisi yazılım geliştirmeyi, matematik-istatistik ile alan bilgisi ise geleneksel araştırmayı verir."
+  },
+  {
+    "id": "dsm5003-h1-03",
+    "course": "DSM 5003",
+    "source": "Hafta 1 sunumu, s. 20–21",
+    "question": "Veri bilimi alanındaki işler karşılaştırıldığında, sunucular ile uygulamalar arasında kesintisiz veri akışını sağlayan ve veri mimarisinden sorumlu olan rol hangisidir?",
+    "options": [
+      "Veri bilimci",
+      "Veri mühendisi",
+      "İstatistikçi",
+      "Veri analisti"
+    ],
+    "answer": 1,
+    "explanation": "Veri mühendisi ölçeklenebilir veri yönetim sistemlerini tasarlar, kurar ve bakımını yapar; veri mimarisi onun sorumluluğundadır. Veri bilimci analitik ve teknik becerileriyle veriden anlam çıkarır, istatistikçi ise istatistik yöntemlerini gerçek problemlere uygular."
+  },
+  {
+    "id": "dsm5003-h2-01",
+    "course": "DSM 5003",
+    "source": "Hafta 2 ders kodu (21092026.R), satır 23–28",
+    "question": "Bu kodun çıktısı nedir?\n\nx <- c(6, 2, 8)\nx[c(3, 3, 1, 2, 3)]",
+    "options": [
+      "8 8 6 2 8",
+      "8 6 2",
+      "6 2 8",
+      "Hata verir"
+    ],
+    "answer": 0,
+    "explanation": "İndeks vektöründeki konumlar sırayla okunur ve aynı konum kaç kez yazıldıysa o eleman o kadar kez döner; sonuç beş elemanlıdır ve indeks vektörünün sırasını izler. Tekrarlanan ya da sırası karışık indisler hata vermez."
+  },
+  {
+    "id": "dsm5003-h2-02",
+    "course": "DSM 5003",
+    "source": "Hafta 2 sunumu, s. 13",
+    "question": "Bu kodun çıktısı nedir?\n\nx <- c(7, 2, 9, 4, 6)\nx[2:length(x)-1]",
+    "options": [
+      "2 9 4",
+      "2 9 4 6",
+      "1 8 3 5",
+      "7 2 9 4"
+    ],
+    "answer": 3,
+    "explanation": "`:` operatörünün önceliği ikili `-` işlecinden yüksektir; ifade `(2:5) - 1`, yani `1:4` olarak işlenir ve ilk dört eleman döner. 2. elemandan sondan bir öncekine kadar almak için parantez gerekir: `x[2:(length(x) - 1)]`."
+  },
+  {
+    "id": "dsm5003-h2-03",
+    "course": "DSM 5003",
+    "source": "Hafta 2 ders kodu (21092026.R), satır 34–36",
+    "question": "Bu kodun çıktısı nedir?\n\n3.5:1",
+    "options": [
+      "3.5 2.5 1.5 1",
+      "3.5 2.5 1.5",
+      "3 2 1",
+      "3.5 2.5 1.5 0.5"
+    ],
+    "answer": 1,
+    "explanation": "`:` başlangıç değerinden birer birer ilerler, başlangıç bitişten büyükse geriye doğru sayar ve bitiş değerini (1) geçmeden durur; 0.5 sınırın dışında kaldığı için dizi 1.5'te biter. Değerler tam sayıya yuvarlanmaz ve bitiş değeri ancak başlangıçtan tam sayı adım uzaktaysa diziye girer."
+  },
+  {
+    "id": "dsm5003-h2-04",
+    "course": "DSM 5003",
+    "source": "Hafta 2 sunumu, s. 12",
+    "question": "Bu kodun çıktısı nedir?\n\nVeri <- 10\nveri <- Veri / 2\nVERI <- veri + Veri\nc(Veri, veri, VERI)",
+    "options": [
+      "10 10 10",
+      "5 5 10",
+      "10 5 15",
+      "Hata verir"
+    ],
+    "answer": 2,
+    "explanation": "R küçük-büyük harfe duyarlıdır; Veri, veri ve VERI üç ayrı nesnedir. veri = 10 / 2 = 5, VERI = 5 + 10 = 15 olur ve Veri 10 olarak kalır."
+  },
+  {
+    "id": "dsm5003-h2-05",
+    "course": "DSM 5003",
+    "source": "Hafta 2 sunumu, s. 13",
+    "question": "Bu kodun çıktısı nedir?\n\nc(17 %/% 5, 17 %% 5)",
+    "options": [
+      "3 2",
+      "2 3",
+      "3.4 2",
+      "3 0.4"
+    ],
+    "answer": 0,
+    "explanation": "`%/%` tam sayı bölmesidir ve bölümün tam kısmını verir (17 / 5 = 3.4 → 3); `%%` ise mod işlemidir ve kalanı verir (17 = 3 × 5 + 2 → 2)."
+  },
+  {
+    "id": "dsm5003-h2-06",
+    "course": "DSM 5003",
+    "source": "Hafta 2 sunumu, s. 14",
+    "question": "Yeni açılmış bir R oturumunda (x henüz tanımlı değilken) hangisi çalıştırıldığında x'e 5 değeri atanır?",
+    "options": [
+      "x == 5",
+      "x <= 5",
+      "x -> 5",
+      "5 -> x"
+    ],
+    "answer": 3,
+    "explanation": "`->` sağa doğru atama operatörüdür; `5 -> x`, `x <- 5` ile aynı işi görür. `x == 5` ve `x <= 5` atama değil karşılaştırmadır (x tanımsız olduğu için hata verir), `x -> 5` ise 5 sabitine atama yapmaya çalıştığı için hata verir."
+  },
+  {
+    "id": "dsm5003-h2-07",
+    "course": "DSM 5003",
+    "source": "Hafta 2 sunumu, s. 17 ve 22",
+    "question": "Bu kodun çıktısı nedir?\n\nx <- 29\nx[2] <- 5\nx",
+    "options": [
+      "5",
+      "29 5",
+      "NA 5",
+      "Hata verir"
+    ],
+    "answer": 1,
+    "explanation": "R'da tek bir değer için ayrı bir veri yapısı yoktur; 29, uzunluğu 1 olan bir vektördür. Var olmayan 2. konuma yapılan atama vektörü uzatır, böylece x iki elemanlı olur."
+  },
+  {
+    "id": "dsm5003-h2-08",
+    "course": "DSM 5003",
+    "source": "Hafta 2 ders kodu (21092026.R), satır 74–86",
+    "question": "Bu kodun çıktısı nedir?\n\nx <- c(8, 1, 7, 3, 9)\nx[-c(2, length(x))]",
+    "options": [
+      "1 9",
+      "8 1 3 9",
+      "8 7 3",
+      "8 7 3 9"
+    ],
+    "answer": 2,
+    "explanation": "Negatif indis o konumlardaki elemanları çıkarır; `length(x)` 5 olduğundan 2. ve 5. elemanlar (1 ve 9) atılır. 1 9 sonucu, pozitif indislerle `x[c(2, length(x))]` yazıldığında alınırdı."
+  },
+  {
+    "id": "dsm5003-h2-09",
+    "course": "DSM 5003",
+    "source": "Hafta 2 sunumu, s. 17; Hafta 3 sunumu, s. 13",
+    "question": "Bu kodun çıktısı nedir?\n\nc(9, TRUE, FALSE)",
+    "options": [
+      "9 1 0",
+      "\"9\" \"TRUE\" \"FALSE\"",
+      "9 TRUE FALSE",
+      "TRUE TRUE FALSE"
+    ],
+    "answer": 0,
+    "explanation": "Bir vektörün bütün elemanları aynı türden olmalıdır; sayı ile mantıksal değerler birleşince mantıksal değerler sayıya çevrilir (TRUE 1, FALSE 0). Karakter türüne dönüşüm ancak vektörde bir metin değeri varsa olur."
+  },
+  {
+    "id": "dsm5003-h3-01",
+    "course": "DSM 5003",
+    "source": "Hafta 3 sunumu, s. 14",
+    "question": "Bu kodun çıktısı nedir?\n\nx1 <- c(4, 7, 2, 8)\nx2 <- c(\"B\", \"A\", \"B\", \"A\")\nx1[x1 > 3 & x2 == \"B\"]",
+    "options": [
+      "4 7 2 8",
+      "4 7 8",
+      "4 2",
+      "4"
+    ],
+    "answer": 3,
+    "explanation": "`&` iki koşulun aynı konumda birlikte TRUE olduğu yerleri seçer: `x1 > 3` TRUE TRUE FALSE TRUE, `x2 == \"B\"` TRUE FALSE TRUE FALSE olduğundan yalnızca 1. konum kalır. Tüm elemanlar `|` (veya) ile seçilirdi; 4 7 8 ve 4 2 ise koşullardan yalnızca birini uygulamaktan gelir."
+  },
+  {
+    "id": "dsm5003-h3-02",
+    "course": "DSM 5003",
+    "source": "Hafta 3 ders kodu (28092026.R), satır 97–101",
+    "question": "Bu kodun çıktısı nedir?\n\nas.logical(c(1, -3, 0, 0.2))",
+    "options": [
+      "TRUE TRUE FALSE TRUE",
+      "TRUE FALSE FALSE TRUE",
+      "TRUE NA FALSE NA",
+      "TRUE FALSE FALSE FALSE"
+    ],
+    "answer": 0,
+    "explanation": "Sayıdan mantıksal türe açık zorlamada yalnızca 0 FALSE olur; negatif ve ondalıklı olanlar dahil sıfırdan farklı her sayı TRUE olur. NA, sayılardan değil \"A\" gibi mantıksal değere çevrilemeyen karakter değerlerinden çıkar."
+  },
+  {
+    "id": "dsm5003-h3-03",
+    "course": "DSM 5003",
+    "source": "Hafta 3 sunumu, s. 22 ve 25",
+    "question": "Bu kodun çıktısı nedir?\n\nx <- c(NA, 5, NULL, NA, 2)\nlength(x)",
+    "options": [
+      "5",
+      "2",
+      "4",
+      "NA"
+    ],
+    "answer": 2,
+    "explanation": "NA eksik bir değerdir ve vektörde bir eleman yeri kaplar; NULL ise boş nesnedir (uzunluğu 0), bu yüzden `c()` içinde hiçbir eleman eklemez. x yalnızca NA, 5, NA ve 2 değerlerinden oluşur."
+  },
+  {
+    "id": "dsm5003-h3-04",
+    "course": "DSM 5003",
+    "source": "Hafta 3 ders kodu (28092026.R), satır 10–15",
+    "question": "Bu kodun çıktısı nedir?\n\nseq(1, 3, len = 5)",
+    "options": [
+      "1.0 1.4 1.8 2.2 2.6",
+      "1 2 3 4 5",
+      "1.0 1.5 2.0 2.5 3.0",
+      "1 2 3"
+    ],
+    "answer": 2,
+    "explanation": "`len` (length.out) üretilecek eleman sayısıdır ve iki uç da diziye dahildir; 1 ile 3 arasına 5 eleman için 4 eşit aralık gerekir, adım (3 - 1) / 4 = 0.5 olur. Adımı aralığı 5'e bölerek bulmak (0.4) diziyi 3'e ulaştırmaz."
+  },
+  {
+    "id": "dsm5003-h3-05",
+    "course": "DSM 5003",
+    "source": "Hafta 3 ders kodu (28092026.R), satır 10–14",
+    "question": "Bu kod çalıştırıldığında ne olur?\n\nseq(5, 1, by = 1)",
+    "options": [
+      "5 4 3 2 1 döndürür; yönü R kendisi belirler.",
+      "1 2 3 4 5 döndürür; sınırları küçükten büyüğe sıralar.",
+      "Yalnızca 5 döndürür; ilk adım bitiş değerini aşar.",
+      "Hata verir; 5'ten 1'e inmek için by negatif olmalıdır."
+    ],
+    "answer": 3,
+    "explanation": "by verildiğinde dizi o adımla ilerler; 5'ten 1'e pozitif adımla ulaşılamadığı için R \"wrong sign in 'by' argument\" hatası verir. Geriye doğru dizi için `seq(5, 1, by = -1)` ya da by vermeden `seq(5, 1)` yazılır."
+  },
+  {
+    "id": "dsm5003-h3-06",
+    "course": "DSM 5003",
+    "source": "Hafta 3 ders kodu (28092026.R), satır 25–29",
+    "question": "Bu kodun çıktısı nedir?\n\nrep(c(5, 2), times = c(3, 1))",
+    "options": [
+      "5 2 5 2 5 2 5 2",
+      "5 5 5 2",
+      "5 5 5 2 2 2",
+      "5 2 5 2 5 2"
+    ],
+    "answer": 1,
+    "explanation": "times bir vektör olarak verilince her eleman kendi sayısı kadar tekrarlanır: 5 üç kez, 2 bir kez. Tek bir sayı verilseydi (ör. `times = 3`) vektörün tamamı art arda tekrarlanırdı."
+  },
+  {
+    "id": "dsm5003-h3-07",
+    "course": "DSM 5003",
+    "source": "Hafta 3 sunumu, s. 10",
+    "question": "Hangi ifade 1 16 27 16 5 vektörünü üretir?",
+    "options": [
+      "(1:5) ^ (5:1)",
+      "(5:1) ^ (1:5)",
+      "(1:5) * (5:1)",
+      "(1:5) ^ 2"
+    ],
+    "answer": 0,
+    "explanation": "Eşit uzunluktaki iki vektör arasında `^` eleman eleman uygulanır: 1^5, 2^4, 3^3, 4^2, 5^1 = 1 16 27 16 5. `(5:1) ^ (1:5)` ise 5 16 27 16 1 verir; uçlardaki değerler yer değiştirir."
+  },
+  {
+    "id": "dsm5003-h3-08",
+    "course": "DSM 5003",
+    "source": "Hafta 3 sunumu, s. 13",
+    "question": "Bu kodun çıktısı nedir?\n\nx <- c(2, 8, 6, 1, 10)\nc(sum(x > 5), mean(x > 5))",
+    "options": [
+      "24 8",
+      "3 8",
+      "3.0 5.4",
+      "3.0 0.6"
+    ],
+    "answer": 3,
+    "explanation": "Aritmetik işlemlerde TRUE 1, FALSE 0 sayılır; `x > 5` FALSE TRUE TRUE FALSE TRUE olduğundan toplamı koşulu sağlayan eleman sayısını (3), ortalaması da bunların oranını (3/5 = 0.6) verir. 24 ve 8 ise koşulu sağlayan değerlerin kendilerinin toplamı ve ortalamasıdır."
+  },
+  {
+    "id": "dsm5003-h3-09",
+    "course": "DSM 5003",
+    "source": "Hafta 3 sunumu, s. 23–24",
+    "question": "x <- c(4, NA, 7, 1) için hangi ifade NA'yı atıp yalnızca 4 7 1 değerlerini döndürür?",
+    "options": [
+      "x[x != NA]",
+      "x[!is.na(x)]",
+      "x[is.na(x)]",
+      "x[-NA]"
+    ],
+    "answer": 1,
+    "explanation": "`is.na(x)` NA olan konumlarda TRUE verir; `!` ile tersine çevrilince yalnızca dolu değerler seçilir (`x[complete.cases(x)]` de aynı sonucu verir). `x != NA` ise her konumda NA ürettiğinden NA'ları ayıklayamaz."
+  },
+  {
+    "id": "dsm5003-h3-10",
+    "course": "DSM 5003",
+    "source": "Hafta 3 sunumu, s. 26",
+    "question": "Bu kodun çıktısı nedir?\n\nc(-1/0, 0/0, 1/0)",
+    "options": [
+      "-Inf NA Inf",
+      "NA NA NA",
+      "-Inf NaN Inf",
+      "Hata verir: sıfıra bölme"
+    ],
+    "answer": 2,
+    "explanation": "R sıfıra bölmede hata vermez: pozitif sayı / 0 Inf, negatif sayı / 0 -Inf olur. 0/0 tanımsız olduğu için sonuç, eksik veriyi gösteren NA değil, \"sayı değil\" anlamındaki NaN'dir."
+  },
+  {
+    "id": "dsm5003-h4-01",
+    "course": "DSM 5003",
+    "source": "Hafta 4 sunumu, s. 14; Hafta 4 ders kodu (05102026.R), satır 72–73",
+    "question": "Bu kodun çıktısı nedir?\n\nm <- matrix(1:6, nrow = 2)\ncolnames(m)",
+    "options": [
+      "\"1\" \"2\" \"3\"",
+      "\"[,1]\" \"[,2]\" \"[,3]\"",
+      "NULL",
+      "\"V1\" \"V2\" \"V3\""
+    ],
+    "answer": 2,
+    "explanation": "Ad verilmemiş bir matrisin sütun adları yoktur, bu yüzden `colnames()` NULL döndürür; ad atanmamış bir vektörde `names()` da NULL döner. Ekranda görünen [,1] [,2] [,3] yalnızca yazdırma biçimidir; sütunlara ad `colnames(m) <- ...` atamasıyla verilir."
+  },
+  {
+    "id": "dsm5003-h4-02",
+    "course": "DSM 5003",
+    "source": "Hafta 4 ders kodu (05102026.R), satır 67–68",
+    "question": "Bu kodun çıktısı nedir?\n\npaste(\"puan\", 1:3)",
+    "options": [
+      "\"puan 1\" \"puan 2\" \"puan 3\"",
+      "\"puan1\" \"puan2\" \"puan3\"",
+      "\"puan 1 puan 2 puan 3\"",
+      "\"puan 1:3\""
+    ],
+    "answer": 0,
+    "explanation": "`paste()` vektörleri eleman eleman birleştirip her öğe için ayrı bir metin üretir; varsayılan ayırıcı `sep = \" \"` olduğu için araya boşluk koyar. Boşluksuz \"puan1\" için `sep = \"\"` yazılmalıdır."
+  },
+  {
+    "id": "dsm5003-h4-03",
+    "course": "DSM 5003",
+    "source": "Hafta 4 sunumu, s. 8",
+    "question": "Bu kodun çıktısı nedir?\n\nm <- matrix(c(5, 2, 9, 6, 4, 1), nrow = 2)\nm[m %% 2 == 0]",
+    "options": [
+      "4 2 6",
+      "2 4 5",
+      "2 4 6",
+      "2 6 4"
+    ],
+    "answer": 3,
+    "explanation": "`m %% 2 == 0` çift değerlerin yerinde TRUE olan mantıksal bir matris üretir; matris bununla indekslenince değerler sütun sütun (5 2 9 6 4 1 sırasıyla) taranır ve çiftler bir vektör olarak döner. 4 2 6 satır satır okumaktan, 2 4 5 ise değerler yerine konumlardan gelir."
+  },
+  {
+    "id": "dsm5003-h4-04",
+    "course": "DSM 5003",
+    "source": "Hafta 4 ders kodu (05102026.R), satır 102–103",
+    "question": "Bu kodun çıktısı nedir?\n\nm <- matrix(1:6, nrow = 2)\nt(m)[3, ]",
+    "options": [
+      "3 6",
+      "5 6",
+      "3 4",
+      "Hata verir: subscript out of bounds"
+    ],
+    "answer": 1,
+    "explanation": "m sütun sütun dolduğu için satırları 1 3 5 ve 2 4 6'dır; `t()` satırlarla sütunları yer değiştirir ve 3×2'lik t(m)'nin satırları 1 2, 3 4, 5 6 olur. m'nin kendisinde 3. satır olmadığından hata ancak `m[3, ]` yazılsaydı alınırdı."
+  },
+  {
+    "id": "dsm5003-h4-05",
+    "course": "DSM 5003",
+    "source": "Hafta 4 sunumu, s. 14",
+    "question": "Bu kodun çıktısı nedir?\n\nm <- matrix(1:12, ncol = 4)\nc(nrow(m), ncol(m), length(m))",
+    "options": [
+      "3 4 12",
+      "4 3 12",
+      "3 4 4",
+      "3 4 3"
+    ],
+    "answer": 0,
+    "explanation": "12 değer `ncol = 4` ile 3 satır ve 4 sütuna yerleşir. Matriste `length()` satır ya da sütun sayısını değil, toplam eleman sayısını (3 × 4 = 12) verir."
+  },
+  {
+    "id": "dsm5003-h4-06",
+    "course": "DSM 5003",
+    "source": "Hafta 4 ders kodu (05102026.R), satır 105–109",
+    "question": "Bu kodun çıktısı nedir?\n\nm <- matrix(c(2, 9, 7, 4, 8, 1), nrow = 2)\nrowSums(m > 5)",
+    "options": [
+      "1 1 1",
+      "15 9",
+      "3",
+      "2 1"
+    ],
+    "answer": 3,
+    "explanation": "`m > 5` aynı boyutta mantıksal bir matris üretir ve TRUE 1 sayıldığı için `rowSums()` her satırda 5'ten büyük kaç değer olduğunu verir: 1. satırda (2 7 8) iki, 2. satırda (9 4 1) bir. 1 1 1 sonucu, sütunlara göre sayan `colSums()` ile alınırdı."
+  },
+  {
+    "id": "dsm5003-h4-07",
+    "course": "DSM 5003",
+    "source": "Hafta 4 sunumu, s. 4",
+    "question": "Bu kod çalıştırıldığında ne olur?\n\nm <- matrix(1:5, nrow = 2)",
+    "options": [
+      "Hata verir; 5 değer 2 satıra eşit bölünemediği için matris kurulmaz.",
+      "2×3 matris oluşur; boş kalan son hücreye NA yazılır, uyarı verilmez.",
+      "2×3 matris oluşur; son hücre baştan tekrarlanan 1 ile dolar, uyarı verilir.",
+      "2×2 matris oluşur; sığmayan 5 değeri atılır ve uyarı verilir."
+    ],
+    "answer": 2,
+    "explanation": "Veri uzunluğu (5) satır sayısının (2) katı olmadığından R 3 sütun açar ve eksik hücreyi değerleri baştan tekrar ederek 1 ile doldurur. Bu bir hata değil, \"data length [5] is not a sub-multiple or multiple of the number of rows [2]\" uyarısıdır."
+  },
+  {
+    "id": "dsm5003-h4-08",
+    "course": "DSM 5003",
+    "source": "Hafta 4 sunumu, s. 11",
+    "question": "Bu kodun çıktısı nedir?\n\nm <- matrix(c(4, 1, 2, 8, 7, 3), nrow = 2)\napply(m, 2, sort)[2, ]",
+    "options": [
+      "1 2 3",
+      "4 3",
+      "1 8 3",
+      "4 8 7"
+    ],
+    "answer": 3,
+    "explanation": "`apply(m, 2, sort)` her sütunu ayrı ayrı küçükten büyüğe sıralar ve sonuçları yine sütun olarak dizer: (4, 1) → 1 4, (2, 8) → 2 8, (7, 3) → 3 7. Bu matrisin 2. satırı her sütunun büyük değeridir."
+  },
+  {
+    "id": "dsm5003-h4-09",
+    "course": "DSM 5003",
+    "source": "Hafta 4 ders kodu (05102026.R), satır 70–86",
+    "question": "Ortalamadan sapmanın en fazla olduğu günün sıcaklık değerini döndüren ifade hangisidir?\n\nsicaklik <- c(25, 26, 23, 28, 29, 27, 25)\nnames(sicaklik) <- paste(1:7, \".gün\", sep = \"\")\nsapma <- abs(19.1 - sicaklik)",
+    "options": [
+      "max(sapma)",
+      "sicaklik[sapma == max(sapma)]",
+      "which(sapma == max(sapma))",
+      "names(sicaklik[sapma == max(sapma)])"
+    ],
+    "answer": 1,
+    "explanation": "`sapma == max(sapma)` yalnızca en büyük sapmanın olduğu konumda TRUE olan mantıksal bir vektördür; sicaklik bununla indekslenince o günün sıcaklığı adıyla birlikte döner. `max(sapma)` sapmanın kendisini, `which()` konumu, `names()` ise günün adını verir."
+  },
+  {
+    "id": "dsm5003-h5-01",
+    "course": "DSM 5003",
+    "source": "Hafta 5 ders kodu (12102026.R), satır 8–15",
+    "question": "Bu kodun çıktısı nedir?\n\nm1 <- matrix(1:6, nrow = 2)\nm2 <- matrix(7:12, nrow = 2)\na2 <- array(c(m1, m2), dim = c(2, 3, 4))\na2[2, 3, 4]",
+    "options": [
+      "24",
+      "12",
+      "NA",
+      "6"
+    ],
+    "answer": 1,
+    "explanation": "c(m1, m2) 12 değer içerir, 2×3×4 bir dizi ise 24 değer ister; `array()` eksik kalan katmanları veriyi baştan tekrar ederek doldurur, böylece 3. katman m1'in, 4. katman m2'nin kopyası olur. Bu yüzden a2[2, 3, 4], m2[2, 3] ile aynıdır."
+  },
+  {
+    "id": "dsm5003-h5-02",
+    "course": "DSM 5003",
+    "source": "Hafta 5 ders kodu (12102026.R), satır 45–48",
+    "question": "Bu kodun çıktısı nedir?\n\nlist1 <- list(e1 = 1:10, e2 = letters[1:10])\nlist3 <- list1\nlist3$e3 <- 1:100\nc(length(list1), length(list3))",
+    "options": [
+      "2 3",
+      "3 3",
+      "2 2",
+      "3 2"
+    ],
+    "answer": 0,
+    "explanation": "`list3 <- list1` list1'in bir kopyasını oluşturur; R'da bir nesneyi değiştirmek yalnızca o nesneyi etkiler, yani list3'e e3 eklemek list1'e dokunmaz. Bu yüzden list1 2, list3 ise 3 elemanlıdır."
+  },
+  {
+    "id": "dsm5003-h5-03",
+    "course": "DSM 5003",
+    "source": "Hafta 5 sunumu, s. 10 ve 16–17",
+    "question": "Bu kodun çıktısı nedir?\n\nno <- c(3423, 5345, 2466)\nad <- c(\"AB\", \"BB\", \"DD\")\npuan1 <- c(90, 87, 92)\ndf1 <- data.frame(no, ad, puan1)\ndf1 <- cbind(df1, puan2 = c(75, 88, 76))\ndf1$puan3 <- c(65, 70, 45)\nlength(df1)",
+    "options": [
+      "3",
+      "15",
+      "5",
+      "1"
+    ],
+    "answer": 2,
+    "explanation": "data.frame, eşit uzunluktaki sütun vektörlerinden oluşan bir list nesnesidir; `length()` bu listenin eleman sayısını, yani sütun sayısını verir. Satır sayısı `nrow(df1)` ile alınır; matristeki gibi hücre sayısı da dönmez."
+  },
+  {
+    "id": "dsm5003-h5-04",
+    "course": "DSM 5003",
+    "source": "Hafta 5 sunumu, s. 20–21",
+    "question": "Hangi ifade yeni satırı df1'in 4. sırasına yerleştirir ve eski 4. satırı (EE) 5. sıraya kaydırır?\n\nno <- c(3423, 5345, 2466, 6365)\nad <- c(\"AB\", \"BB\", \"DD\", \"EE\")\npuan1 <- c(90, 87, 92, 77)\ndf1 <- data.frame(no, ad, puan1)\nyeni <- list(1254, \"FF\", 80)",
+    "options": [
+      "rbind(df1, yeni)",
+      "rbind(df1[1:3, ], yeni, df1[-(1:3), ])",
+      "df1[4, ] <- yeni",
+      "rbind(df1[1:3, ], yeni, df1[-1:3, ])"
+    ],
+    "answer": 1,
+    "explanation": "`df1[1:3, ]` ilk üç satırı, `df1[-(1:3), ]` geri kalanları verir ve `rbind()` yeni satırı bu ikisinin arasına koyar. Parantezsiz `-1:3` önce -1 0 1 2 3 olarak işlendiği için negatif ve pozitif indisler karışır ve hata verir; `rbind(df1, yeni)` sona ekler, `df1[4, ] <- yeni` ise 4. satırın üzerine yazar."
+  },
+  {
+    "id": "dsm5003-h5-05",
+    "course": "DSM 5003",
+    "source": "Hafta 5 ders kodu (12102026.R), satır 1–5",
+    "question": "Bu kodun çıktısı nedir?\n\na1 <- array(1:24, dim = c(2, 4, 3))\ndim(a1[, , -1])",
+    "options": [
+      "2 4",
+      "1 4 3",
+      "2 4 2",
+      "2 3 3"
+    ],
+    "answer": 2,
+    "explanation": "Üçüncü indis katmanı (matrisi) seçer; `-1` ilk katmanı çıkarır ve geriye 2 satır, 4 sütunlu 2 katman kalır. Satır ya da sütun çıkarmak için -1 birinci ya da ikinci indis konumuna yazılmalıydı."
+  },
+  {
+    "id": "dsm5003-h5-06",
+    "course": "DSM 5003",
+    "source": "Hafta 5 sunumu, s. 4 ve 6",
+    "question": "Bu kodun çıktısı nedir?\n\nlist1 <- list(e1 = 1:10, e2 = letters[1:10], e3 = matrix(1:12, nrow = 3))\nlist1$e3[, 2]",
+    "options": [
+      "2 6 10",
+      "2 5 8 11",
+      "Hata verir",
+      "4 5 6"
+    ],
+    "answer": 3,
+    "explanation": "`list1$e3` listedeki matrisin kendisini döndürür, ardından gelen `[, 2]` bu matrisin 2. sütununu seçer. matrix(1:12, nrow = 3) sütun sütun dolduğu için 2. sütun 4 5 6'dır."
+  },
+  {
+    "id": "dsm5003-h5-07",
+    "course": "DSM 5003",
+    "source": "Hafta 5 sunumu, s. 9",
+    "question": "Bu kodun çıktısı nedir?\n\nliste <- list(a = 1:3, b = 4:5)\nc(length(c(liste, liste)), length(unlist(liste)))",
+    "options": [
+      "4 5",
+      "2 5",
+      "4 2",
+      "10 5"
+    ],
+    "answer": 0,
+    "explanation": "`c()` iki listeyi birleştirince elemanlarını tek bir listede art arda dizer (2 + 2 = 4 eleman). `unlist()` ise listeyi tek bir vektöre açar, bu yüzden içteki bütün değerler sayılır (3 + 2 = 5)."
+  },
+  {
+    "id": "dsm5003-h5-08",
+    "course": "DSM 5003",
+    "source": "Hafta 5 sunumu, s. 15–16",
+    "question": "Bu kodun çıktısı nedir?\n\nno <- c(3423, 5345, 2466)\nad <- c(\"AB\", \"BB\", \"DD\")\npuan1 <- c(90, 87, 92)\ndf1 <- data.frame(no, ad, puan1)\ndf1$puan2 <- c(75, 88, 76)\nsubset(df1, puan1 > 88 & puan2 > 75)$ad",
+    "options": [
+      "\"AB\" \"DD\"",
+      "\"DD\"",
+      "\"BB\" \"DD\"",
+      "\"AB\" \"BB\" \"DD\""
+    ],
+    "answer": 1,
+    "explanation": "`subset()` koşuldaki sütun adlarını df1 içinde arar ve iki koşulu birden sağlayan satırları döndürür: puan1 > 88 AB ile DD'de, puan2 > 75 ise BB ile DD'de doğrudur (AB'nin 75'i 75'ten büyük değildir). İkisini de yalnızca DD sağlar ve `$ad` onun adını verir."
+  },
+  {
+    "id": "dsm5003-h5-09",
+    "course": "DSM 5003",
+    "source": "Hafta 5 sunumu, s. 10",
+    "question": "Bu kod çalıştırıldığında ne olur?\n\ndf <- data.frame(no = c(1, 2, 3), puan = c(90, 87))",
+    "options": [
+      "Hata verir; sütunların uzunlukları eşit olmalıdır.",
+      "3 satırlı tablo oluşur; kısa sütun baştan tekrarlanır: 90 87 90.",
+      "3 satırlı tablo oluşur; eksik puan hücresi NA ile dolar.",
+      "2 satırlı tablo oluşur; fazladan gelen 3 değeri atılır."
+    ],
+    "answer": 0,
+    "explanation": "data.frame, eşit uzunlukta vektörlerden oluşan bir listedir; 3 ve 2 uzunluklu sütunlar tek tabloya yerleşemez ve R \"arguments imply differing number of rows: 3, 2\" hatası verir. Kısa sütun ancak uzunluğu uzun olanınkini tam bölseydi tekrarlanarak tamamlanabilirdi."
+  }
+]

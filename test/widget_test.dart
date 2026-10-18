@@ -5,6 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:organizer/main.dart';
 import 'package:organizer/models/event.dart';
 import 'package:organizer/services/event_store.dart';
+import 'package:organizer/services/quiz_store.dart';
 
 void main() {
   testWidgets('App renders the Day view shell', (tester) async {
@@ -12,7 +13,7 @@ void main() {
     final store = EventStore();
     await store.load();
 
-    await tester.pumpWidget(OrganizerApp(store: store));
+    await tester.pumpWidget(OrganizerApp(store: store, quiz: QuizStore()));
 
     expect(find.text('Organizer'), findsOneWidget);
     expect(find.text('Day'), findsOneWidget);
@@ -36,7 +37,7 @@ void main() {
       category: EventCategory.personal,
       notes: notes,
     );
-    await tester.pumpWidget(OrganizerApp(store: store));
+    await tester.pumpWidget(OrganizerApp(store: store, quiz: QuizStore()));
     await tester.pumpAndSettle();
     await tester.tap(find.byIcon(Icons.chevron_right));
     await tester.pumpAndSettle();
