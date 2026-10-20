@@ -1,0 +1,562 @@
+[
+  {
+    "id": "ga-kpi-01",
+    "course": "Game Analytics",
+    "source": "Interview prep: ARPDAU basics",
+    "question": "On one day a mobile game has 50,000 DAU, 500 paying users, $3,000 of IAP revenue and $2,000 of ad revenue. What is that day's ARPDAU?",
+    "options": [
+      "$0.10",
+      "$0.06",
+      "$10.00",
+      "$0.04"
+    ],
+    "answer": 0,
+    "explanation": "ARPDAU = total revenue (IAP + ads) / DAU = $5,000 / 50,000 = $0.10. $0.06 uses IAP revenue only, $0.04 uses ad revenue only, and $10.00 divides total revenue by payers instead of by active users."
+  },
+  {
+    "id": "ga-kpi-02",
+    "course": "Game Analytics",
+    "source": "Interview prep: ARPDAU drop",
+    "question": "After a large user-acquisition (UA) campaign started, ARPDAU dropped 15% while total daily revenue stayed flat. What is the most likely explanation, and what should you check first?",
+    "options": [
+      "A price change cut payer conversion; split conversion by store product (SKU)",
+      "DAU grew with new users who rarely pay yet; split ARPDAU by new vs returning users",
+      "Last month's payers spend less now; check their ARPPU against last month",
+      "Ad networks paid lower eCPMs; split ad revenue by network and ad format"
+    ],
+    "answer": 1,
+    "explanation": "Flat revenue with ARPDAU down 15% means DAU rose by about 18% (1/0.85), and fresh installs rarely pay in their first days, so the denominator grew faster than revenue. Lower eCPMs, a pricing problem or weaker payers would all have lowered total revenue, which did not happen."
+  },
+  {
+    "id": "ga-kpi-03",
+    "course": "Game Analytics",
+    "source": "Interview prep: KPI mix shift by country",
+    "question": "Week 1: the US has 20,000 DAU at $0.30 ARPDAU and India has 20,000 DAU at $0.03 ARPDAU. Week 2: the US is unchanged, India grows to 60,000 DAU, and each country's ARPDAU stays exactly the same. What is the game's overall ARPDAU in week 2?",
+    "options": [
+      "$0.165",
+      "$0.0825",
+      "$0.0975",
+      "$0.075"
+    ],
+    "answer": 2,
+    "explanation": "Overall ARPDAU is a DAU-weighted average: ($6,000 + $1,800) / 80,000 = $0.0975, down about 41% from $0.165 although no country got worse. $0.165 is the unweighted average of the two countries; this is a pure mix shift, which is why a KPI change should be split by country, platform and source before blaming the product."
+  },
+  {
+    "id": "ga-kpi-04",
+    "course": "Game Analytics",
+    "source": "Interview prep: conversion × ARPPU",
+    "question": "A new $0.99 starter pack raises daily payer conversion from 2% to 3%, while daily ARPPU falls from $20 to $15. DAU is unchanged. What happened to IAP ARPDAU?",
+    "options": [
+      "It rose by 50%",
+      "It stayed the same",
+      "It fell by 25%",
+      "It rose by 12.5%"
+    ],
+    "answer": 3,
+    "explanation": "IAP ARPDAU = payer conversion × ARPPU: 0.02 × $20 = $0.40 before and 0.03 × $15 = $0.45 after, a 12.5% rise. Cheap offers usually lower ARPPU because they bring in small spenders, so reading ARPPU alone (−25%) or conversion alone (+50%) gives the wrong picture."
+  },
+  {
+    "id": "ga-kpi-05",
+    "course": "Game Analytics",
+    "source": "Interview prep: DAU/MAU stickiness",
+    "question": "A game's average DAU over a 30-day month is 30,000 and its MAU is 150,000. What does the DAU/MAU ratio tell you?",
+    "options": [
+      "About 20% of installs were still active 30 days later",
+      "About 20% of the monthly users churned during the month",
+      "About 20% of the monthly users played on every single day",
+      "The average monthly user played on about 6 of the 30 days"
+    ],
+    "answer": 3,
+    "explanation": "DAU/MAU = 0.2 measures stickiness: 30,000 × 30 = 900,000 user-days spread over 150,000 users is about 6 active days each. It says nothing direct about churn or D30 retention, and '20% play daily' is only one of many patterns that give the same ratio."
+  },
+  {
+    "id": "ga-kpi-06",
+    "course": "Game Analytics",
+    "source": "Interview prep: LTV from the retention curve",
+    "question": "For an install cohort, the sum of daily retention from D0 to D179 is 12 (an average install is active on 12 of its first 180 days). D180 retention is 3%, and the cohort's ARPDAU is a steady $0.10. What is its 180-day LTV per install?",
+    "options": [
+      "$18.00",
+      "$12.00",
+      "$0.54",
+      "$1.20"
+    ],
+    "answer": 3,
+    "explanation": "LTV = ARPDAU × expected active days = $0.10 × 12 = $1.20, which is then compared with CPI. $18.00 assumes every install plays all 180 days, and $0.54 (= $0.10 × 180 × 3%) uses only the final retention point and ignores the many active days before it."
+  },
+  {
+    "id": "ga-kpi-07",
+    "course": "Game Analytics",
+    "source": "Interview prep: ad revenue drop",
+    "question": "Ad ARPDAU fell 20% overnight in every country. IAP revenue is stable, and ad impressions per DAU did not change. Where does the drop come from, and what do you check?",
+    "options": [
+      "Fewer payers; check whether payers were shown fewer rewarded ads",
+      "Lower DAU; check installs and retention by country and platform",
+      "Lower eCPM; check eCPM by ad network and format, and recent mediation changes",
+      "Fewer ads per player; check frequency caps and ad placements in the build"
+    ],
+    "answer": 2,
+    "explanation": "Ad ARPDAU = impressions per DAU × eCPM / 1,000, so with impressions per DAU unchanged, the price per impression must have fallen (e.g., a network issue, a waterfall change or a seasonal drop such as early January). DAU cannot explain it because ARPDAU is already per user."
+  },
+  {
+    "id": "ga-kpi-08",
+    "course": "Game Analytics",
+    "source": "Interview prep: tracking bug vs real change",
+    "question": "A new app version went live a week ago. Since then, revenue in the analytics dashboard is up 40%, but revenue in the Google Play Console is flat. On the new version, payers per day are unchanged and purchase events per payer roughly doubled. What is the most likely explanation?",
+    "options": [
+      "A new store offer makes payers buy more often",
+      "Play Console data lags; it will catch up in a few days",
+      "Players moved to Android, where prices are higher",
+      "The new version logs some purchases twice"
+    ],
+    "answer": 3,
+    "explanation": "The store console is the source of truth for IAP money; if it is flat for a full week, the extra revenue exists only in tracking, and a doubling of purchase events per payer on one version points to duplicate logging (check duplicate transaction IDs). A real offer or platform effect would show up in store revenue too."
+  },
+  {
+    "id": "ga-kpi-09",
+    "course": "Game Analytics",
+    "source": "Interview prep: ARPDAU rise",
+    "question": "ARPDAU rose 11% this week. Total revenue was flat, and DAU fell 10% after the UA team paused campaigns. How should you read this?",
+    "options": [
+      "Mostly a composition effect: fewer non-paying new users in DAU",
+      "Revenue per user is higher, so UA can restart at a higher CPI",
+      "Monetization improved: the newest store offers are working",
+      "Each payer spent about 11% more, so ARPPU must have risen"
+    ],
+    "answer": 0,
+    "explanation": "Flat revenue over 10% fewer DAU gives +11% ARPDAU mechanically (1/0.9 ≈ 1.11). Paused UA removes new users who rarely pay, so the rise reflects who is in DAU, not better monetization; ARPDAU of comparable segments (e.g., returning users) is the check."
+  },
+  {
+    "id": "ga-kpi-10",
+    "course": "Game Analytics",
+    "source": "Interview prep: ARPU vs ARPDAU",
+    "question": "In a 30-day month a game makes $300,000 in revenue, with 500,000 MAU and an average DAU of 100,000. What is the average ARPDAU for the month?",
+    "options": [
+      "$3.00",
+      "$0.60",
+      "$0.10",
+      "$0.02"
+    ],
+    "answer": 2,
+    "explanation": "ARPDAU = revenue / user-days = $300,000 / (100,000 × 30) = $0.10. $0.60 is monthly ARPU (revenue / MAU), and $0.02 divides by MAU × 30, as if every monthly user played every day."
+  },
+  {
+    "id": "ga-ab-01",
+    "course": "Game Analytics",
+    "source": "Interview prep: A/B test duration",
+    "question": "You test a new tutorial on new installs. Baseline D1 retention is 40% and you want to detect a lift of 2 percentage points (absolute). With α = 0.05 and 80% power, use the rule of thumb n ≈ 16·p(1−p)/δ² users per variant. There are two variants and about 1,000 eligible new installs per day, split evenly. Your team always runs tests for a whole number of weeks. How long should the test run?",
+    "options": [
+      "14 days",
+      "28 days",
+      "7 days",
+      "21 days"
+    ],
+    "answer": 3,
+    "explanation": "n ≈ 16 × 0.4 × 0.6 / 0.02² = 9,600 per variant, so 19,200 users in total; at 1,000 per day that is 19.2 days, rounded up to whole weeks = 21 days. 14 days comes from forgetting that traffic is split across two variants (9.6 days, rounded up), and 28 days over-rounds. Halving the detectable lift would quadruple n."
+  },
+  {
+    "id": "ga-ab-02",
+    "course": "Game Analytics",
+    "source": "Interview prep: A/B test duration",
+    "question": "Why should an A/B test in a mobile game usually run for whole weeks, even if the required sample size is reached earlier?",
+    "options": [
+      "Significance tests are only valid for data collected over multiples of seven days",
+      "A longer test always allows a lower significance level for the same decision",
+      "App stores roll out updates on a weekly cycle, so results settle after a week",
+      "Players behave differently on weekdays and weekends, so part-weeks give a skewed sample"
+    ],
+    "answer": 3,
+    "explanation": "Player mix and behavior change by day of week (e.g., longer sessions and different players on weekends), so a Monday–Thursday test only describes weekday players. Nothing in the test statistic itself requires multiples of seven days."
+  },
+  {
+    "id": "ga-ab-03",
+    "course": "Game Analytics",
+    "source": "Interview prep: peeking",
+    "question": "A PM checks the A/B test dashboard every day. On day 4 of a planned 14-day test, the p-value for revenue per user is 0.03, and the PM wants to stop and ship. What is the best response?",
+    "options": [
+      "Stop now: reaching significance with a small sample means a very strong effect",
+      "Keep running to the plan; stopping at the first p < 0.05 inflates false positives",
+      "Keep running, but stop as soon as the p-value climbs back above 0.05",
+      "Stop now: p < 0.05 means the result is significant and the decision is safe"
+    ],
+    "answer": 1,
+    "explanation": "With daily looks and a stop-when-significant rule, the chance of a false positive is far above 5%, because p-values fluctuate and dip below 0.05 by chance. Either stick to the pre-planned sample size or use a sequential method designed for interim looks."
+  },
+  {
+    "id": "ga-ab-04",
+    "course": "Game Analytics",
+    "source": "Interview prep: sample ratio mismatch (SRM)",
+    "question": "A test is configured for a 50/50 split. After a week, control has 52,000 users and treatment has 48,000. What should you do?",
+    "options": [
+      "Reweight the two groups to 50/50 and then read the results as usual",
+      "Treat it as a sample ratio mismatch and find the cause before trusting any metric",
+      "Nothing special: a 2,000-user gap is normal noise at this sample size",
+      "Proceed, because both groups are well above the required sample size"
+    ],
+    "answer": 1,
+    "explanation": "With 100,000 users, a fair 50/50 split gives 50,000 ± about 160 (1 SD) per group; a 2,000 gap is a chi-square of 160 (p far below 0.001). That points to broken assignment or logging (e.g., treatment users crashing before they are logged), which biases every metric, so reweighting does not fix it."
+  },
+  {
+    "id": "ga-ab-05",
+    "course": "Game Analytics",
+    "source": "Interview prep: randomization unit",
+    "question": "You test a 20% discount on shop bundles. Which randomization unit is best?",
+    "options": [
+      "Session, because it gives many more units and power",
+      "User ID, so each player always sees the same prices",
+      "Purchase, assigning each checkout to a random price",
+      "Calendar day, alternating normal and discount days"
+    ],
+    "answer": 1,
+    "explanation": "Prices must be consistent per player: with session-, day- or purchase-level assignment the same user sees both prices, can learn to wait for the discount, and the groups are no longer independent. More units do not help when they contaminate each other."
+  },
+  {
+    "id": "ga-ab-06",
+    "course": "Game Analytics",
+    "source": "Interview prep: primary and guardrail metrics",
+    "question": "You test showing an interstitial ad after every level instead of after every second level. Which metric plan fits best?",
+    "options": [
+      "Primary: D7 retention; guardrail: ad impressions per DAU, to make sure ads are shown",
+      "Primary: ad impressions per DAU; guardrails: none, since only ad frequency changes",
+      "Primary: eCPM of interstitial ads; guardrail: number of sessions per user per day",
+      "Primary: total revenue per user (ads + IAP); guardrails: D1/D7 retention and playtime"
+    ],
+    "answer": 3,
+    "explanation": "The goal is more revenue without losing players, so revenue per user (including possible IAP losses) is primary and retention and playtime are guardrails. Impressions per DAU rise almost by construction, so they cannot measure success, and eCPM may even fall when more impressions are sold."
+  },
+  {
+    "id": "ga-ab-07",
+    "course": "Game Analytics",
+    "source": "Interview prep: novelty effect",
+    "question": "A new daily-reward screen lifts sessions per user by 15% in the first 3 days of a test, and the lift shrinks to about 2% by week 2. What is the most likely reading?",
+    "options": [
+      "The true effect is 15%; the later days are just random noise",
+      "A sample ratio mismatch that started to appear after day 3",
+      "The test is underpowered and should be restarted with more users",
+      "A novelty effect: the lasting impact is closer to the later lift"
+    ],
+    "answer": 3,
+    "explanation": "Existing players react to anything new and then return to their habits, so the early lift overstates the lasting effect. Plot the effect by days since exposure (or look at new users, who never saw the old version) and judge it once it is stable."
+  },
+  {
+    "id": "ga-ab-08",
+    "course": "Game Analytics",
+    "source": "Interview prep: multiple metrics",
+    "question": "An A/B test report lists 20 metrics. One of them is significant at p = 0.04; the other 19 are not. What is the best conclusion?",
+    "options": [
+      "Ship it: one significant metric is enough to show the change has an effect",
+      "Consistent with chance: 20 tests at α = 0.05 give about one false positive",
+      "Every one of the other 19 metrics is now proven to be unaffected by it",
+      "Lower α to 0.01 for that metric only and re-test it on the same data"
+    ],
+    "answer": 1,
+    "explanation": "20 × 0.05 = 1 false positive is expected even if nothing changed. Decide on the pre-registered primary metric, correct for multiple comparisons (Bonferroni: 0.05/20 = 0.0025, which 0.04 fails), or treat the result as a hypothesis for a new test."
+  },
+  {
+    "id": "ga-ab-09",
+    "course": "Game Analytics",
+    "source": "Interview prep: confidence intervals",
+    "question": "The ARPDAU lift in a test is +2%, with a 95% confidence interval from −1% to +5%. Which reading is correct?",
+    "options": [
+      "It is significant, because the point estimate of the lift is positive",
+      "The test proves that the change has no effect at all on ARPDAU",
+      "There is a 95% probability that the true lift is exactly +2%",
+      "Not significant at 5%; the data fit anything from a small loss to a 5% gain"
+    ],
+    "answer": 3,
+    "explanation": "A 95% CI that contains 0 means the result is not significant at α = 0.05, but it is not proof of zero effect: losses down to about −1% and gains up to +5% remain plausible. Usual next steps are more data or a decision based on what a −1% outcome would cost."
+  },
+  {
+    "id": "ga-ab-10",
+    "course": "Game Analytics",
+    "source": "Interview prep: practical vs statistical significance",
+    "question": "With 4 million users per variant, a new feature raises D1 retention by +0.1 percentage points (95% CI +0.04 to +0.16 pp, p = 0.001). The team agreed beforehand that only lifts of at least +1 pp justify the feature's maintenance cost. What should they conclude?",
+    "options": [
+      "Ship it: p = 0.001 shows that the effect is large and important",
+      "The lift is real but too small: even the CI's upper end is far below +1 pp",
+      "Inconclusive: keep the test running until the lift reaches +1 pp",
+      "It must be a false positive, because a 0.1 pp lift is so small"
+    ],
+    "answer": 1,
+    "explanation": "With millions of users, tiny effects become statistically significant; the CI says the lift is real but at most about 0.16 pp, far below the agreed 1 pp bar. A small p-value is evidence against zero effect, not a measure of how big the effect is."
+  },
+  {
+    "id": "ga-ret-01",
+    "course": "Game Analytics",
+    "source": "Interview prep: classic vs rolling retention",
+    "question": "A cohort has 1,000 installs on day 0. 180 of them are active on day 7, 260 are active on day 7 or any later day, and 420 are active on at least one day from day 1 to day 7. What is the cohort's classic D7 retention?",
+    "options": [
+      "18%",
+      "42%",
+      "8%",
+      "26%"
+    ],
+    "answer": 0,
+    "explanation": "Classic (day-N) D7 = users active exactly on day 7 / installs = 180 / 1,000 = 18%. 26% is rolling (unbounded) D7, which counts anyone active on day 7 or later, and 42% is a 'came back within the first week' measure."
+  },
+  {
+    "id": "ga-ret-02",
+    "course": "Game Analytics",
+    "source": "Interview prep: classic vs rolling retention",
+    "question": "Why does rolling D7 retention for last week's install cohort keep rising when you re-run the same query in later weeks, while classic D7 stays the same?",
+    "options": [
+      "It is estimated from a sample of users, which is refreshed every week",
+      "It counts anyone active on day 7 or later, so late returners keep adding to it",
+      "It is based on a moving 7-day average of DAU, which keeps changing",
+      "It removes users who uninstalled from the denominator as time goes by"
+    ],
+    "answer": 1,
+    "explanation": "Rolling (unbounded) D7 = users active on day 7 or any later day / installs, so a player who returns on day 40 raises it after the fact; classic D7 only looks at day 7, which is fixed once that day has passed. Rolling values for recent cohorts are therefore incomplete, and rolling is always ≥ classic."
+  },
+  {
+    "id": "ga-ret-03",
+    "course": "Game Analytics",
+    "source": "Interview prep: retention drop by install source",
+    "question": "D1 retention for the whole install cohort fell from 40% to 33%. All users except those from a new ad network still have 40% D1; users from the new network have 20% D1. What share of the new cohort came from the new network?",
+    "options": [
+      "35%",
+      "50%",
+      "17.5%",
+      "7%"
+    ],
+    "answer": 0,
+    "explanation": "Overall D1 is a weighted average: 0.40 × (1 − s) + 0.20 × s = 0.33 gives s = 0.35. The 7-point drop is entirely a source-mix shift, so the issue is the UA channel, not the product; always split retention by install source, country and platform before blaming an update."
+  },
+  {
+    "id": "ga-ret-04",
+    "course": "Game Analytics",
+    "source": "Interview prep: churn definition",
+    "question": "You need a churn definition of the form 'no session for N days' for a casual mobile game. How should you choose N?",
+    "options": [
+      "Pick N from the data: the gap after which few players ever return",
+      "Use 1 day, so that churn is detected as early as possible",
+      "Use 30 days, since that is the industry standard for every game",
+      "Use the time until the player uninstalls the app from the phone"
+    ],
+    "answer": 0,
+    "explanation": "A churn window should match the game's own play cadence: look at the distribution of inactivity gaps and pick the N after which return rates are low (e.g., under 10%). A 1-day window labels normal every-other-day players as churned, and uninstalls are often not tracked reliably."
+  },
+  {
+    "id": "ga-ret-05",
+    "course": "Game Analytics",
+    "source": "Interview prep: FTUE funnel",
+    "question": "The FTUE funnel for new installs shows the share of installs reaching each step: tutorial start 95%, tutorial step 3 90%, tutorial step 4 60%, level 1 complete 57%. Where should you look first to improve D1?",
+    "options": [
+      "The move from install to tutorial start",
+      "The move from step 4 to level 1 complete",
+      "The move from tutorial step 3 to step 4",
+      "Level 1 itself, as only 57% complete it"
+    ],
+    "answer": 2,
+    "explanation": "Step-to-step conversion is 95%, 94.7%, 66.7% and 95%, so a third of players drop between steps 3 and 4, far more than at any other step. The 57% at the end is the cumulative result of all steps and is mostly caused by that one drop."
+  },
+  {
+    "id": "ga-ret-06",
+    "course": "Game Analytics",
+    "source": "Interview prep: drivers of early retention",
+    "question": "Which change is most likely to improve D1 retention of new players?",
+    "options": [
+      "Adding a new endgame raid for players who have reached level 100",
+      "Adding a monthly leaderboard season with rewards for top players",
+      "Raising the monthly price of the VIP subscription by 20 percent",
+      "Fixing a slow first load and a difficulty spike in the first levels"
+    ],
+    "answer": 3,
+    "explanation": "D1 is decided in the first session: loading time, crashes, tutorial clarity and early difficulty. Endgame content and monthly seasons reach only players who are already retained, so they affect D30 and later rather than D1."
+  },
+  {
+    "id": "ga-ret-07",
+    "course": "Game Analytics",
+    "source": "Interview prep: cohort maturity",
+    "question": "A new dashboard shows 'average D7 retention for installs in the last 14 days', and the value is well below the D7 of every individual mature cohort in the old report. The query averages over all install dates in the window. What is the most likely problem?",
+    "options": [
+      "Older cohorts get too much weight compared with newer cohorts",
+      "Weekend cohorts always have lower D7 than weekday cohorts do",
+      "D7 should be divided by DAU rather than by installs per cohort",
+      "Cohorts younger than 7 days have no day 7 yet and count as 0%"
+    ],
+    "answer": 3,
+    "explanation": "Cohorts installed in the last 6 days cannot have reached day 7, so their D7 is 0 (or partial) and drags the average down. Include only cohorts whose day 7 falls on or before the last complete day of data."
+  },
+  {
+    "id": "ga-ret-08",
+    "course": "Game Analytics",
+    "source": "Interview prep: retention segmentation and causality",
+    "question": "Payers have 70% D30 retention versus 8% for non-payers. A manager concludes that getting players to make a first purchase will raise their retention. What is the main problem with this conclusion?",
+    "options": [
+      "Nothing: a gap this large is enough to prove that paying causes retention",
+      "Payers are too small a group for their retention to be measured at all",
+      "Engaged players are more likely both to pay and to stay, so it may not be causal",
+      "Retention should be compared at D1 rather than at D30 for this question"
+    ],
+    "answer": 2,
+    "explanation": "This is selection: players who already like the game both buy and keep playing, so the correlation does not show what a purchase does to a given player. A randomized experiment (e.g., a starter offer shown to a random half) is needed to measure the causal effect."
+  },
+  {
+    "id": "ga-ret-09",
+    "course": "Game Analytics",
+    "source": "Interview prep: DAU vs retention",
+    "question": "DAU is up 20% month over month, but D1 and D7 retention of recent install cohorts are both down. What is the most likely explanation?",
+    "options": [
+      "The retention metrics are broken, since DAU cannot rise while retention falls",
+      "ARPDAU increased, which pulled more returning players back into the game",
+      "Recent cohorts are smaller than before, so they now weigh less in total DAU",
+      "Installs rose (e.g., more UA), so DAU grew even though cohorts keep fewer users"
+    ],
+    "answer": 3,
+    "explanation": "DAU is the sum over cohorts of installs × retention, so a big rise in installs can lift DAU while each new cohort retains worse, often because new UA traffic is lower quality. DAU growth alone can hide a worsening product or channel; check installs and retention by source."
+  },
+  {
+    "id": "ga-ret-10",
+    "course": "Game Analytics",
+    "source": "Interview prep: DAU from installs and retention",
+    "question": "A game gets a steady 5,000 installs per day for a long time. For each cohort, the expected number of active days per install (the sum of daily retention from D0 onward, with D0 = 100%) is 8. Roughly what DAU does the game settle at?",
+    "options": [
+      "40,000",
+      "5,000",
+      "8,000",
+      "625"
+    ],
+    "answer": 0,
+    "explanation": "Each day's DAU is the sum over all past cohorts of installs × that cohort's retention on that day; with constant installs this equals 5,000 × Σ retention = 5,000 × 8 = 40,000. This is why DAU depends on both install volume and the whole retention curve."
+  },
+  {
+    "id": "ga-sql-01",
+    "course": "Game Analytics",
+    "source": "Interview prep: SQL COUNT DISTINCT",
+    "question": "Table events(user_id, event_date, event_name) has one row per event. This query is meant to return DAU:\n\nSELECT event_date, COUNT(user_id) AS dau\nFROM events\nGROUP BY event_date\n\nWhat is wrong with it?",
+    "options": [
+      "It needs HAVING COUNT(user_id) > 0 to drop days with no events",
+      "It counts events, not players; it needs COUNT(DISTINCT user_id)",
+      "It should GROUP BY user_id instead of event_date to count users",
+      "Nothing: COUNT skips repeated user_id values, so it is correct"
+    ],
+    "answer": 1,
+    "explanation": "COUNT(user_id) counts every row with a non-NULL user_id, so a player with 50 events adds 50. COUNT(DISTINCT user_id) counts each player once per day."
+  },
+  {
+    "id": "ga-sql-02",
+    "course": "Game Analytics",
+    "source": "Interview prep: SQL GROUP BY and HAVING",
+    "question": "Table purchases(user_id, purchase_ts, amount_usd) has one row per purchase. Which query lists the users with more than 3 purchases?",
+    "options": [
+      "SELECT user_id FROM purchases GROUP BY user_id HAVING COUNT(*) > 3",
+      "SELECT user_id FROM purchases GROUP BY amount_usd HAVING COUNT(*) > 3",
+      "SELECT user_id FROM purchases WHERE COUNT(*) > 3 GROUP BY user_id",
+      "SELECT DISTINCT user_id FROM purchases WHERE amount_usd > 3"
+    ],
+    "answer": 0,
+    "explanation": "Aggregates such as COUNT(*) cannot be used in WHERE, which filters rows before grouping (the query fails); HAVING filters groups after GROUP BY. The DISTINCT query finds users with a purchase above $3, not users with more than 3 purchases."
+  },
+  {
+    "id": "ga-sql-03",
+    "course": "Game Analytics",
+    "source": "Interview prep: SQL join row duplication",
+    "question": "users(user_id, country) has one row per user; purchases(user_id, amount_usd) has one row per purchase. This query should return players and revenue per country:\n\nSELECT u.country,\n  COUNT(u.user_id) AS players,\n  SUM(p.amount_usd) AS revenue\nFROM users u\nLEFT JOIN purchases p ON u.user_id = p.user_id\nGROUP BY u.country\n\nWhat is wrong with the result?",
+    "options": [
+      "players is too high: a user with several purchases appears in several rows",
+      "revenue is too high: every purchase is repeated once for each country row",
+      "players is too low: the LEFT JOIN drops every user who never purchased",
+      "Nothing: a LEFT JOIN keeps exactly one output row per row of users"
+    ],
+    "answer": 0,
+    "explanation": "The join produces one row per purchase, so a user with 5 purchases is counted 5 times by COUNT(u.user_id); use COUNT(DISTINCT u.user_id). SUM(p.amount_usd) is still right because each purchase appears once, and the LEFT JOIN keeps non-payers with NULL amounts."
+  },
+  {
+    "id": "ga-sql-04",
+    "course": "Game Analytics",
+    "source": "Interview prep: SQL LEFT JOIN filter in WHERE vs ON",
+    "question": "You want every user who installed on 2026-10-01 with their revenue on that same day (0 for non-payers):\n\nSELECT u.user_id, COALESCE(SUM(p.amount_usd), 0) AS revenue\nFROM users u\nLEFT JOIN purchases p ON u.user_id = p.user_id\nWHERE u.install_date = '2026-10-01'\n  AND p.purchase_date = '2026-10-01'\nGROUP BY u.user_id\n\nThe result contains no users with revenue 0. Why?",
+    "options": [
+      "The p.purchase_date filter in WHERE drops the NULL rows; it belongs in ON",
+      "A LEFT JOIN never returns unmatched users; it needs a FULL OUTER JOIN",
+      "GROUP BY removes every group whose summed revenue is exactly zero",
+      "COALESCE is applied before SUM, so every zero turns into a NULL value"
+    ],
+    "answer": 0,
+    "explanation": "For non-payers the LEFT JOIN fills the p columns with NULL, and NULL = '2026-10-01' is not true, so WHERE removes them and the query behaves like an inner join. Putting p.purchase_date = '2026-10-01' in the ON clause keeps every user and only restricts which purchases match."
+  },
+  {
+    "id": "ga-sql-05",
+    "course": "Game Analytics",
+    "source": "Interview prep: SQL ROW_NUMBER",
+    "question": "Which query returns each user's first purchase from purchases(user_id, purchase_ts, amount_usd)?",
+    "options": [
+      "SELECT * FROM (SELECT *, ROW_NUMBER() OVER (PARTITION BY purchase_ts ORDER BY user_id) AS rn FROM purchases) WHERE rn = 1",
+      "SELECT * FROM (SELECT *, ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY purchase_ts DESC) AS rn FROM purchases) WHERE rn = 1",
+      "SELECT * FROM (SELECT *, ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY purchase_ts) AS rn FROM purchases) WHERE rn = 1",
+      "SELECT * FROM (SELECT *, ROW_NUMBER() OVER (ORDER BY purchase_ts) AS rn FROM purchases) WHERE rn = 1"
+    ],
+    "answer": 2,
+    "explanation": "PARTITION BY user_id restarts the numbering for each user, and ascending ORDER BY purchase_ts puts the earliest purchase first. DESC returns each user's latest purchase, and without PARTITION BY you get only the single earliest purchase in the whole table."
+  },
+  {
+    "id": "ga-sql-06",
+    "course": "Game Analytics",
+    "source": "Interview prep: SQL LAG",
+    "question": "sessions(user_id, session_date) has one row per user per active day. For user 1 the dates are 2026-10-01, 2026-10-03 and 2026-10-08. What does gap_days return for user 1, in date order?\n\nSELECT session_date,\n  DATE_DIFF(session_date,\n    LAG(session_date) OVER (PARTITION BY user_id ORDER BY session_date),\n    DAY) AS gap_days\nFROM sessions\nWHERE user_id = 1",
+    "options": [
+      "NULL, 2, 7",
+      "2, 5, NULL",
+      "0, 2, 5",
+      "NULL, 2, 5"
+    ],
+    "answer": 3,
+    "explanation": "LAG returns the previous row's value within the user's partition; the first row has no previous row, so LAG is NULL and the difference is NULL, not 0. The other gaps are Oct 3 − Oct 1 = 2 and Oct 8 − Oct 3 = 5 days (7 would be the distance from the first session)."
+  },
+  {
+    "id": "ga-sql-07",
+    "course": "Game Analytics",
+    "source": "Interview prep: SQL NULL handling",
+    "question": "user_revenue(user_id, revenue) has 4 rows with revenue = 10, NULL, NULL, 30 (NULL = the user never paid). What does SELECT AVG(revenue) FROM user_revenue return?",
+    "options": [
+      "10",
+      "NULL",
+      "20",
+      "40"
+    ],
+    "answer": 2,
+    "explanation": "AVG ignores NULLs, so it averages only 10 and 30 = 20, which is effectively ARPPU rather than ARPU. AVG(COALESCE(revenue, 0)) gives the per-user average 40 / 4 = 10."
+  },
+  {
+    "id": "ga-sql-08",
+    "course": "Game Analytics",
+    "source": "Interview prep: SQL cohort retention query",
+    "question": "users(user_id, install_date) has one row per user; activity(user_id, activity_date) has one row per user per active day. What does this query return for each install date?\n\nSELECT u.install_date,\n  COUNT(DISTINCT a.user_id) / COUNT(DISTINCT u.user_id) AS d1\nFROM users u\nJOIN activity a\n  ON a.user_id = u.user_id\n  AND a.activity_date = DATE_ADD(u.install_date, INTERVAL 1 DAY)\nGROUP BY u.install_date",
+    "options": [
+      "1.0 for every install date that has at least one returning user",
+      "The correct classic D1 retention for each install date",
+      "Rolling D1 retention, which also counts later returns",
+      "0 for every install date, because of integer division"
+    ],
+    "answer": 0,
+    "explanation": "The inner JOIN keeps only users who were active on day 1, so the numerator and denominator count the same users and the ratio is 1. Use users LEFT JOIN activity so non-returners stay in the denominator; in BigQuery, / returns FLOAT64, so integer division is not the issue."
+  },
+  {
+    "id": "ga-sql-09",
+    "course": "Game Analytics",
+    "source": "Interview prep: SQL dates and timestamps",
+    "question": "In BigQuery, events.event_ts is a TIMESTAMP and all dates are meant in UTC. To get every event from 1 to 7 October 2026, an analyst writes:\n\nWHERE event_ts BETWEEN '2026-10-01' AND '2026-10-07'\n\nWhat is the problem?",
+    "options": [
+      "BETWEEN excludes both end points, so all of Oct 1 and Oct 7 are missed",
+      "BigQuery cannot compare a TIMESTAMP column with a string literal at all",
+      "'2026-10-07' means midnight at the start of Oct 7, so most of Oct 7 is missed",
+      "The filter also picks up events from the first hours of 8 October"
+    ],
+    "answer": 2,
+    "explanation": "The literal is read as 2026-10-07 00:00:00, and BETWEEN is inclusive only up to that instant, so events later on Oct 7 are excluded. Use event_ts >= '2026-10-01' AND event_ts < '2026-10-08', or filter on DATE(event_ts) BETWEEN the two dates."
+  },
+  {
+    "id": "ga-sql-10",
+    "course": "Game Analytics",
+    "source": "Interview prep: SQL distinct users over a period",
+    "question": "For one week, the sum of the seven daily DAU values is 70,000, and COUNT(DISTINCT user_id) over all events in that week is 25,000. What is the weekly active users (WAU) figure?",
+    "options": [
+      "70,000",
+      "10,000",
+      "25,000",
+      "95,000"
+    ],
+    "answer": 2,
+    "explanation": "WAU counts each player once per week, which is the distinct count, 25,000. Summing daily DAU counts the same player once per active day (70,000 user-days), and 10,000 is the average DAU."
+  }
+]
