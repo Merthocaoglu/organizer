@@ -1,562 +1,884 @@
 [
   {
-    "id": "dsm5003-h1-01",
+    "id": "dsm5003-h1-k01",
     "course": "DSM 5003",
-    "source": "Hafta 1 sunumu, s. 10 ve 12",
-    "question": "R ile RStudio arasındaki ilişki için hangisi doğrudur?",
+    "source": "Hafta 1 sunumu, s. 10",
+    "question": "Yeni bir bilgisayarda R ile çalışmaya başlayacaksın. Sunumdaki kurulum düzenine göre doğru yaklaşım hangisidir?",
     "options": [
-      "RStudio, R'ın yerini alan ayrı bir dildir; kurulunca R'a gerek kalmaz.",
-      "R kodu yalnızca RStudio içinde çalışır; başka editörlerle kullanılamaz.",
-      "R ayrıca kurulur; RStudio ise R ile çalışmak için kullanılan bir editördür.",
-      "RStudio yalnızca paket kurmaya yarar; kod R konsolunda yazılmak zorundadır."
+      "Önce RStudio'yu kurmak, R'ı ise sonradan bir paket olarak eklemek.",
+      "Yalnızca CRAN'dan paketleri indirmek; ayrı bir R kurulumu gerekmez.",
+      "Yalnızca RStudio'yu kurmak; R dili onun içinde hazır gelir.",
+      "Önce R'ı, ardından onu kullanmak için RStudio editörünü kurmak."
+    ],
+    "answer": 3,
+    "explanation": "Sunum R kurulumunu (r-project.org) ve editör olarak RStudio'yu (posit.co) ayrı adımlar olarak verir: dili ve hesaplama motorunu R sağlar, RStudio ise R'ı daha rahat kullanmak için bir editördür. En çekici yanlış 'yalnızca RStudio yeter' seçeneğidir; RStudio kendi başına kod çalıştıramaz, arkasında kurulu bir R olması gerekir."
+  },
+  {
+    "id": "dsm5003-h1-k02",
+    "course": "DSM 5003",
+    "source": "Hafta 1 sunumu, s. 11",
+    "question": "CRAN'dan R veya paket indirirken neden sana en yakın aynanın (mirror) seçilmesi önerilir?",
+    "options": [
+      "Her ayna farklı paket sürümleri sunar; en yakını yerel sisteme uyumlu olanıdır.",
+      "Tüm aynalar aynı güncel içeriği tutar; yakın olanı seçmek ağ yükünü azaltır.",
+      "Uzak aynalar yalnızca eski R sürümlerini tuttuğu için güncel paket bulunmaz.",
+      "Yakın ayna seçilmezse kurulan paketler lisans kontrolünden geçemez."
+    ],
+    "answer": 1,
+    "explanation": "CRAN, dünyanın dört bir yanındaki sunucularda aynı ve güncel kod ile belgeleri tutan bir ağdır; yakın aynayı seçmenin amacı ağ yükünü azaltmaktır. Bu yüzden 'aynalar farklı sürümler sunar' düşüncesi yanlıştır: hangi aynayı seçersen seç içerik aynıdır, değişen yalnızca indirmenin geçtiği yoldur."
+  },
+  {
+    "id": "dsm5003-h1-k04",
+    "course": "DSM 5003",
+    "source": "Hafta 1 sunumu, s. 13",
+    "question": "Sunumdaki veri bilimi tanımına göre aşağıdakilerden hangisi veri biliminin kapsamını en iyi anlatır?",
+    "options": [
+      "Verileri bir veritabanında güvenli ve düzenli biçimde saklayıp yönetmek.",
+      "Veriyi içe aktarmak, temizlemek, dönüştürmek, modellemek ve görselleştirmek.",
+      "Hazır grafik araçlarıyla yönetim için rapor panoları hazırlamak.",
+      "Hazır veri üzerinde makine öğrenmesi modelleri eğitip doğruluklarını raporlamak."
+    ],
+    "answer": 1,
+    "explanation": "Sunumdaki tanım veri bilimini disiplinler arası bir süreç olarak görür: veriyi içe aktarma, temizleme, işleme, modelleme ve görselleştirme adımlarının tamamı. Model eğitmek bu sürecin yalnızca bir halkasıdır; en çekici yanlış olan makine öğrenmesi seçeneği, veriyi içe aktarma, temizleme ve keşifsel analiz gibi modelden önce gelen adımları dışarıda bırakır. Saklama ve raporlama da sürecin parçalarıyla ilgilidir ama tek başlarına tanımı karşılamaz."
+  },
+  {
+    "id": "dsm5003-h2-k01",
+    "course": "DSM 5003",
+    "source": "Hafta 2 sunumu, s. 9–10",
+    "question": "Korelasyon katsayısı hesaplayan bir fonksiyon arıyorsun ama adını bilmiyorsun. Yardım sisteminde hangisini kullanmalısın?",
+    "options": [
+      "example(correlation)",
+      "?correlation",
+      "??\"correlation\"",
+      "help(correlation)"
     ],
     "answer": 2,
-    "explanation": "R, dilin ve çalışma ortamının kendisidir ve ayrıca kurulur; RStudio ise R ile çalışmayı kolaylaştıran bir editördür. R, VS Code ya da Jupyter Notebook (IRkernel) gibi başka araçlarla da kullanılabilir."
+    "explanation": "?? (help.search) yardım dosyalarında anahtar kelimeyle arama yapar; bu yüzden fonksiyonun adını bilmediğinde doğru araçtır. ? ve help() ise adını tam bildiğin bir fonksiyonun sayfasını açar; 'correlation' diye bir fonksiyon olmadığı için R 'No documentation for correlation' der. example() de ancak var olan bir fonksiyonun örneklerini çalıştırır."
   },
   {
-    "id": "dsm5003-h1-02",
-    "course": "DSM 5003",
-    "source": "Hafta 1 sunumu, s. 17",
-    "question": "Veri bilimini üç alanın kesişimi olarak gösteren Venn diyagramında alanlar bilgisayar bilimi/BT, matematik ve istatistik ile alan/iş bilgisidir. Bilgisayar bilimi ile matematik ve istatistiğin kesiştiği, ama alan/iş bilgisinin dışında kalan bölge hangisidir?",
-    "options": [
-      "Yazılım geliştirme",
-      "Geleneksel araştırma",
-      "Veri bilimi",
-      "Makine öğrenmesi"
-    ],
-    "answer": 3,
-    "explanation": "Üç alanın ortak bölgesi veri bilimidir. İkili kesişimlerde bilgisayar bilimi ile matematik-istatistik makine öğrenmesini, bilgisayar bilimi ile alan bilgisi yazılım geliştirmeyi, matematik-istatistik ile alan bilgisi ise geleneksel araştırmayı verir."
-  },
-  {
-    "id": "dsm5003-h1-03",
-    "course": "DSM 5003",
-    "source": "Hafta 1 sunumu, s. 20–21",
-    "question": "Veri bilimi alanındaki işler karşılaştırıldığında, sunucular ile uygulamalar arasında kesintisiz veri akışını sağlayan ve veri mimarisinden sorumlu olan rol hangisidir?",
-    "options": [
-      "Veri bilimci",
-      "Veri mühendisi",
-      "İstatistikçi",
-      "Veri analisti"
-    ],
-    "answer": 1,
-    "explanation": "Veri mühendisi ölçeklenebilir veri yönetim sistemlerini tasarlar, kurar ve bakımını yapar; veri mimarisi onun sorumluluğundadır. Veri bilimci analitik ve teknik becerileriyle veriden anlam çıkarır, istatistikçi ise istatistik yöntemlerini gerçek problemlere uygular."
-  },
-  {
-    "id": "dsm5003-h2-01",
-    "course": "DSM 5003",
-    "source": "Hafta 2 ders kodu (21092026.R), satır 23–28",
-    "question": "Bu kodun çıktısı nedir?\n\nx <- c(6, 2, 8)\nx[c(3, 3, 1, 2, 3)]",
-    "options": [
-      "8 8 6 2 8",
-      "8 6 2",
-      "6 2 8",
-      "Hata verir"
-    ],
-    "answer": 0,
-    "explanation": "İndeks vektöründeki konumlar sırayla okunur ve aynı konum kaç kez yazıldıysa o eleman o kadar kez döner; sonuç beş elemanlıdır ve indeks vektörünün sırasını izler. Tekrarlanan ya da sırası karışık indisler hata vermez."
-  },
-  {
-    "id": "dsm5003-h2-02",
-    "course": "DSM 5003",
-    "source": "Hafta 2 sunumu, s. 13",
-    "question": "Bu kodun çıktısı nedir?\n\nx <- c(7, 2, 9, 4, 6)\nx[2:length(x)-1]",
-    "options": [
-      "2 9 4",
-      "2 9 4 6",
-      "1 8 3 5",
-      "7 2 9 4"
-    ],
-    "answer": 3,
-    "explanation": "`:` operatörünün önceliği ikili `-` işlecinden yüksektir; ifade `(2:5) - 1`, yani `1:4` olarak işlenir ve ilk dört eleman döner. 2. elemandan sondan bir öncekine kadar almak için parantez gerekir: `x[2:(length(x) - 1)]`."
-  },
-  {
-    "id": "dsm5003-h2-03",
-    "course": "DSM 5003",
-    "source": "Hafta 2 ders kodu (21092026.R), satır 34–36",
-    "question": "Bu kodun çıktısı nedir?\n\n3.5:1",
-    "options": [
-      "3.5 2.5 1.5 1",
-      "3.5 2.5 1.5",
-      "3 2 1",
-      "3.5 2.5 1.5 0.5"
-    ],
-    "answer": 1,
-    "explanation": "`:` başlangıç değerinden birer birer ilerler, başlangıç bitişten büyükse geriye doğru sayar ve bitiş değerini (1) geçmeden durur; 0.5 sınırın dışında kaldığı için dizi 1.5'te biter. Değerler tam sayıya yuvarlanmaz ve bitiş değeri ancak başlangıçtan tam sayı adım uzaktaysa diziye girer."
-  },
-  {
-    "id": "dsm5003-h2-04",
+    "id": "dsm5003-h2-k02",
     "course": "DSM 5003",
     "source": "Hafta 2 sunumu, s. 12",
-    "question": "Bu kodun çıktısı nedir?\n\nVeri <- 10\nveri <- Veri / 2\nVERI <- veri + Veri\nc(Veri, veri, VERI)",
+    "question": "Bir değişkeni Ort <- 12 diye tanımladın. Sonra ort * 2 yazınca \"object 'ort' not found\" hatası aldın. Bunun nedeni nedir?",
     "options": [
-      "10 10 10",
-      "5 5 10",
-      "10 5 15",
-      "Hata verir"
+      "Değişken adları büyük harfle başlayamaz; Ort hiç oluşturulmamıştır.",
+      "<- ile yapılan atama yalnızca aynı satırda geçerli kalır.",
+      "* operatörü tek sayıyla değil, yalnızca vektörlerle çalışır.",
+      "R büyük/küçük harfe duyarlıdır; Ort ile ort iki ayrı nesnedir."
     ],
-    "answer": 2,
-    "explanation": "R küçük-büyük harfe duyarlıdır; Veri, veri ve VERI üç ayrı nesnedir. veri = 10 / 2 = 5, VERI = 5 + 10 = 15 olur ve Veri 10 olarak kalır."
+    "answer": 3,
+    "explanation": "R büyük/küçük harf duyarlı bir dildir: k1 ile K1 gibi, Ort ile ort de farklı nesnelerdir; ort hiç tanımlanmadığı için bulunamaz. Büyük harfle başlayan adlar geçerlidir, yani Ort sorunsuz oluşturulmuştur; slayttaki ad kısıtları büyük harfle ilgili değil, sayıyla ya da '.2' gibi nokta+sayıyla başlamakla ilgilidir."
   },
   {
-    "id": "dsm5003-h2-05",
+    "id": "dsm5003-h2-k03",
+    "course": "DSM 5003",
+    "source": "Hafta 2 sunumu, s. 12",
+    "question": "Aşağıdaki adlardan hangisi R'da geçerli bir değişken adıdır?",
+    "options": [
+      "_ciro2017",
+      ".2ciro",
+      "2017_ciro",
+      "ciro.2017"
+    ],
+    "answer": 3,
+    "explanation": "Değişken adları sayıyla başlayamaz (2017_ciro) ve nokta ardından sayıyla da başlayamaz (.2ciro); alt çizgiyle başlamak da geçersizdir. ciro.2017 harfle başladığı için geçerlidir; içinde nokta ve rakam bulunması sorun değildir. En çekici yanlış .2ciro'dur: nokta ile başlayan adlar mümkündür ama noktadan hemen sonra rakam gelirse R bunu sayı (0.2) gibi okur."
+  },
+  {
+    "id": "dsm5003-h2-k04",
     "course": "DSM 5003",
     "source": "Hafta 2 sunumu, s. 13",
-    "question": "Bu kodun çıktısı nedir?\n\nc(17 %/% 5, 17 %% 5)",
+    "question": "R'da -2^2 ifadesi 4 değil -4 verir. Bunun nedeni nedir?",
     "options": [
-      "3 2",
-      "2 3",
-      "3.4 2",
-      "3 0.4"
+      "Üs alma (^) tekli eksiden önce gelir; ifade -(2^2) olarak okunur.",
+      "R negatif bir sayının karesini her zaman negatif olarak döndürür.",
+      "Tekli eksi önce uygulanır ama sonuç yazdırılırken işaret korunur.",
+      "^ sağdan sola işlendiği için 2 önce -2 sayısına dönüştürülür."
     ],
     "answer": 0,
-    "explanation": "`%/%` tam sayı bölmesidir ve bölümün tam kısmını verir (17 / 5 = 3.4 → 3); `%%` ise mod işlemidir ve kalanı verir (17 = 3 × 5 + 2 → 2)."
+    "explanation": "Operatör öncelik tablosunda ^ (üs alma), tekli eksi ve artıdan daha yukarıdadır; bu yüzden R önce 2^2'yi hesaplar, sonra başına eksi koyar. (-2)^2 yazılsaydı parantez önceliği değiştirir ve sonuç pozitif olurdu. '^ sağdan sola işlenir' bilgisi doğrudur ama yalnızca 2^3^2 gibi zincirleme üslerin sırasını belirler, eksi işaretiyle ilgisi yoktur."
   },
   {
-    "id": "dsm5003-h2-06",
+    "id": "dsm5003-h2-k05",
     "course": "DSM 5003",
-    "source": "Hafta 2 sunumu, s. 14",
-    "question": "Yeni açılmış bir R oturumunda (x henüz tanımlı değilken) hangisi çalıştırıldığında x'e 5 değeri atanır?",
+    "source": "Hafta 2 sunumu, s. 17",
+    "question": "x <- 29 yazdığında R bu değeri hangi yapıda saklar?",
     "options": [
-      "x == 5",
-      "x <= 5",
-      "x -> 5",
-      "5 -> x"
+      "Vektörden ayrı, tek değer tutan skaler bir nesne olarak.",
+      "Uzunluğu 1 olan bir tamsayı (integer) vektörü olarak.",
+      "Uzunluğu 1 olan sayısal (double) bir vektör olarak.",
+      "Tek elemanlı bir liste (list) nesnesi olarak."
+    ],
+    "answer": 2,
+    "explanation": "R'da tek bir değer için ayrı bir veri yapısı yoktur; 29 da uzunluğu 1 olan bir vektördür ve L eki olmadan yazılan sayılar double saklanır. Integer elde etmek için 29L yazmak gerekir; '29 tam sayı olduğu için integer olur' düşüncesi bu yüzden yanlıştır."
+  },
+  {
+    "id": "dsm5003-h2-k06",
+    "course": "DSM 5003",
+    "source": "Hafta 2 sunumu, s. 18–20",
+    "question": "x2 <- 1:4 için class(x2) \"integer\", mode(x2) ise \"numeric\" döndürür. Bu farkın sebebi nedir?",
+    "options": [
+      "mode() integer ve double'ı tek 'numeric' kipinde toplar; class() türü ayırır.",
+      "1:4 önce integer üretir, mode() çağrıldığında ise vektör double'a dönüştürülür.",
+      "class() ile mode() aynı bilgiyi verir; aradaki fark yalnızca yazım biçimidir.",
+      "mode() yalnızca ilk elemana, class() ise vektörün tüm elemanlarına bakar."
+    ],
+    "answer": 0,
+    "explanation": "mode() daha kaba bir sınıflamadır: integer ve double vektörlerin ikisi de 'numeric' kipindedir. class() (ve typeof()) ise ayrımı korur ve 1:4'ün integer olduğunu söyler. mode() nesneyi değiştirmez, yalnızca sorgular; bu yüzden 'double'a dönüştürülür' seçeneği yanlıştır."
+  },
+  {
+    "id": "dsm5003-h2-k07",
+    "course": "DSM 5003",
+    "source": "Hafta 2 ders kodu (21092026.R), satır 23–26",
+    "question": "x <- c(9,6,3,5) iken x[c(4,1,2,4,4)] ifadesi için hangisi doğrudur?",
+    "options": [
+      "Elemanlar indeks sırasıyla döner; tekrar eden indeks elemanı da tekrarlar.",
+      "Aynı indeks birden fazla yazıldığı için R hata verir.",
+      "İndeksler önce küçükten büyüğe sıralanır, elemanlar o sırayla döner.",
+      "Tekrar eden indeksler yok sayılır; her eleman sonuçta yalnızca bir kez döner."
+    ],
+    "answer": 0,
+    "explanation": "[ ] içine verilen indeks vektörü bir 'seçim listesi' gibi çalışır: R onu soldan sağa okur ve her konum için o elemanı getirir; aynı indeks üç kez yazılırsa eleman da üç kez gelir. Bu, bir vektörü yeniden sıralamak veya örnek çoğaltmak için kullanılır. İndeksler sıralanmaz ve tekrarlar atılmaz; o davranış unique() ya da sort() gibi ayrı fonksiyonlardan gelir."
+  },
+  {
+    "id": "dsm5003-h2-k08",
+    "course": "DSM 5003",
+    "source": "Hafta 2 sunumu, s. 22; Hafta 2 ders kodu (21092026.R), satır 63–65",
+    "question": "x1 dört elemanlı bir vektörken x1[5] <- 12 çalıştırılırsa ne olur?",
+    "options": [
+      "Son elemanın yerine 12 yazılır; vektörün uzunluğu değişmez.",
+      "Hata verir; indeks vektörün uzunluğunu aştığı için atama yapılamaz.",
+      "Uyarı verilir ve 5. konuma 12 yerine NA yazılır.",
+      "Vektör beş elemana uzar ve 12 yeni son eleman olarak eklenir."
     ],
     "answer": 3,
-    "explanation": "`->` sağa doğru atama operatörüdür; `5 -> x`, `x <- 5` ile aynı işi görür. `x == 5` ve `x <= 5` atama değil karşılaştırmadır (x tanımsız olduğu için hata verir), `x -> 5` ise 5 sabitine atama yapmaya çalıştığı için hata verir."
+    "explanation": "R'da var olmayan bir konuma atama yapmak vektörü o konuma kadar uzatır; slayttaki örnekte x1[5] <- 12 dört elemanlı vektörü beş elemana çıkarır. Birçok dilde bu durum 'index out of bounds' hatasıdır, bu yüzden hata seçeneği çekicidir; ama R vektörleri atamayla büyüyebilir. Aynı sonucu x1 <- c(x1, 12) ile de alırsın."
   },
   {
-    "id": "dsm5003-h2-07",
+    "id": "dsm5003-h2-k09",
     "course": "DSM 5003",
-    "source": "Hafta 2 sunumu, s. 17 ve 22",
-    "question": "Bu kodun çıktısı nedir?\n\nx <- 29\nx[2] <- 5\nx",
+    "source": "Hafta 2 ders kodu (21092026.R), satır 77–81",
+    "question": "x1[-c(1, length(x1))] ifadesi tek başına çalıştırıldığında ne olur?",
     "options": [
-      "5",
-      "29 5",
-      "NA 5",
-      "Hata verir"
+      "x1'in ilk ve son elemanı kalıcı olarak silinir; x1 artık kısalmıştır.",
+      "Sondan saymaya başlanır ve son iki eleman döner.",
+      "İlk ve son elemanı çıkarılmış yeni bir vektör döner; x1 değişmez.",
+      "Yalnızca ilk ve son eleman döner; diğerleri atlanır."
+    ],
+    "answer": 2,
+    "explanation": "Negatif indeks 'bu konumlar hariç' demektir; length(x1) son elemanın konumunu verdiği için ifade ilk ve son elemanı dışarıda bırakır. Ama bu yalnızca bir seçimdir: x1'in kendisi değişmez; ders kodunda da kalıcı silme için sonuç x1 <- x1[-c(1, length(x1))] ile yeniden atanır. Python'daki -1 alışkanlığıyla 'sondan sayar' sanmak yaygın bir hatadır."
+  },
+  {
+    "id": "dsm5003-h2-k10",
+    "course": "DSM 5003",
+    "source": "Hafta 2 sunumu, s. 25",
+    "question": "Uzunluğu 5 olan x1 ile x1 + c(1,2) çalıştırınca sonuç üretilir ama uyarı gelir. Hangisi doğrudur?",
+    "options": [
+      "Kısa vektör tekrarlanır; 5, 2'nin katı olmadığı için uyarı verilir.",
+      "Kısa vektörün eksik konumları 0 kabul edilir; uyarı bu doldurmayı bildirir.",
+      "Uzunluklar farklı olduğu için işlem yapılmaz ve NA vektörü döner.",
+      "Yalnızca ilk iki elemana ekleme yapılır; kalan elemanlar aynen kalır."
+    ],
+    "answer": 0,
+    "explanation": "R farklı uzunlukta vektörlerde kısa olanı baştan tekrar ederek uzatır (recycling): c(1,2) burada 1,2,1,2,1 gibi kullanılır. Uzun vektörün uzunluğu kısa olanın katı değilse sonuç yine üretilir, ama R 'longer object length is not a multiple of shorter object length' uyarısıyla muhtemel bir hatayı haber verir. Eksik konumlar 0 ile doldurulmaz; tekrar kuralı x1 + 2 gibi tek sayıyla toplamayı da mümkün kılan mekanizmadır."
+  },
+  {
+    "id": "dsm5003-h3-k01",
+    "course": "DSM 5003",
+    "source": "Hafta 3 sunumu, s. 2; Hafta 3 ders kodu (28092026.R), satır 13–15",
+    "question": "-1 ile 1 arasını tam 5 eşit aralıklı noktaya bölmek istiyorsun ama adım büyüklüğünü kendin hesaplamak istemiyorsun. Hangisi uygundur?",
+    "options": [
+      "seq(-1, 1, by=5)",
+      "seq(-1, 1, length=5)",
+      "rep(c(-1, 1), each=5)",
+      "rep(-1:1, times=5)"
     ],
     "answer": 1,
-    "explanation": "R'da tek bir değer için ayrı bir veri yapısı yoktur; 29, uzunluğu 1 olan bir vektördür. Var olmayan 2. konuma yapılan atama vektörü uzatır, böylece x iki elemanlı olur."
+    "explanation": "seq() içinde length (length.out) kaç nokta istediğini söyler; adımı R kendisi hesaplar. by ise adım büyüklüğüdür: by=5 '5'er artır' demektir ve -1'den 1'e giderken ikinci noktaya ulaşılamadığı için yalnızca -1 döner. rep() değer üretmez, var olan değerleri tekrarlar; eşit aralıklı dizi için uygun değildir."
   },
   {
-    "id": "dsm5003-h2-08",
+    "id": "dsm5003-h3-k02",
     "course": "DSM 5003",
-    "source": "Hafta 2 ders kodu (21092026.R), satır 74–86",
-    "question": "Bu kodun çıktısı nedir?\n\nx <- c(8, 1, 7, 3, 9)\nx[-c(2, length(x))]",
+    "source": "Hafta 3 sunumu, s. 3–4",
+    "question": "rep(x, times=2) ile rep(x, each=2) arasındaki fark nedir?",
     "options": [
-      "1 9",
-      "8 1 3 9",
-      "8 7 3",
-      "8 7 3 9"
-    ],
-    "answer": 2,
-    "explanation": "Negatif indis o konumlardaki elemanları çıkarır; `length(x)` 5 olduğundan 2. ve 5. elemanlar (1 ve 9) atılır. 1 9 sonucu, pozitif indislerle `x[c(2, length(x))]` yazıldığında alınırdı."
-  },
-  {
-    "id": "dsm5003-h2-09",
-    "course": "DSM 5003",
-    "source": "Hafta 2 sunumu, s. 17; Hafta 3 sunumu, s. 13",
-    "question": "Bu kodun çıktısı nedir?\n\nc(9, TRUE, FALSE)",
-    "options": [
-      "9 1 0",
-      "\"9\" \"TRUE\" \"FALSE\"",
-      "9 TRUE FALSE",
-      "TRUE TRUE FALSE"
+      "times vektörü bütün olarak, each her elemanı yerinde art arda tekrarlar.",
+      "İkisi aynı sonucu verir; yalnızca argüman adları farklıdır.",
+      "times her elemanı yerinde art arda, each ise vektörün tamamını tekrarlar.",
+      "times sonucu sıralar, each ise elemanların özgün sırasını korur."
     ],
     "answer": 0,
-    "explanation": "Bir vektörün bütün elemanları aynı türden olmalıdır; sayı ile mantıksal değerler birleşince mantıksal değerler sayıya çevrilir (TRUE 1, FALSE 0). Karakter türüne dönüşüm ancak vektörde bir metin değeri varsa olur."
+    "explanation": "times=2 vektörü bütün olarak iki kez arka arkaya koyar (3 9 6 5 3 9 6 5); each=2 ise her elemanı kendi yerinde ikiler (3 3 9 9 6 6 5 5). İkisi çok sık karıştırılır, bu yüzden ters tanım en çekici yanlıştır. Hiçbiri sıralama yapmaz; değerlerin sırası her iki durumda da korunur."
   },
   {
-    "id": "dsm5003-h3-01",
-    "course": "DSM 5003",
-    "source": "Hafta 3 sunumu, s. 14",
-    "question": "Bu kodun çıktısı nedir?\n\nx1 <- c(4, 7, 2, 8)\nx2 <- c(\"B\", \"A\", \"B\", \"A\")\nx1[x1 > 3 & x2 == \"B\"]",
-    "options": [
-      "4 7 2 8",
-      "4 7 8",
-      "4 2",
-      "4"
-    ],
-    "answer": 3,
-    "explanation": "`&` iki koşulun aynı konumda birlikte TRUE olduğu yerleri seçer: `x1 > 3` TRUE TRUE FALSE TRUE, `x2 == \"B\"` TRUE FALSE TRUE FALSE olduğundan yalnızca 1. konum kalır. Tüm elemanlar `|` (veya) ile seçilirdi; 4 7 8 ve 4 2 ise koşullardan yalnızca birini uygulamaktan gelir."
-  },
-  {
-    "id": "dsm5003-h3-02",
-    "course": "DSM 5003",
-    "source": "Hafta 3 ders kodu (28092026.R), satır 97–101",
-    "question": "Bu kodun çıktısı nedir?\n\nas.logical(c(1, -3, 0, 0.2))",
-    "options": [
-      "TRUE TRUE FALSE TRUE",
-      "TRUE FALSE FALSE TRUE",
-      "TRUE NA FALSE NA",
-      "TRUE FALSE FALSE FALSE"
-    ],
-    "answer": 0,
-    "explanation": "Sayıdan mantıksal türe açık zorlamada yalnızca 0 FALSE olur; negatif ve ondalıklı olanlar dahil sıfırdan farklı her sayı TRUE olur. NA, sayılardan değil \"A\" gibi mantıksal değere çevrilemeyen karakter değerlerinden çıkar."
-  },
-  {
-    "id": "dsm5003-h3-03",
-    "course": "DSM 5003",
-    "source": "Hafta 3 sunumu, s. 22 ve 25",
-    "question": "Bu kodun çıktısı nedir?\n\nx <- c(NA, 5, NULL, NA, 2)\nlength(x)",
-    "options": [
-      "5",
-      "2",
-      "4",
-      "NA"
-    ],
-    "answer": 2,
-    "explanation": "NA eksik bir değerdir ve vektörde bir eleman yeri kaplar; NULL ise boş nesnedir (uzunluğu 0), bu yüzden `c()` içinde hiçbir eleman eklemez. x yalnızca NA, 5, NA ve 2 değerlerinden oluşur."
-  },
-  {
-    "id": "dsm5003-h3-04",
-    "course": "DSM 5003",
-    "source": "Hafta 3 ders kodu (28092026.R), satır 10–15",
-    "question": "Bu kodun çıktısı nedir?\n\nseq(1, 3, len = 5)",
-    "options": [
-      "1.0 1.4 1.8 2.2 2.6",
-      "1 2 3 4 5",
-      "1.0 1.5 2.0 2.5 3.0",
-      "1 2 3"
-    ],
-    "answer": 2,
-    "explanation": "`len` (length.out) üretilecek eleman sayısıdır ve iki uç da diziye dahildir; 1 ile 3 arasına 5 eleman için 4 eşit aralık gerekir, adım (3 - 1) / 4 = 0.5 olur. Adımı aralığı 5'e bölerek bulmak (0.4) diziyi 3'e ulaştırmaz."
-  },
-  {
-    "id": "dsm5003-h3-05",
-    "course": "DSM 5003",
-    "source": "Hafta 3 ders kodu (28092026.R), satır 10–14",
-    "question": "Bu kod çalıştırıldığında ne olur?\n\nseq(5, 1, by = 1)",
-    "options": [
-      "5 4 3 2 1 döndürür; yönü R kendisi belirler.",
-      "1 2 3 4 5 döndürür; sınırları küçükten büyüğe sıralar.",
-      "Yalnızca 5 döndürür; ilk adım bitiş değerini aşar.",
-      "Hata verir; 5'ten 1'e inmek için by negatif olmalıdır."
-    ],
-    "answer": 3,
-    "explanation": "by verildiğinde dizi o adımla ilerler; 5'ten 1'e pozitif adımla ulaşılamadığı için R \"wrong sign in 'by' argument\" hatası verir. Geriye doğru dizi için `seq(5, 1, by = -1)` ya da by vermeden `seq(5, 1)` yazılır."
-  },
-  {
-    "id": "dsm5003-h3-06",
-    "course": "DSM 5003",
-    "source": "Hafta 3 ders kodu (28092026.R), satır 25–29",
-    "question": "Bu kodun çıktısı nedir?\n\nrep(c(5, 2), times = c(3, 1))",
-    "options": [
-      "5 2 5 2 5 2 5 2",
-      "5 5 5 2",
-      "5 5 5 2 2 2",
-      "5 2 5 2 5 2"
-    ],
-    "answer": 1,
-    "explanation": "times bir vektör olarak verilince her eleman kendi sayısı kadar tekrarlanır: 5 üç kez, 2 bir kez. Tek bir sayı verilseydi (ör. `times = 3`) vektörün tamamı art arda tekrarlanırdı."
-  },
-  {
-    "id": "dsm5003-h3-07",
-    "course": "DSM 5003",
-    "source": "Hafta 3 sunumu, s. 10",
-    "question": "Hangi ifade 1 16 27 16 5 vektörünü üretir?",
-    "options": [
-      "(1:5) ^ (5:1)",
-      "(5:1) ^ (1:5)",
-      "(1:5) * (5:1)",
-      "(1:5) ^ 2"
-    ],
-    "answer": 0,
-    "explanation": "Eşit uzunluktaki iki vektör arasında `^` eleman eleman uygulanır: 1^5, 2^4, 3^3, 4^2, 5^1 = 1 16 27 16 5. `(5:1) ^ (1:5)` ise 5 16 27 16 1 verir; uçlardaki değerler yer değiştirir."
-  },
-  {
-    "id": "dsm5003-h3-08",
+    "id": "dsm5003-h3-k03",
     "course": "DSM 5003",
     "source": "Hafta 3 sunumu, s. 13",
-    "question": "Bu kodun çıktısı nedir?\n\nx <- c(2, 8, 6, 1, 10)\nc(sum(x > 5), mean(x > 5))",
+    "question": "x1 sayısal bir vektörken sum(x1 > 5) neden 5'ten büyük elemanların sayısını verir?",
     "options": [
-      "24 8",
-      "3 8",
-      "3.0 5.4",
-      "3.0 0.6"
+      "Aritmetikte TRUE 1, FALSE 0 sayıldığı için toplam TRUE sayısını verir.",
+      "x1 > 5 filtrelenmiş değerleri döndürür; sum() da onları sayar.",
+      "sum() mantıksal bir vektör gördüğünde kendiliğinden length() gibi çalışır.",
+      "sum() mantıksal girdide yalnızca TRUE konumlardaki x1 değerlerini toplar."
+    ],
+    "answer": 0,
+    "explanation": "x1 > 5 her eleman için TRUE/FALSE içeren bir mantıksal vektör üretir; aritmetik işlemlerde TRUE 1, FALSE 0 kabul edildiği için toplamı TRUE sayısına eşittir. sum() x1'in değerlerini görmez; o değerleri toplamak isteseydin sum(x1[x1 > 5]) yazman gerekirdi. Bu yüzden 'TRUE konumlardaki değerleri toplar' seçeneği yanlıştır."
+  },
+  {
+    "id": "dsm5003-h3-k04",
+    "course": "DSM 5003",
+    "source": "Hafta 3 sunumu, s. 15",
+    "question": "Bir vektörde en az bir negatif değer olup olmadığını tek bir TRUE/FALSE ile öğrenmek istiyorsun. Hangisi uygundur?",
+    "options": [
+      "x[x < 0]",
+      "all(x < 0)",
+      "x < 0",
+      "any(x < 0)"
     ],
     "answer": 3,
-    "explanation": "Aritmetik işlemlerde TRUE 1, FALSE 0 sayılır; `x > 5` FALSE TRUE TRUE FALSE TRUE olduğundan toplamı koşulu sağlayan eleman sayısını (3), ortalaması da bunların oranını (3/5 = 0.6) verir. 24 ve 8 ise koşulu sağlayan değerlerin kendilerinin toplamı ve ortalamasıdır."
+    "explanation": "any() mantıksal vektörde en az bir TRUE varsa TRUE döndürür; tam olarak 'en az bir tane var mı?' sorusunun cevabıdır. all() ise ancak tüm elemanlar negatifse TRUE verir. x < 0 her eleman için ayrı bir TRUE/FALSE, x[x < 0] ise negatif değerlerin kendisini döndürür; ikisi de tek bir cevap vermez."
   },
   {
-    "id": "dsm5003-h3-09",
+    "id": "dsm5003-h3-k05",
     "course": "DSM 5003",
-    "source": "Hafta 3 sunumu, s. 23–24",
-    "question": "x <- c(4, NA, 7, 1) için hangi ifade NA'yı atıp yalnızca 4 7 1 değerlerini döndürür?",
+    "source": "Hafta 3 sunumu, s. 16–18; Hafta 3 ders kodu (28092026.R), satır 76–84",
+    "question": "x1[x1^2 > 10] ile which(x1^2 > 10) arasındaki fark nedir?",
     "options": [
-      "x[x != NA]",
-      "x[!is.na(x)]",
-      "x[is.na(x)]",
-      "x[-NA]"
+      "İlki koşulu sağlayan konumları, ikincisi bu konumlardaki değerleri döndürür.",
+      "İlki koşulu sağlayan değerleri, ikincisi bunların konumlarını döndürür.",
+      "which() koşulu sağlayan eleman sayısını, ilki ise değerleri döndürür.",
+      "İkisi aynı değerleri döndürür; which() yalnızca daha hızlı çalışır."
     ],
     "answer": 1,
-    "explanation": "`is.na(x)` NA olan konumlarda TRUE verir; `!` ile tersine çevrilince yalnızca dolu değerler seçilir (`x[complete.cases(x)]` de aynı sonucu verir). `x != NA` ise her konumda NA ürettiğinden NA'ları ayıklayamaz."
+    "explanation": "Mantıksal vektörle indeksleme (x1[koşul]) TRUE olan konumlardaki değerleri seçer. which() ise mantıksal vektördeki TRUE'ların konumlarını verir; bu yüzden x1[which(koşul)] yine aynı değerleri getirir. Sayma işi which()'in değil, sum(koşul)'un işidir."
   },
   {
-    "id": "dsm5003-h3-10",
+    "id": "dsm5003-h3-k06",
     "course": "DSM 5003",
-    "source": "Hafta 3 sunumu, s. 26",
-    "question": "Bu kodun çıktısı nedir?\n\nc(-1/0, 0/0, 1/0)",
+    "source": "Hafta 3 sunumu, s. 20",
+    "question": "as.numeric(c(\"A\",\"A\",\"B\",\"B\")) NA değerleri üretir ve uyarı verir. Bunun nedeni nedir?",
     "options": [
-      "-Inf NA Inf",
-      "NA NA NA",
-      "-Inf NaN Inf",
-      "Hata verir: sıfıra bölme"
+      "Harfler alfabedeki sıralarına çevrilir; uyarı bunu hatırlatmak içindir.",
+      "\"A\" ve \"B\" sayı olarak okunamaz; dönüştürülemeyen her değer NA olur.",
+      "Tekrar eden değerler olduğu için R hangi sayıyı atayacağını seçemez.",
+      "as.numeric() yalnızca mantıksal vektörleri sayıya dönüştürebilir."
+    ],
+    "answer": 1,
+    "explanation": "as.numeric() bir metni ancak \"12\" ya da \"3.5\" gibi sayı olarak okunabiliyorsa sayıya çevirir; \"A\" gibi bir metnin sayısal karşılığı yoktur, bu yüzden NA olur ve R 'NAs introduced by coercion' uyarısı verir. Harflerin alfabe sırasına çevrilmesi R'ın yaptığı bir şey değildir; kategorilere sayı kodu atamak istersen bu factor ile yapılır."
+  },
+  {
+    "id": "dsm5003-h3-k07",
+    "course": "DSM 5003",
+    "source": "Hafta 3 sunumu, s. 19; Hafta 3 ders kodu (28092026.R), satır 101",
+    "question": "as.logical() sayısal bir vektöre uygulandığında hangi kural geçerlidir?",
+    "options": [
+      "Negatif sayılar FALSE, pozitif sayılar TRUE olur.",
+      "Yalnızca 1 TRUE olur; geri kalan bütün sayılar NA olarak döner.",
+      "Yalnızca 0 FALSE olur; sıfırdan farklı her sayı TRUE olur.",
+      "Tam sayı olmayan değerler NA, tam sayılar TRUE olur."
     ],
     "answer": 2,
-    "explanation": "R sıfıra bölmede hata vermez: pozitif sayı / 0 Inf, negatif sayı / 0 -Inf olur. 0/0 tanımsız olduğu için sonuç, eksik veriyi gösteren NA değil, \"sayı değil\" anlamındaki NaN'dir."
+    "explanation": "Sayıdan mantıksala dönüşümde kural basittir: 0 FALSE, sıfırdan farklı her değer (negatif ya da ondalıklı olsa da) TRUE'dur; bu yüzden -1, 1.5 ve 100 hepsi TRUE olur. 'Negatifler FALSE' sezgisi çekicidir ama işaretin önemi yoktur. NA sayılardan değil, \"A\" gibi mantıksal değer olarak yorumlanamayan metinlerden (ya da zaten NA olan değerlerden) çıkar."
   },
   {
-    "id": "dsm5003-h4-01",
+    "id": "dsm5003-h3-k08",
     "course": "DSM 5003",
-    "source": "Hafta 4 sunumu, s. 14; Hafta 4 ders kodu (05102026.R), satır 72–73",
-    "question": "Bu kodun çıktısı nedir?\n\nm <- matrix(1:6, nrow = 2)\ncolnames(m)",
+    "source": "Hafta 3 sunumu, s. 22; Hafta 3 ders kodu (28092026.R), satır 129–131",
+    "question": "x1 <- c(9,6,NA,3,5) iken mean(x1) NA döndürür. Eksik değeri dışarıda bırakıp ortalama almak için hangisi doğrudur?",
     "options": [
-      "\"1\" \"2\" \"3\"",
-      "\"[,1]\" \"[,2]\" \"[,3]\"",
-      "NULL",
-      "\"V1\" \"V2\" \"V3\""
+      "mean(x1, na.omit=TRUE)",
+      "mean(x1[is.na(x1)])",
+      "mean(is.na(x1))",
+      "mean(x1, na.rm=TRUE)"
+    ],
+    "answer": 3,
+    "explanation": "mean() içindeki argümanın adı na.rm'dir; na.rm=TRUE NA'ları hesaptan çıkarır. na.omit=TRUE yazmak hata vermez ama mean bu adı tanımadığı için sessizce yok sayar ve sonuç yine NA olur; bu yüzden en tehlikeli tuzaktır. mean(is.na(x1)) ise eksik değerlerin oranını, x1[is.na(x1)] yalnızca NA'ların kendisini verir."
+  },
+  {
+    "id": "dsm5003-h3-k09",
+    "course": "DSM 5003",
+    "source": "Hafta 3 sunumu, s. 22 ve 25",
+    "question": "NA ile NULL arasındaki fark için hangisi doğrudur?",
+    "options": [
+      "NA eksik bir değeri temsil eder ve uzunluğa sayılır; NULL boş nesnedir, uzunluğu 0'dır.",
+      "NA ile NULL aynı anlama gelir; NULL yalnızca listelerde kullanılan yazımdır.",
+      "NULL eksik bir değeri temsil eder ve uzunluğa sayılır; NA ise boş nesnedir, uzunluğu 0'dır.",
+      "NA yalnızca sayısal vektörlerde, NULL yalnızca karakter vektörlerinde kullanılır."
+    ],
+    "answer": 0,
+    "explanation": "NA, 'burada bir değer olmalı ama bilinmiyor' demektir: c(9,6,NA,3,5) vektörünün uzunluğu yine 5'tir. NULL ise 'hiçbir şey yok' demektir; y <- NULL için length(y) 0 döner. Bu fark önemlidir: bir vektörde eksik gözlemi NA ile işaretlersin, bir listeden eleman silmek içinse NULL atarsın."
+  },
+  {
+    "id": "dsm5003-h3-k10",
+    "course": "DSM 5003",
+    "source": "Hafta 3 sunumu, s. 27–28",
+    "question": "x3 <- 1:3 ve x4 <- c(1,2,3) için x3 == x4 her konumda TRUE verirken identical(x3, x4) FALSE döndürür. Neden?",
+    "options": [
+      "== yalnızca ilk elemana bakar; identical() tüm elemanları karşılaştırır.",
+      "identical() yalnızca karakter vektörlerinde doğru çalışır; sayılarda FALSE döndürür.",
+      "c() ile oluşturulan vektörler yuvarlama hatası içerdiği için değerler tam eşit değildir.",
+      "== yalnızca değerlere bakar; identical() türe de bakar: biri integer, diğeri double."
+    ],
+    "answer": 3,
+    "explanation": "== eleman eleman değer karşılaştırması yapar ve 1 ile 1L'yi eşit sayar. identical() ise iki nesnenin her bakımdan aynı olup olmadığına bakar: 1:3 integer, c(1,2,3) double olduğu için FALSE verir (typeof ile görülebilir). 1, 2, 3 gibi tam sayılarda yuvarlama hatası olmaz; sorun değerde değil türdedir."
+  },
+  {
+    "id": "dsm5003-h4-k01",
+    "course": "DSM 5003",
+    "source": "Hafta 4 sunumu, s. 3 ve 5",
+    "question": "matrix(c(9,6,3,5), nrow=2) değerleri matrise nasıl yerleştirir?",
+    "options": [
+      "Değerleri büyükten küçüğe sıralayıp öyle yerleştirir.",
+      "Varsayılan olarak satır satır doldurur; sütun sütun için bycol=TRUE gerekir.",
+      "Varsayılan olarak sütun sütun doldurur; satır satır için byrow=TRUE gerekir.",
+      "nrow verildiği için önce yalnızca birinci satırı doldurur, kalanı NA olur."
     ],
     "answer": 2,
-    "explanation": "Ad verilmemiş bir matrisin sütun adları yoktur, bu yüzden `colnames()` NULL döndürür; ad atanmamış bir vektörde `names()` da NULL döner. Ekranda görünen [,1] [,2] [,3] yalnızca yazdırma biçimidir; sütunlara ad `colnames(m) <- ...` atamasıyla verilir."
+    "explanation": "R matrisleri varsayılan olarak sütun sütun doldurur: 9 ve 6 birinci sütuna, 3 ve 5 ikinci sütuna gider. Satır satır yerleştirmek için byrow=TRUE (byrow=T) verilir; bycol diye bir argüman yoktur. Satır satır doldurma birçok kişinin sezgisi olduğu için en çekici yanlıştır."
   },
   {
-    "id": "dsm5003-h4-02",
+    "id": "dsm5003-h4-k02",
+    "course": "DSM 5003",
+    "source": "Hafta 4 sunumu, s. 4; Hafta 4 ders kodu (05102026.R), satır 15",
+    "question": "matrix(c(9,6,3,5,4), nrow=2) bir matris üretir ama uyarı verir. Ne olmuştur?",
+    "options": [
+      "Beş değer iki satıra bölünmez; eksik hücre baştan tekrarlanan değerle dolar.",
+      "Eksik kalan hücre NA ile doldurulmuş ve bunun için uyarı verilmiştir.",
+      "Matris en fazla dört eleman alabildiği için beşinci değer atılmıştır.",
+      "nrow çift olduğu için R sütun sayısını belirleyememiş ve tek sütun kurmuştur."
+    ],
+    "answer": 0,
+    "explanation": "5 eleman 2 satıra bölünmeyince R üç sütunlu bir matris kurar ve eksik kalan hücreyi vektörün başından tekrar ederek (recycling) doldurur; uyarı, veri uzunluğunun satır sayısının katı olmadığını söyler. Eksik hücre NA ile doldurulmaz; bu yüzden uyarıyı görmezden gelmek matrise fark edilmeden yanlış bir değer sokabilir."
+  },
+  {
+    "id": "dsm5003-h4-k03",
+    "course": "DSM 5003",
+    "source": "Hafta 4 sunumu, s. 6",
+    "question": "m1 bir matrisken m1[ , -1] ne döndürür?",
+    "options": [
+      "Yalnızca birinci sütunu, işareti ters çevrilmiş olarak",
+      "Birinci satır dışındaki tüm satırları",
+      "Son sütun dışındaki tüm sütunları",
+      "Birinci sütun dışındaki tüm sütunları"
+    ],
+    "answer": 3,
+    "explanation": "Matris indekslemede virgülün solu satırı, sağı sütunu seçer; satır kısmı boş olduğu için tüm satırlar alınır, -1 ise 'birinci sütun hariç' demektir. Negatif indeks değerlerin işaretini değiştirmez, yalnızca dışlar. Satır dışlamak isteseydin eksi işaretini virgülün soluna, m1[-1, ] şeklinde yazman gerekirdi."
+  },
+  {
+    "id": "dsm5003-h4-k04",
+    "course": "DSM 5003",
+    "source": "Hafta 4 sunumu, s. 7; Hafta 4 ders kodu (05102026.R), satır 22–27",
+    "question": "m2 matrisinin ikinci sütunundaki değeri 5 veya daha büyük olan satırlarını seçmek istiyorsun. Hangisi doğrudur?",
+    "options": [
+      "m2[m2[,2] >= 5, ]",
+      "m2[m2[2,] >= 5, ]",
+      "m2[m2 >= 5, ]",
+      "m2[, m2[,2] >= 5]"
+    ],
+    "answer": 0,
+    "explanation": "m2[,2] >= 5 her satır için bir TRUE/FALSE üretir; bu mantıksal vektör virgülün soluna konunca satır seçer, sağ taraf boş kaldığı için tüm sütunlar gelir. m2[2,] ikinci satırdır, ikinci sütun değil; m2[, koşul] ise satırları değil sütunları süzer. m2 >= 5 bütün matris boyunda bir mantıksal matris üretir ve satır indeksi olarak kullanılamaz."
+  },
+  {
+    "id": "dsm5003-h4-k05",
+    "course": "DSM 5003",
+    "source": "Hafta 4 sunumu, s. 12",
+    "question": "2×2'lik m3 matrisine m3[3,] <- c(-3,2) ile üçüncü satır eklemeye çalışınca 'subscript out of bounds' hatası alınır. Doğru yol hangisidir?",
+    "options": [
+      "m3 <- c(m3, c(-3,2))",
+      "m3 <- cbind(m3, c(-3,2))",
+      "m3[3,] <- list(-3,2)",
+      "m3 <- rbind(m3, c(-3,2))"
+    ],
+    "answer": 3,
+    "explanation": "Vektörlerin aksine matrisler var olmayan bir satıra atamayla büyümez; yeni satır eklemek için satırları alt alta birleştiren rbind() kullanılır ve sonuç yeniden m3'e atanır. cbind() sütun ekler, c() ise boyut bilgisini atıp düz bir vektör üretir. list() ile atama da var olmayan satır sorununu çözmez; aynı hata yine gelir."
+  },
+  {
+    "id": "dsm5003-h4-k06",
+    "course": "DSM 5003",
+    "source": "Hafta 4 sunumu, s. 14; Hafta 4 ders kodu (05102026.R), satır 45–49",
+    "question": "Bir matrise length() uygulandığında ne döner?",
+    "options": [
+      "Satır ve sütun sayısını içeren iki elemanlı vektör",
+      "Matrisin sütun sayısı",
+      "Matrisin satır sayısı",
+      "Matristeki toplam eleman (hücre) sayısı"
+    ],
+    "answer": 3,
+    "explanation": "Matris, boyut (dim) bilgisi eklenmiş bir vektördür; length() bu vektörün tüm elemanlarını, yani satır × sütun kadar hücreyi sayar. Satır ve sütun sayısını birlikte görmek için dim(), ayrı ayrı görmek için nrow() ve ncol() kullanılır; iki elemanlı vektör seçeneği aslında dim()'in tanımıdır."
+  },
+  {
+    "id": "dsm5003-h4-k07",
+    "course": "DSM 5003",
+    "source": "Hafta 4 sunumu, s. 8; Hafta 4 ders kodu (05102026.R), satır 53–58",
+    "question": "Bir matristeki çift sayıları vektör olarak listelemek istiyorsun. Hangisi doğrudur?",
+    "options": [
+      "which(m2 %% 2 == 0)",
+      "m2[m2 / 2 == 0]",
+      "m2[m2 %% 2 == 0]",
+      "m2[m2 %/% 2 == 0]"
+    ],
+    "answer": 2,
+    "explanation": "%% mod (kalan) operatörüdür; m2 %% 2 == 0 her hücre için 'ikiye kalansız bölünüyor mu?' sorusunun cevabını verir ve bu mantıksal matrisle indeksleme çift değerleri vektör olarak döndürür. %/% tam sayı bölmesidir; bölümün 0 olması yalnızca 0 ve 1 için doğrudur, çiftlik ile ilgisi yoktur. which() de değerleri değil, konumlarını verir."
+  },
+  {
+    "id": "dsm5003-h4-k08",
+    "course": "DSM 5003",
+    "source": "Hafta 4 ders kodu (05102026.R), satır 88–95",
+    "question": "sapma vektöründe en büyük değer iki farklı günde aynı çıkarsa which.max(sapma) ile which(sapma == max(sapma)) nasıl davranır?",
+    "options": [
+      "which.max eşit olanların hepsini verir, which(... == max) ise yalnızca sonuncusunu verir.",
+      "which.max yalnızca ilkinin konumunu, which(... == max) eşitlerin hepsini verir.",
+      "which.max eşitlik olduğunda hata verir, which(... == max) ise ilkini verir.",
+      "İkisi de eşit olan bütün konumları verir; aralarında yalnızca hız farkı vardır."
+    ],
+    "answer": 1,
+    "explanation": "which.max() tek bir konum döndürür: en büyük değerin ilk görüldüğü yer. which(sapma == max(sapma)) ise mantıksal vektördeki bütün TRUE'ların konumlarını verdiği için eşitliklerin hepsini yakalar. Ders kodundaki iki yöntem eşitlik yokken aynı sonucu verir; eşitlik olabilecek verilerde 'en çok sapan günler' sorusunun tam cevabı ikinci yöntemdir."
+  },
+  {
+    "id": "dsm5003-h4-k09",
     "course": "DSM 5003",
     "source": "Hafta 4 ders kodu (05102026.R), satır 67–68",
-    "question": "Bu kodun çıktısı nedir?\n\npaste(\"puan\", 1:3)",
+    "question": "paste(1:7, \".gun\") çıktısında sayı ile \".gun\" arasında boşluk oluşuyor. \"1.gun\", \"2.gun\" gibi boşluksuz adlar üretmek için hangisi doğrudur?",
     "options": [
-      "\"puan 1\" \"puan 2\" \"puan 3\"",
-      "\"puan1\" \"puan2\" \"puan3\"",
-      "\"puan 1 puan 2 puan 3\"",
-      "\"puan 1:3\""
+      "paste(1:7, \".gun\", sep=\"\")",
+      "paste(1:7, \".gun\", collapse=\"\")",
+      "paste(1:7 + \".gun\")",
+      "paste(c(1:7, \".gun\"))"
     ],
     "answer": 0,
-    "explanation": "`paste()` vektörleri eleman eleman birleştirip her öğe için ayrı bir metin üretir; varsayılan ayırıcı `sep = \" \"` olduğu için araya boşluk koyar. Boşluksuz \"puan1\" için `sep = \"\"` yazılmalıdır."
+    "explanation": "paste() parçaları varsayılan olarak boşlukla (sep=\" \") birleştirir; sep=\"\" bu ayıracı kaldırır ve her sayı için ayrı bir ad üretir (paste0 da aynı işi yapar). collapse ise ayrı sonuçları tek bir metinde birleştirir; collapse=\"\" ile yedi adın hepsi tek bir uzun metne dönüşür ve aradaki boşluk da kalır. R'da + metinleri birleştirmez, hata verir."
   },
   {
-    "id": "dsm5003-h4-03",
+    "id": "dsm5003-h4-k10",
     "course": "DSM 5003",
-    "source": "Hafta 4 sunumu, s. 8",
-    "question": "Bu kodun çıktısı nedir?\n\nm <- matrix(c(5, 2, 9, 6, 4, 1), nrow = 2)\nm[m %% 2 == 0]",
+    "source": "Hafta 4 sunumu, s. 10–11; Hafta 4 ders kodu (05102026.R), satır 115–118",
+    "question": "Bir matrisin her sütununun medyanını hesaplamak istiyorsun. Hangisi doğrudur?",
     "options": [
-      "4 2 6",
-      "2 4 5",
-      "2 4 6",
-      "2 6 4"
-    ],
-    "answer": 3,
-    "explanation": "`m %% 2 == 0` çift değerlerin yerinde TRUE olan mantıksal bir matris üretir; matris bununla indekslenince değerler sütun sütun (5 2 9 6 4 1 sırasıyla) taranır ve çiftler bir vektör olarak döner. 4 2 6 satır satır okumaktan, 2 4 5 ise değerler yerine konumlardan gelir."
-  },
-  {
-    "id": "dsm5003-h4-04",
-    "course": "DSM 5003",
-    "source": "Hafta 4 ders kodu (05102026.R), satır 102–103",
-    "question": "Bu kodun çıktısı nedir?\n\nm <- matrix(1:6, nrow = 2)\nt(m)[3, ]",
-    "options": [
-      "3 6",
-      "5 6",
-      "3 4",
-      "Hata verir: subscript out of bounds"
+      "median(m2)",
+      "apply(m2, 2, median)",
+      "apply(m2, 1, median)",
+      "colMeans(m2)"
     ],
     "answer": 1,
-    "explanation": "m sütun sütun dolduğu için satırları 1 3 5 ve 2 4 6'dır; `t()` satırlarla sütunları yer değiştirir ve 3×2'lik t(m)'nin satırları 1 2, 3 4, 5 6 olur. m'nin kendisinde 3. satır olmadığından hata ancak `m[3, ]` yazılsaydı alınırdı."
+    "explanation": "apply()'ın ikinci argümanı (MARGIN) fonksiyonun nereye uygulanacağını söyler: 1 satırlar, 2 sütunlar. apply(m2, 1, median) her satırın medyanını verir; median(m2) bütün matrisi tek vektör sayıp tek bir medyan döndürür. colMeans() sütun ortalamasıdır; temel R'da medyan için hazır bir 'colMedians' fonksiyonu olmadığından apply() kullanılır."
   },
   {
-    "id": "dsm5003-h4-05",
+    "id": "dsm5003-h5-k01",
     "course": "DSM 5003",
-    "source": "Hafta 4 sunumu, s. 14",
-    "question": "Bu kodun çıktısı nedir?\n\nm <- matrix(1:12, ncol = 4)\nc(nrow(m), ncol(m), length(m))",
+    "source": "Hafta 5 sunumu, s. 2; Hafta 5 ders kodu (12102026.R), satır 1–4",
+    "question": "a1 <- array(1:24, dim=c(2,4,3)) için a1[ , , 1] neyi döndürür?",
     "options": [
-      "3 4 12",
-      "4 3 12",
-      "3 4 4",
-      "3 4 3"
+      "Her katmanın birinci satırını",
+      "Birinci katmandaki 2×4'lük matrisi",
+      "Dizinin yalnızca ilk elemanını (tek değer)",
+      "Tüm katmanlardaki birinci sütunu"
     ],
-    "answer": 0,
-    "explanation": "12 değer `ncol = 4` ile 3 satır ve 4 sütuna yerleşir. Matriste `length()` satır ya da sütun sayısını değil, toplam eleman sayısını (3 × 4 = 12) verir."
+    "answer": 1,
+    "explanation": "Üç boyutlu dizide indeks sırası [satır, sütun, katman]'dır (ders kodundaki a1[r,c,m] notu). İlk iki konum boş bırakılıp üçüncüye 1 yazılınca birinci katmanın tüm satır ve sütunları, yani 2×4'lük matris gelir. Birinci satırı almak için a1[1, , 1] gibi satır konumunu doldurmak gerekir."
   },
   {
-    "id": "dsm5003-h4-06",
+    "id": "dsm5003-h5-k02",
     "course": "DSM 5003",
-    "source": "Hafta 4 ders kodu (05102026.R), satır 105–109",
-    "question": "Bu kodun çıktısı nedir?\n\nm <- matrix(c(2, 9, 7, 4, 8, 1), nrow = 2)\nrowSums(m > 5)",
+    "source": "Hafta 5 sunumu, s. 5–6; Hafta 5 ders kodu (12102026.R), satır 23–27",
+    "question": "sum(list1[1]) hata verirken sum(list1[[1]]) çalışır. Bunun nedeni nedir?",
     "options": [
-      "1 1 1",
-      "15 9",
-      "3",
-      "2 1"
-    ],
-    "answer": 3,
-    "explanation": "`m > 5` aynı boyutta mantıksal bir matris üretir ve TRUE 1 sayıldığı için `rowSums()` her satırda 5'ten büyük kaç değer olduğunu verir: 1. satırda (2 7 8) iki, 2. satırda (9 4 1) bir. 1 1 1 sonucu, sütunlara göre sayan `colSums()` ile alınırdı."
-  },
-  {
-    "id": "dsm5003-h4-07",
-    "course": "DSM 5003",
-    "source": "Hafta 4 sunumu, s. 4",
-    "question": "Bu kod çalıştırıldığında ne olur?\n\nm <- matrix(1:5, nrow = 2)",
-    "options": [
-      "Hata verir; 5 değer 2 satıra eşit bölünemediği için matris kurulmaz.",
-      "2×3 matris oluşur; boş kalan son hücreye NA yazılır, uyarı verilmez.",
-      "2×3 matris oluşur; son hücre baştan tekrarlanan 1 ile dolar, uyarı verilir.",
-      "2×2 matris oluşur; sığmayan 5 değeri atılır ve uyarı verilir."
+      "sum() listelerde yalnızca na.rm=TRUE verildiğinde çalışır.",
+      "[ ] yalnızca isimli elemanlarda çalışır, [[ ]] her elemanda çalışır.",
+      "[ ] tek elemanlı bir liste, [[ ]] ise elemanın kendisini (vektörü) döndürür.",
+      "[[ ]] tek elemanlı bir liste, [ ] ise elemanın kendisini (vektörü) döndürür."
     ],
     "answer": 2,
-    "explanation": "Veri uzunluğu (5) satır sayısının (2) katı olmadığından R 3 sütun açar ve eksik hücreyi değerleri baştan tekrar ederek 1 ile doldurur. Bu bir hata değil, \"data length [5] is not a sub-multiple or multiple of the number of rows [2]\" uyarısıdır."
+    "explanation": "Bir listede [ ] ile seçim yine bir liste döndürür (class(list1[1]) \"list\"); sum() listeyle çalışamadığı için 'invalid type (list)' hatası verir. [[ ]] ve $ ise elemanın kendisini, burada 1:10 vektörünü verir. Benzetme: [ ] trendeki vagonu, [[ ]] vagonun içindeki yükü alır."
   },
   {
-    "id": "dsm5003-h4-08",
+    "id": "dsm5003-h5-k03",
     "course": "DSM 5003",
-    "source": "Hafta 4 sunumu, s. 11",
-    "question": "Bu kodun çıktısı nedir?\n\nm <- matrix(c(4, 1, 2, 8, 7, 3), nrow = 2)\napply(m, 2, sort)[2, ]",
+    "source": "Hafta 5 sunumu, s. 7; Hafta 5 ders kodu (12102026.R), satır 37–38",
+    "question": "list1'de e5 adında bir eleman yokken list1$e5 <- c(\"en\",\"yeni\",\"eleman\") çalıştırılırsa ne olur?",
     "options": [
-      "1 2 3",
-      "4 3",
-      "1 8 3",
-      "4 8 7"
-    ],
-    "answer": 3,
-    "explanation": "`apply(m, 2, sort)` her sütunu ayrı ayrı küçükten büyüğe sıralar ve sonuçları yine sütun olarak dizer: (4, 1) → 1 4, (2, 8) → 2 8, (7, 3) → 3 7. Bu matrisin 2. satırı her sütunun büyük değeridir."
-  },
-  {
-    "id": "dsm5003-h4-09",
-    "course": "DSM 5003",
-    "source": "Hafta 4 ders kodu (05102026.R), satır 70–86",
-    "question": "Ortalamadan sapmanın en fazla olduğu günün sıcaklık değerini döndüren ifade hangisidir?\n\nsicaklik <- c(25, 26, 23, 28, 29, 27, 25)\nnames(sicaklik) <- paste(1:7, \".gün\", sep = \"\")\nsapma <- abs(19.1 - sicaklik)",
-    "options": [
-      "max(sapma)",
-      "sicaklik[sapma == max(sapma)]",
-      "which(sapma == max(sapma))",
-      "names(sicaklik[sapma == max(sapma)])"
-    ],
-    "answer": 1,
-    "explanation": "`sapma == max(sapma)` yalnızca en büyük sapmanın olduğu konumda TRUE olan mantıksal bir vektördür; sicaklik bununla indekslenince o günün sıcaklığı adıyla birlikte döner. `max(sapma)` sapmanın kendisini, `which()` konumu, `names()` ise günün adını verir."
-  },
-  {
-    "id": "dsm5003-h5-01",
-    "course": "DSM 5003",
-    "source": "Hafta 5 ders kodu (12102026.R), satır 8–15",
-    "question": "Bu kodun çıktısı nedir?\n\nm1 <- matrix(1:6, nrow = 2)\nm2 <- matrix(7:12, nrow = 2)\na2 <- array(c(m1, m2), dim = c(2, 3, 4))\na2[2, 3, 4]",
-    "options": [
-      "24",
-      "12",
-      "NA",
-      "6"
-    ],
-    "answer": 1,
-    "explanation": "c(m1, m2) 12 değer içerir, 2×3×4 bir dizi ise 24 değer ister; `array()` eksik kalan katmanları veriyi baştan tekrar ederek doldurur, böylece 3. katman m1'in, 4. katman m2'nin kopyası olur. Bu yüzden a2[2, 3, 4], m2[2, 3] ile aynıdır."
-  },
-  {
-    "id": "dsm5003-h5-02",
-    "course": "DSM 5003",
-    "source": "Hafta 5 ders kodu (12102026.R), satır 45–48",
-    "question": "Bu kodun çıktısı nedir?\n\nlist1 <- list(e1 = 1:10, e2 = letters[1:10])\nlist3 <- list1\nlist3$e3 <- 1:100\nc(length(list1), length(list3))",
-    "options": [
-      "2 3",
-      "3 3",
-      "2 2",
-      "3 2"
+      "Listeye e5 adıyla yeni bir eleman eklenir.",
+      "Listenin ilk elemanının üzerine yazılır.",
+      "e5 adlı bir eleman bulunamadığı için R hata verir.",
+      "Yeni eleman listenin en başına eklenir."
     ],
     "answer": 0,
-    "explanation": "`list3 <- list1` list1'in bir kopyasını oluşturur; R'da bir nesneyi değiştirmek yalnızca o nesneyi etkiler, yani list3'e e3 eklemek list1'e dokunmaz. Bu yüzden list1 2, list3 ise 3 elemanlıdır."
+    "explanation": "$ veya [[ ]] ile var olmayan bir ada atama yapmak listeyi genişletir: e5 adlı eleman listenin sonuna eklenir. Okurken olmayan bir ada erişmek de hata vermez, NULL döner; bu yüzden 'hata verir' sezgisi listelerde geçerli değildir. Hiçbir mevcut eleman değişmez."
   },
   {
-    "id": "dsm5003-h5-03",
+    "id": "dsm5003-h5-k04",
     "course": "DSM 5003",
-    "source": "Hafta 5 sunumu, s. 10 ve 16–17",
-    "question": "Bu kodun çıktısı nedir?\n\nno <- c(3423, 5345, 2466)\nad <- c(\"AB\", \"BB\", \"DD\")\npuan1 <- c(90, 87, 92)\ndf1 <- data.frame(no, ad, puan1)\ndf1 <- cbind(df1, puan2 = c(75, 88, 76))\ndf1$puan3 <- c(65, 70, 45)\nlength(df1)",
+    "source": "Hafta 5 sunumu, s. 8; Hafta 5 ders kodu (12102026.R), satır 50–51",
+    "question": "Beş elemanlı list1 için list1[5] <- NULL çalıştırılırsa ne olur?",
     "options": [
-      "3",
-      "15",
-      "5",
-      "1"
-    ],
-    "answer": 2,
-    "explanation": "data.frame, eşit uzunluktaki sütun vektörlerinden oluşan bir list nesnesidir; `length()` bu listenin eleman sayısını, yani sütun sayısını verir. Satır sayısı `nrow(df1)` ile alınır; matristeki gibi hücre sayısı da dönmez."
-  },
-  {
-    "id": "dsm5003-h5-04",
-    "course": "DSM 5003",
-    "source": "Hafta 5 sunumu, s. 20–21",
-    "question": "Hangi ifade yeni satırı df1'in 4. sırasına yerleştirir ve eski 4. satırı (EE) 5. sıraya kaydırır?\n\nno <- c(3423, 5345, 2466, 6365)\nad <- c(\"AB\", \"BB\", \"DD\", \"EE\")\npuan1 <- c(90, 87, 92, 77)\ndf1 <- data.frame(no, ad, puan1)\nyeni <- list(1254, \"FF\", 80)",
-    "options": [
-      "rbind(df1, yeni)",
-      "rbind(df1[1:3, ], yeni, df1[-(1:3), ])",
-      "df1[4, ] <- yeni",
-      "rbind(df1[1:3, ], yeni, df1[-1:3, ])"
-    ],
-    "answer": 1,
-    "explanation": "`df1[1:3, ]` ilk üç satırı, `df1[-(1:3), ]` geri kalanları verir ve `rbind()` yeni satırı bu ikisinin arasına koyar. Parantezsiz `-1:3` önce -1 0 1 2 3 olarak işlendiği için negatif ve pozitif indisler karışır ve hata verir; `rbind(df1, yeni)` sona ekler, `df1[4, ] <- yeni` ise 4. satırın üzerine yazar."
-  },
-  {
-    "id": "dsm5003-h5-05",
-    "course": "DSM 5003",
-    "source": "Hafta 5 ders kodu (12102026.R), satır 1–5",
-    "question": "Bu kodun çıktısı nedir?\n\na1 <- array(1:24, dim = c(2, 4, 3))\ndim(a1[, , -1])",
-    "options": [
-      "2 4",
-      "1 4 3",
-      "2 4 2",
-      "2 3 3"
-    ],
-    "answer": 2,
-    "explanation": "Üçüncü indis katmanı (matrisi) seçer; `-1` ilk katmanı çıkarır ve geriye 2 satır, 4 sütunlu 2 katman kalır. Satır ya da sütun çıkarmak için -1 birinci ya da ikinci indis konumuna yazılmalıydı."
-  },
-  {
-    "id": "dsm5003-h5-06",
-    "course": "DSM 5003",
-    "source": "Hafta 5 sunumu, s. 4 ve 6",
-    "question": "Bu kodun çıktısı nedir?\n\nlist1 <- list(e1 = 1:10, e2 = letters[1:10], e3 = matrix(1:12, nrow = 3))\nlist1$e3[, 2]",
-    "options": [
-      "2 6 10",
-      "2 5 8 11",
-      "Hata verir",
-      "4 5 6"
-    ],
-    "answer": 3,
-    "explanation": "`list1$e3` listedeki matrisin kendisini döndürür, ardından gelen `[, 2]` bu matrisin 2. sütununu seçer. matrix(1:12, nrow = 3) sütun sütun dolduğu için 2. sütun 4 5 6'dır."
-  },
-  {
-    "id": "dsm5003-h5-07",
-    "course": "DSM 5003",
-    "source": "Hafta 5 sunumu, s. 9",
-    "question": "Bu kodun çıktısı nedir?\n\nliste <- list(a = 1:3, b = 4:5)\nc(length(c(liste, liste)), length(unlist(liste)))",
-    "options": [
-      "4 5",
-      "2 5",
-      "4 2",
-      "10 5"
+      "5. eleman listeden tamamen silinir; liste dört elemana düşer.",
+      "Listenin tamamı boşaltılır.",
+      "5. elemanın değeri NULL olur; eleman yerinde kalır ve uzunluk 5 kalır.",
+      "Listeye NULL atanamayacağı için R hata verir."
     ],
     "answer": 0,
-    "explanation": "`c()` iki listeyi birleştirince elemanlarını tek bir listede art arda dizer (2 + 2 = 4 eleman). `unlist()` ise listeyi tek bir vektöre açar, bu yüzden içteki bütün değerler sayılır (3 + 2 = 5)."
+    "explanation": "Listelerde bir elemana NULL atamak o elemanı silmenin yoludur; uzunluk bir azalır ve sonraki elemanlar öne kayar. 'Değeri NULL olur ama yerinde durur' sezgisi çekicidir, ama NULL 'hiçbir şey' demek olduğu için R onu bir değer olarak saklamaz. Silmenin diğer yolu negatif indeksle süzüp sonucu yeniden atamaktır."
   },
   {
-    "id": "dsm5003-h5-08",
+    "id": "dsm5003-h5-k05",
     "course": "DSM 5003",
-    "source": "Hafta 5 sunumu, s. 15–16",
-    "question": "Bu kodun çıktısı nedir?\n\nno <- c(3423, 5345, 2466)\nad <- c(\"AB\", \"BB\", \"DD\")\npuan1 <- c(90, 87, 92)\ndf1 <- data.frame(no, ad, puan1)\ndf1$puan2 <- c(75, 88, 76)\nsubset(df1, puan1 > 88 & puan2 > 75)$ad",
+    "source": "Hafta 5 sunumu, s. 9; Hafta 2 sunumu, s. 17",
+    "question": "Sayı, harf ve matris içeren list1'e unlist() uygulanınca sonuç neden karakter vektörü olur?",
     "options": [
-      "\"AB\" \"DD\"",
-      "\"DD\"",
-      "\"BB\" \"DD\"",
-      "\"AB\" \"BB\" \"DD\""
+      "Hepsi tek vektörde birleşir; vektör tek türlü olduğu için sayılar karaktere çevrilir.",
+      "Elemanların adları değerlere eklendiği için sonuç metne dönüşür.",
+      "Matris elemanı düzleştirilemediği için R tüm sonucu metne çevirir.",
+      "unlist() girdinin türünden bağımsız olarak sonucu her zaman karakter vektörü olarak döndürür."
     ],
-    "answer": 1,
-    "explanation": "`subset()` koşuldaki sütun adlarını df1 içinde arar ve iki koşulu birden sağlayan satırları döndürür: puan1 > 88 AB ile DD'de, puan2 > 75 ise BB ile DD'de doğrudur (AB'nin 75'i 75'ten büyük değildir). İkisini de yalnızca DD sağlar ve `$ad` onun adını verir."
+    "answer": 0,
+    "explanation": "unlist() listedeki her şeyi tek bir atomik vektöre döker; bir vektörün bütün elemanları aynı türde olmak zorunda olduğundan, karakter içeren bir karışımda sayılar da karaktere çevrilir. Liste yalnızca sayılardan oluşsaydı sonuç sayısal olurdu; yani 'her zaman karakter' doğru değildir. Matris de sorunsuz düzleşir, sütun sırasıyla vektöre eklenir."
   },
   {
-    "id": "dsm5003-h5-09",
+    "id": "dsm5003-h5-k06",
+    "course": "DSM 5003",
+    "source": "Hafta 5 sunumu, s. 10; Hafta 5 ders kodu (12102026.R), satır 65–68",
+    "question": "class(df1) \"data.frame\" iken typeof(df1) \"list\" döndürür. Bu ne anlama gelir?",
+    "options": [
+      "data.frame'deki tüm sütunların aynı türde olması gerektiğini gösterir.",
+      "Her satır, o satırdaki sütun değerlerini tutan ayrı bir liste elemanı olarak saklanır.",
+      "data.frame, eşit uzunlukta, türleri farklı olabilen sütun vektörlerinin listesidir.",
+      "data.frame içte bir matris olarak saklanır; typeof bunu yanlış raporlar."
+    ],
+    "answer": 2,
+    "explanation": "data.frame aslında her elemanı bir sütun olan bir listedir; sütunlar eşit uzunlukta olmak zorundadır ama türleri farklı olabilir (no sayı, ad karakter). Matris ise tek türlüdür; data.frame'in karışık türleri tutabilmesinin nedeni tam olarak liste olmasıdır. Liste elemanları satırlar değil sütunlardır; df1[[1]] ve df1$no bu yüzden bir sütun döndürür."
+  },
+  {
+    "id": "dsm5003-h5-k07",
     "course": "DSM 5003",
     "source": "Hafta 5 sunumu, s. 10",
-    "question": "Bu kod çalıştırıldığında ne olur?\n\ndf <- data.frame(no = c(1, 2, 3), puan = c(90, 87))",
+    "question": "R 4.0.0 ve sonrasında, karakter vektörü ad ile data.frame(no, ad, puan1) yazıldığında ad sütunu hangi türde saklanır?",
     "options": [
-      "Hata verir; sütunların uzunlukları eşit olmalıdır.",
-      "3 satırlı tablo oluşur; kısa sütun baştan tekrarlanır: 90 87 90.",
-      "3 satırlı tablo oluşur; eksik puan hücresi NA ile dolar.",
-      "2 satırlı tablo oluşur; fazladan gelen 3 değeri atılır."
+      "character; çünkü stringsAsFactors varsayılanı artık FALSE'tur.",
+      "logical; çünkü metin sütunları mantıksal değere çevrilir.",
+      "factor; çünkü stringsAsFactors varsayılanı hâlâ TRUE olarak durur.",
+      "list; çünkü her metin ayrı bir liste elemanı olarak saklanır."
     ],
     "answer": 0,
-    "explanation": "data.frame, eşit uzunlukta vektörlerden oluşan bir listedir; 3 ve 2 uzunluklu sütunlar tek tabloya yerleşemez ve R \"arguments imply differing number of rows: 3, 2\" hatası verir. Kısa sütun ancak uzunluğu uzun olanınkini tam bölseydi tekrarlanarak tamamlanabilirdi."
+    "explanation": "R 4.0.0 ile stringsAsFactors'ın varsayılanı TRUE'dan FALSE'a değişti; artık karakter sütunlar kendiliğinden factor'e çevrilmez, character kalır. Eski kitaplar ve kodlar TRUE varsayımıyla yazıldığı için factor seçeneği çekicidir. Kategorik bir sütun gerekiyorsa factor() ile bilinçli olarak dönüştürmek gerekir."
+  },
+  {
+    "id": "dsm5003-h5-k08",
+    "course": "DSM 5003",
+    "source": "Hafta 5 ders kodu (12102026.R), satır 72–74",
+    "question": "df1 bir data.frame iken df1[1] ile df1$no (no birinci sütun) arasındaki fark nedir?",
+    "options": [
+      "df1[1] ilk hücreyi tek değer olarak, df1$no ise sütunu döndürür.",
+      "df1[1] tablonun ilk satırını, df1$no ise no sütununu vektör olarak döndürür.",
+      "df1[1] tek sütunlu bir data.frame, df1$no ise sütunun vektörünü döndürür.",
+      "İkisi de no sütununu aynı vektör olarak döndürür."
+    ],
+    "answer": 2,
+    "explanation": "data.frame bir liste olduğu için virgülsüz tek köşeli parantez liste gibi davranır: df1[1] birinci sütunu içeren tek sütunlu bir data.frame verir. $ ve [[ ]] ise sütunun kendisini, yani vektörü döndürür; mean() gibi fonksiyonlara bu verilir. İlk satırı almak için virgül gerekir: df1[1, ]."
+  },
+  {
+    "id": "dsm5003-h5-k09",
+    "course": "DSM 5003",
+    "source": "Hafta 5 sunumu, s. 14; Hafta 5 ders kodu (12102026.R), satır 84–86",
+    "question": "df1[df1$puan1 >= 90, ] ifadesindeki virgül unutulup df1[df1$puan1 >= 90] yazılırsa ne olur?",
+    "options": [
+      "Mantıksal vektör sütunları seçmek için kullanılır; sonuç satır süzmesi olmaz.",
+      "R virgül eksik olduğu için hata verir ve hiçbir şey döndürmez.",
+      "Yine puan1'i 90 ve üzeri olan satırlar seçilir; virgül yalnızca isteğe bağlıdır.",
+      "Koşulu sağlamayan satırlar NA ile doldurulmuş olarak döner."
+    ],
+    "answer": 0,
+    "explanation": "Virgülün solundaki indeks satırı, sağındaki sütunu seçer; virgül olmadan tek indeks data.frame'i liste gibi ele alır ve sütun seçer. Bu yüzden TRUE/FALSE vektörü sütunlara uygulanır ve sonuç satır süzmesi yerine bazı sütunlardan oluşan bir tablo olur; R hata vermediği için bu yanlışlık fark edilmeden kalabilir. Aynı süzmeyi subset(df1, puan1 >= 90) ile de yapabilirsin."
+  },
+  {
+    "id": "dsm5003-h5-k10",
+    "course": "DSM 5003",
+    "source": "Hafta 5 sunumu, s. 18; Hafta 5 ders kodu (12102026.R), satır 93–107",
+    "question": "df1'e yeni satır eklemek için df1[4,] <- c(6365,\"EE\",77,66) yazmak neden 'hatalı' sayılır?",
+    "options": [
+      "Değerler sütun sırasına göre değil, alfabetik sıraya göre yerleştirilir.",
+      "c() tüm değerleri karaktere zorlar; sayısal sütunlar da karakter olur, list() gerekir.",
+      "4. satır henüz olmadığı için R hata verir ve df1 değişmeden kalır.",
+      "data.frame'e köşeli parantezle satır eklenemez; yalnızca rbind() ile satır eklenebilir."
+    ],
+    "answer": 1,
+    "explanation": "c() tek türlü bir vektör üretir; içinde \"EE\" olduğu için tüm değerler karaktere dönüşür ve atama sonrasında no, puan1, puan2 sütunları da character olur (ders kodunda str(df1) ile görülür). list() her değeri kendi türünde tuttuğu için sütun türleri korunur. Köşeli parantezle satır eklemek mümkündür, sorun ekleme yöntemi değil eklenen nesnenin türüdür."
+  },
+  {
+    "id": "dsm5003-h6-k01",
+    "course": "DSM 5003",
+    "source": "Hafta 6 sunumu, s. 2–3",
+    "question": "x1 <- c(3,4,5,2,2,4,5) için factor(x1) ile factor(x1, levels=1:5) arasındaki fark nedir?",
+    "options": [
+      "levels=1:5 verilince veriye 1 değerli yeni bir gözlem eklenir.",
+      "levels=1:5 verilince veride görülmeyen 1 de tanımlı bir düzey olarak yer alır.",
+      "factor(x1) düzeyleri verideki görülme sırasına göre dizer, diğeri sayı sırasına göre.",
+      "levels=1:5 x1'deki değerleri 1 ile 5 arasına ölçekler."
+    ],
+    "answer": 1,
+    "explanation": "factor(x1) düzeyleri yalnızca veride görülen değerlerden (2, 3, 4, 5) oluşturur. levels=1:5 ise olası kategorileri baştan tanımlar; 1 hiç gözlenmemiş olsa da düzeyler arasında yer alır ve table() onun için 0 sayar. Veri değişmez, yeni gözlem eklenmez; bu, örneğin 1–5'lik bir anket ölçeğinde boş kalan seçenekleri de raporlamak için kullanılır."
+  },
+  {
+    "id": "dsm5003-h6-k02",
+    "course": "DSM 5003",
+    "source": "Hafta 6 ders kodu (19102026.R), satır 5–11",
+    "question": "xf, düzeyleri 1:5 olan bir faktörken xf[8] <- 10 çalıştırılırsa ne olur?",
+    "options": [
+      "10 yeni bir düzey olarak tanımlanır ve 8. konuma 10 değeri yazılır.",
+      "R hata verir ve xf hiç değişmez.",
+      "10 en yakın tanımlı düzeye, yani 5'e yuvarlanır.",
+      "8. konuma NA yazılır ve 'invalid factor level' uyarısı verilir."
+    ],
+    "answer": 3,
+    "explanation": "Faktör yalnızca tanımlı düzeylerden değer alabilir; 10 bir düzey olmadığı için R atamayı NA olarak yapar ve 'invalid factor level, NA generated' uyarısı verir. Düzeyler kendiliğinden genişlemez; yeni bir kategori gerekiyorsa önce levels() ile düzey eklemek gerekir. Hata değil uyarı verildiği için, gözden kaçan bir NA veride sessizce kalabilir."
+  },
+  {
+    "id": "dsm5003-h6-k03",
+    "course": "DSM 5003",
+    "source": "Hafta 6 sunumu, s. 4–5; Hafta 6 ders kodu (19102026.R), satır 14–22",
+    "question": "x1 <- c(3,4,5,2,2,4,5) ve xf <- factor(x1, levels=1:5, labels=LETTERS[1:5]) iken mean(as.numeric(xf)) x1'in ortalamasıyla aynı çıkar. Bunun nedeni nedir?",
+    "options": [
+      "Faktör orijinal değerleri ayrıca sakladığı için as.numeric() onları döndürür.",
+      "Düzeyler 1:5 olduğu için düzey kodları tesadüfen orijinal değerlerle aynıdır.",
+      "mean() faktörlerde kendiliğinden orijinal değerleri kullanır.",
+      "as.numeric() faktörün etiketlerini orijinal sayılara geri çevirir."
+    ],
+    "answer": 1,
+    "explanation": "as.numeric() bir faktörde düzeylerin iç sıra kodlarını (1, 2, 3, ...) döndürür, orijinal değerleri değil. Burada düzeyler tam olarak 1:5 olduğu için 3 değeri 3. düzeye düşer ve kodlar tesadüfen değerlerle örtüşür. factor(c(10,20,50)) gibi bir faktörde as.numeric() 1, 2, 3 verir; orijinal sayılar için as.numeric(as.character(f)) gerekir."
+  },
+  {
+    "id": "dsm5003-h6-k04",
+    "course": "DSM 5003",
+    "source": "Hafta 6 sunumu, s. 6",
+    "question": "Bir faktörü ordered=TRUE ile tanımlamak ne kazandırır?",
+    "options": [
+      "Yalnızca yazdırırken düzeyleri sıralı gösterir; hesaplamalara hiçbir etkisi olmaz.",
+      "Düzeyler arasında sıra tanımlanır; < ve > karşılaştırmaları anlam kazanır.",
+      "Gözlemleri alfabetik sıraya göre yeniden dizer.",
+      "Düzeyleri sayıya çevirip ortalama alınabilmesini sağlar."
+    ],
+    "answer": 1,
+    "explanation": "Sıralı faktörde düzeyler A < B < C < D < E biçiminde sıralanır; böylece xf < \"C\" gibi karşılaştırmalar her gözlem için TRUE/FALSE verir. Sırasız bir faktörde aynı karşılaştırma '< not meaningful for factors' uyarısı ve NA ile sonuçlanır. Bu, eğitim düzeyi veya memnuniyet gibi sıralayıcı ölçekteki değişkenler içindir; gözlemlerin yeri değişmez ve ortalama yine anlamlı olmaz."
+  },
+  {
+    "id": "dsm5003-h6-k05",
+    "course": "DSM 5003",
+    "source": "Hafta 6 sunumu, s. 10; Hafta 6 ders kodu (19102026.R), satır 33–38",
+    "question": "cut(x, breaks=c(60,70,80,90)) ile cut(x, breaks=c(60,70,80,90), right=FALSE) arasındaki fark nedir?",
+    "options": [
+      "Varsayılan [a,b) aralıkları üretir; right=FALSE ile (a,b] olur ve sınırdaki değer alt aralığa geçer.",
+      "Varsayılan (a,b] aralıkları üretir; right=FALSE ile [a,b) olur ve sınırdaki değer üst aralığa geçer.",
+      "right=FALSE en sağdaki aralığı siler ve o değerleri NA yapar.",
+      "right=FALSE yalnızca etiketlerin yazılışını değiştirir; değerlerin aralıkları aynı kalır."
+    ],
+    "answer": 1,
+    "explanation": "cut() varsayılan olarak sağdan kapalı aralıklar kurar: (60,70] aralığı 70'i içerir ama 60'ı içermez. right=FALSE ile aralıklar soldan kapalı [60,70) olur; bu durumda 70 değeri bir üst aralığa, [70,80)'e geçer. Etiketlerdeki parantez tipi tam olarak bu dahil/hariç bilgisini gösterir; sınırdaki gözlemlerin hangi sınıfa düştüğü frekans tablosunu değiştirebilir."
+  },
+  {
+    "id": "dsm5003-h6-k06",
+    "course": "DSM 5003",
+    "source": "Hafta 6 ders kodu (19102026.R), satır 49–52",
+    "question": "rivers verisini cut() ile sınıflarken breaks vektörünün sonuna Inf eklenmesinin amacı nedir?",
+    "options": [
+      "En uzun nehirlerin de bir sınıfa girmesi; aksi halde breaks dışındakiler NA olur.",
+      "Verideki sonsuz uzunluktaki nehirleri ayrı bir sınıfta göstermek.",
+      "Aralık genişliklerini otomatik olarak eşitlemek.",
+      "cut()'ın sonucu factor yerine düz bir sayısal vektör olarak döndürmesini sağlamak."
+    ],
+    "answer": 0,
+    "explanation": "cut() yalnızca breaks'in kapsadığı aralıktaki değerleri sınıflar; son kesme noktasından büyük bir değer hiçbir aralığa düşmez ve NA olur. Son sınır olarak Inf vermek, en uzun nehirler dahil her değerin son sınıfa (ör. 'çok uzun') girmesini garanti eder. Verinin kendisinde sonsuz değer yoktur; Inf yalnızca açık uçlu bir üst sınıf kurmak için kullanılır."
+  },
+  {
+    "id": "dsm5003-h6-k07",
+    "course": "DSM 5003",
+    "source": "Hafta 6 sunumu, s. 13",
+    "question": "Slayttaki df1'de no, puan1, puan2 ve puan3 sayısal, ad ise karakter sütunudur. Slaytta ortalamalar apply(df1, 2, mean) ile değil, yalnızca puan sütunları seçilerek apply(df1[,3:4], 2, mean) ile alınıyor. apply(df1, 2, mean) yazılsaydı neden işe yaramazdı?",
+    "options": [
+      "apply() karakter sütunlara mean() yerine kendiliğinden table() uygular.",
+      "apply() önce matrise çevirir; karakter sütun tüm matrisi karakter yapar, mean() çalışmaz.",
+      "apply() data.frame'in yalnızca ilk iki sütununu işleyebildiği için kalan sütunlar boş kalırdı.",
+      "Sayısal olmayan sütunlar apply() tarafından sessizce atlanır; seçim yalnızca hız içindir."
+    ],
+    "answer": 1,
+    "explanation": "apply() matris için tasarlanmıştır; data.frame verilince onu as.matrix() ile tek türlü bir matrise çevirir. Tek bir karakter sütun (ad) bile bütün değerleri karaktere çevirir ve mean() sayısal sütunlar dahil her sütun için uyarıyla NA döndürür. Karakter sütunlar sessizce atlanmaz; bu yüzden apply() öncesinde yalnızca sayısal sütunlar seçilmelidir."
+  },
+  {
+    "id": "dsm5003-h6-k08",
+    "course": "DSM 5003",
+    "source": "Hafta 6 sunumu, s. 14–15",
+    "question": "lapply() ile sapply() arasındaki temel fark nedir?",
+    "options": [
+      "lapply() her zaman liste döndürür; sapply() sonucu mümkünse vektöre sadeleştirir.",
+      "sapply() fonksiyonu satırlara, lapply() ise sütunlara uygular.",
+      "lapply() yalnızca listelerde, sapply() yalnızca vektörlerde çalışır.",
+      "sapply() her zaman liste döndürür; lapply() sonucu mümkünse vektöre sadeleştirir."
+    ],
+    "answer": 0,
+    "explanation": "İkisi de fonksiyonu listenin (ya da data.frame'in sütunlarının) her elemanına uygular; fark çıktının biçimindedir. lapply ('list apply') sonucu her zaman liste olarak verir; sapply ('simplified apply') her sonuç tek değerse bunları bir vektörde toplar (liste elemanlarının adı varsa vektör de adlı olur). Slayttaki medyan örneğinde lapply iki elemanlı bir liste, sapply 34 ve 5 değerlerinden oluşan bir vektör üretir."
+  },
+  {
+    "id": "dsm5003-h6-k09",
+    "course": "DSM 5003",
+    "source": "Hafta 6 ders kodu (19102026.R), satır 92–96",
+    "question": "airquality'de eksik değer içeren sütunların ortalamaları için apply(airquality[,1:4], 2, mean, na.rm=TRUE) yazılıyor. Buradaki na.rm=TRUE ne yapar?",
+    "options": [
+      "apply()'ın ... argümanı üzerinden her sütun için çağrılan mean()'e iletilir.",
+      "NA değerlerini o sütunun ortalamasıyla doldurur, sonra ortalama alır.",
+      "apply() bu argümana bakarak NA içeren satırları hesaplamadan önce tamamen siler.",
+      "NA içeren sütunları sonuçtan tamamen çıkarır."
+    ],
+    "answer": 0,
+    "explanation": "apply() tanımadığı ek argümanları ... (üç nokta) üzerinden uyguladığı fonksiyona aktarır; böylece her sütun için mean(sütun, na.rm=TRUE) çalışır ve her sütunda yalnızca o sütunun NA'ları atılır. apply() satırları silmez; bu yüzden Ozone'daki bir NA, Wind ortalamasını etkilemez. Aynı mekanizmayla tr=0.05 gibi argümanlar da geçirilebilir."
+  },
+  {
+    "id": "dsm5003-h6-k10",
+    "course": "DSM 5003",
+    "source": "Hafta 6 sunumu, s. 21",
+    "question": "tapply(mtcars$mpg, list(mtcars$gear, mtcars$cyl), mean) tablosunda bir hücre NA çıkıyor. Bunun en olası nedeni nedir?",
+    "options": [
+      "tapply() iki gruplama değişkeniyle yalnızca köşegen hücreleri hesaplar.",
+      "list() içinde sıralama gear, cyl yerine cyl, gear olmalıdır.",
+      "O vites–silindir kombinasyonunda hiç araç yoktur; boş grubun ortalaması olmaz.",
+      "O gruptaki mpg değerlerinden biri eksiktir ve tapply'a na.rm=TRUE verilmemiştir."
+    ],
+    "answer": 2,
+    "explanation": "İki faktörle tapply() her kombinasyon için bir hücre ayırır; veride hiç gözlemi olmayan kombinasyon için hesaplanacak değer olmadığından NA yazılır. mtcars'ta mpg'de eksik değer yoktur; table(mtcars$gear, mtcars$cyl) ile bakılınca o hücrenin frekansının 0 olduğu görülür. list() içindeki sıra yalnızca satır ve sütunların yerini değiştirir, boş hücreyi doldurmaz."
+  },
+  {
+    "id": "dsm5003-h7-k01",
+    "course": "DSM 5003",
+    "source": "Hafta 7 sunumu, s. 2; Hafta 7 ders kodu (26102026.R), satır 1–10",
+    "question": "Şehirler arası uzaklık matrisinde 2. şehre en yakın şehri bulmak için which(m1[2,] == min(m1[2,])) neden yanlış sonuç verir?",
+    "options": [
+      "min() matris satırlarında çalışmadığı için R hata verir.",
+      "which() konum değil değer döndürdüğü için sonuç şehir değil bir uzaklık olur.",
+      "Köşegendeki 0, yani şehrin kendisine uzaklığı, her zaman en küçük değerdir.",
+      "Matris simetrik olduğu için satır yerine sütun kullanmak gerekir."
+    ],
+    "answer": 2,
+    "explanation": "Uzaklık matrisinde her şehrin kendisine uzaklığı 0'dır ve satırdaki en küçük değer her zaman budur; bu yüzden yanlış formül 2. şehrin kendisini döndürür. Ders kodunda önce m1[2, m1[2,] != 0] ile sıfır olmayan uzaklıklar alınır, sonra bu minimuma eşit konum which() ile bulunur. Matris simetrik olduğu için satır ya da sütun kullanmak aynı sonucu verir; sorun yön değil, sıfırdır."
+  },
+  {
+    "id": "dsm5003-h7-k02",
+    "course": "DSM 5003",
+    "source": "Hafta 7 ders kodu (26102026.R), satır 13–20",
+    "question": "file1.R, file2.R, ..., file10.R adlarını noktalı virgülle ayrılmış tek bir metin olarak üretmek istiyorsun. Hangisi doğrudur?",
+    "options": [
+      "paste(\"file;\", 1:10, \".R\", sep=\"\", collapse=\"\")",
+      "paste(\"file\", 1:10, \".R\", sep=\"\", collapse=\";\")",
+      "paste(\"file\", 1:10, \".R\", sep=\";\")",
+      "paste(\"file\", 1:10, \".R\", collapse=\"\")"
+    ],
+    "answer": 1,
+    "explanation": "sep, aynı ad içindeki parçaların ('file', sayı, '.R') arasına girer; collapse ise oluşan on ayrı adı tek bir metne birleştirirken araya konur. sep=\"\" ile file1.R gibi adlar oluşur, collapse=\";\" ile hepsi tek metinde birleşir. sep=\";\" ise ayracı adların içine koyar ('file;1;.R') ve sonuç yine on ayrı metin olarak kalır."
+  },
+  {
+    "id": "dsm5003-h7-k03",
+    "course": "DSM 5003",
+    "source": "Hafta 7 ders kodu (26102026.R), satır 23–27",
+    "question": "x1 araç adlarını tutuyorken grep(\"toyota\", x1) boş sonuç (integer(0)) verir, grep(\"Toyota\", x1) ise iki konum döndürür. Neden?",
+    "options": [
+      "grep() yalnızca tam eşleşen metinleri bulur.",
+      "Küçük harfli aramalar için önce strsplit() uygulanmalıdır.",
+      "grep() varsayılan olarak büyük/küçük harfe duyarlıdır.",
+      "grep() yalnızca adın başındaki kelimeyi arar."
+    ],
+    "answer": 2,
+    "explanation": "grep() desenle metinleri karşılaştırırken harf büyüklüğünü dikkate alır; 'toyota' ile 'Toyota' farklı desenlerdir. Harf büyüklüğünü önemsememek için ignore.case=TRUE verilebilir ya da metin önce tolower() ile küçük harfe çevrilebilir. grep() tam eşleşme aramaz; desen metnin herhangi bir yerinde geçiyorsa o konumu döndürür."
+  },
+  {
+    "id": "dsm5003-h7-k04",
+    "course": "DSM 5003",
+    "source": "Hafta 7 sunumu, s. 5; Hafta 7 ders kodu (26102026.R), satır 26–28",
+    "question": "Adında \"Toyota\" geçen araçların adlarının kendisini almak istiyorsun. Hangisi doğrudur?",
+    "options": [
+      "grep(\"Toyota\", x1)",
+      "x1[grep(\"Toyota\", x1)]",
+      "nchar(grep(\"Toyota\", x1))",
+      "substr(x1, \"Toyota\")"
+    ],
+    "answer": 1,
+    "explanation": "grep() eşleşen metinleri değil, onların x1 içindeki konumlarını (20 ve 21) döndürür; bu konumlarla x1'i indekslemek adların kendisini verir. grep(..., value=TRUE) de aynı işi yapar. nchar() karakter sayar ve substr() başlangıç–bitiş konumu ister; ikisi de bu iş için uygun değildir."
+  },
+  {
+    "id": "dsm5003-h7-k05",
+    "course": "DSM 5003",
+    "source": "Hafta 7 ders kodu (26102026.R), satır 30–31",
+    "question": "x1 32 araç adı içeren bir karakter vektörüyken substr(x1, 1, 3) ne döndürür?",
+    "options": [
+      "Yalnızca ilk adın ilk üç karakterini",
+      "Her adın ilk üç karakterini",
+      "x1'in ilk üç elemanını",
+      "Üç karakterden uzun adları"
+    ],
+    "answer": 1,
+    "explanation": "substr() vektörleştirilmiş bir fonksiyondur: x1'in her elemanına ayrı ayrı uygulanır ve her adın 1. ile 3. karakter arasındaki kısmını döndürür, yani sonuç yine 32 elemanlıdır. Vektörün ilk üç elemanını almak substr()'ın değil x1[1:3]'ün işidir. Bu, örneğin marka kısaltması gibi sabit konumlu parçaları çıkarmak için kullanılır."
+  },
+  {
+    "id": "dsm5003-h7-k06",
+    "course": "DSM 5003",
+    "source": "Hafta 7 sunumu, s. 7; Hafta 7 ders kodu (26102026.R), satır 36–38",
+    "question": "y1 <- strsplit(x1, \" \") sonrasında ilk aracın kelimelerini karakter vektörü olarak almak istiyorsun. Hangisi doğrudur?",
+    "options": [
+      "y1[1]",
+      "y1[[1]]",
+      "y1[1, ]",
+      "unlist(y1)[1]"
+    ],
+    "answer": 1,
+    "explanation": "strsplit() her ad farklı sayıda kelimeye bölünebildiği için sonucu liste olarak verir. y1[1] yine tek elemanlı bir listedir; y1[[1]] ise içindeki karakter vektörünü ('Mazda', 'RX4') döndürür. unlist(y1)[1] tüm kelimeleri tek vektörde birleştirip yalnızca ilk kelimeyi verir; liste satır–sütun indeksi kabul etmediği için y1[1, ] hata verir."
+  },
+  {
+    "id": "dsm5003-h7-k07",
+    "course": "DSM 5003",
+    "source": "Hafta 7 sunumu, s. 8–9",
+    "question": "regexpr(\"ist\", \"istatistik\") ile gregexpr(\"ist\", \"istatistik\") arasındaki fark nedir?",
+    "options": [
+      "regexpr eşleşme olup olmadığını TRUE/FALSE ile, gregexpr ise eşleşme sayısını verir.",
+      "İkisi aynı sonucu verir; gregexpr yalnızca sonucu liste olarak döndürür.",
+      "regexpr tüm eşleşmelerin, gregexpr ise yalnızca son eşleşmenin konumunu verir.",
+      "regexpr yalnızca ilk eşleşmenin, gregexpr tüm eşleşmelerin konumlarını verir."
+    ],
+    "answer": 3,
+    "explanation": "regexpr() desenin ilk geçtiği yeri (ve eşleşme uzunluğunu) verir; 'istatistik' içinde 'ist' iki kez geçse de yalnızca ilki raporlanır. gregexpr()'deki g 'global' anlamındadır: tüm eşleşmelerin konumlarını bir liste içinde döndürür. Liste biçimi doğrudur ama asıl fark içerikte; ikincisi tek değil tüm eşleşmeleri içerir."
+  },
+  {
+    "id": "dsm5003-h7-k08",
+    "course": "DSM 5003",
+    "source": "Hafta 7 ders kodu (26102026.R), satır 69–72",
+    "question": "Ders kodunda cut(x, breaks=seq(min(x), max(x)+1, length=4), right=FALSE) yazılıyor. Üst sınırda max(x) yerine max(x)+1 kullanılmasının nedeni nedir?",
+    "options": [
+      "Aralık sayısını üçten dörde çıkarmak için.",
+      "[a,b) aralıklarında üst sınır max(x) olsaydı en büyük değer NA olurdu.",
+      "Aralıkların genişliğini tam sayıya yuvarlayıp etiketleri sadeleştirmek için.",
+      "min(x) değerinin [a,b) yapısında ilk aralığa da dahil edilmesini sağlamak için."
+    ],
+    "answer": 1,
+    "explanation": "right=FALSE aralıkları soldan kapalı, sağdan açık [a,b) yapar; bu yüzden son kesme noktası max(x) olsaydı en büyük gözlem son aralığa da giremez ve NA olurdu. Üst sınırı biraz yukarı çekmek bu gözlemin son sınıfa girmesini sağlar. min(x) zaten [a,b) aralığının kapalı tarafında olduğu için ilk sınıfa girer; length=4 ise hep dört kesme noktası, yani üç aralık üretir."
+  },
+  {
+    "id": "dsm5003-h7-k09",
+    "course": "DSM 5003",
+    "source": "Hafta 7 ders kodu (26102026.R), satır 54–58",
+    "question": "quantile(x) yerine quantile(x, probs=seq(0, 1, by=0.1)) yazmak neyi değiştirir?",
+    "options": [
+      "Verinin yalnızca %10'luk rastgele bir örneğinden çeyreklikleri yeniden hesaplar.",
+      "Çeyreklikler yerine %0, %10, ..., %100 ondalık dilim noktalarını döndürür.",
+      "Uç değerlerin %10'unu atıp kalan veriden çeyreklikleri hesaplar.",
+      "Çeyreklikleri 0.1 hassasiyetle yuvarlayarak döndürür."
+    ],
+    "answer": 1,
+    "explanation": "quantile()'ın varsayılan probs değeri 0, 0.25, 0.5, 0.75, 1'dir; bu yüzden çeyreklikleri verir. probs argümanı hangi yüzdelik noktaların isteneceğini belirler; seq(0, 1, by=0.1) ile on bir nokta, yani ondalık dilimler (desiller) elde edilir. Uçlardan kırpma mean(x, trim=...)'in işidir; quantile() veriyi örneklemez ya da kırpmaz."
+  },
+  {
+    "id": "dsm5003-h7-k10",
+    "course": "DSM 5003",
+    "source": "Hafta 7 sunumu, s. 10",
+    "question": "Sunumda sum() 'Summary', cumsum() ise 'Math' grubunda yer alır. İkisinin çıktısı arasındaki fark nedir?",
+    "options": [
+      "cumsum() yalnızca pozitif değerleri, sum() ise tüm değerleri toplar.",
+      "İkisi de tek bir toplam döndürür; cumsum() yalnızca NA'ları atlar.",
+      "cumsum() her konuma kadarki toplamları vektör olarak, sum() tek bir toplam verir.",
+      "sum() her konuma kadarki toplamları vektör olarak, cumsum() tek bir toplam verir."
+    ],
+    "answer": 2,
+    "explanation": "Summary grubundaki fonksiyonlar (sum, prod, min, max) bütün vektörü tek bir değere indirir. Math grubundaki cumsum() ise girdiyle aynı uzunlukta bir vektör döndürür: her konumda o konuma kadarki toplam yer alır, örneğin günlük satışlardan kümülatif satışı izlemek için. cumsum() NA'ları atlamaz; bir NA'dan sonraki tüm birikimli değerler NA olur."
   }
 ]

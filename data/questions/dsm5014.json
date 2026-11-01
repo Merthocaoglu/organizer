@@ -1,562 +1,702 @@
 [
   {
-    "id": "dsm5014-d1-01",
+    "id": "dsm5014-d1-k01",
     "course": "DSM 5014",
-    "source": "Ders 1 sunumu, s. 27",
-    "question": "Eğitim verisiyle 5 katlı (K = 5) çapraz doğrulama yapılıyor. Eğitim verisindeki herhangi bir gözlem için hangisi doğrudur?",
+    "source": "Ders 1 sunumu, s. 11",
+    "question": "Bir laboratuvarda yalnızca birkaç yüz protein dizisi uzmanlarca etiketlenmiş, ancak milyonlarca etiketsiz dizi de mevcut. Hem etiketli hem etiketsiz veriyi kullanarak bir sınıflandırıcı kurmak hangi öğrenme yaklaşımına girer?",
     "options": [
-      "Beş turun hepsinde aynı anda hem eğitim hem doğrulama kümesinde yer alır",
-      "Yalnızca bir turda kullanılır; diğer dört turda tamamen dışarıda bırakılır",
-      "Beş turun yalnızca birinde doğrulama, kalan dördünde eğitim için kullanılır",
-      "Beş turun hepsinde doğrulamada yer alır; hiçbir turda eğitimde kullanılmaz"
-    ],
-    "answer": 2,
-    "explanation": "K katlı düzende veri K parçaya ayrılır ve her turda bir parça doğrulama, kalan parçalar eğitim için kullanılır; böylece her gözlem tam bir kez doğrulamada, K − 1 kez eğitimde yer alır. Model K kez eğitildiği için sonunda tüm veri hem eğitim hem doğrulama sürecinde kullanılmış olur."
-  },
-  {
-    "id": "dsm5014-d1-02",
-    "course": "DSM 5014",
-    "source": "Ders 1 sunumu, s. 44",
-    "question": "Özellik çıkarma (feature extraction), var olan özellikler arasından seçim yapmak yerine ilk özellik kümesinden yeni özellikler türetir. Aşağıdakilerden hangisi bir özellik çıkarma yöntemidir?",
-    "options": [
-      "Aşamalı özellik seçimi (forward selection)",
-      "Geri adım atma (backward elimination)",
-      "Yüksek korelasyonlu özelliği eleme",
-      "Temel bileşen analizi (PCA)"
+      "Denetimsiz öğrenme; verinin büyük çoğunluğu etiketsiz",
+      "Denetimli öğrenme; sonuçta bir sınıflandırıcı eğitiliyor",
+      "Pekiştirmeli öğrenme; model uzman geri bildirimiyle öğreniyor",
+      "Yarı denetimli öğrenme; az etiketli ve çok etiketsiz veri birlikte"
     ],
     "answer": 3,
-    "explanation": "PCA, ilk özelliklerden bilgilendirici ve gereksiz olmayan yeni bileşenler türetir; notlarda özellik çıkarmanın ortak (yaygın) prosedürü olarak verilir. Aşamalı seçim, geri adım atma ve yüksek korelasyonlu özelliği eleme ise var olan özellikler arasından seçim yapan özellik seçimi yöntemleridir."
+    "explanation": "Yarı denetimli öğrenme tam olarak az miktarda etiketli veriyi büyük miktarda etiketsiz veriyle birlikte kullanmaktır; derste örneği protein dizisi sınıflandırmasıdır. Yalnızca birkaç yüz etiketli örnekle yetinmek denetimli öğrenme olurdu, ama etiketsiz milyonlarca diziden hiç yararlanılmazdı. Verinin çoğunun etiketsiz olması problemi denetimsiz yapmaz; amaç hâlâ etiket tahmin etmektir."
   },
   {
-    "id": "dsm5014-d1-03",
+    "id": "dsm5014-d1-k02",
     "course": "DSM 5014",
-    "source": "Ders 1 sunumu, s. 35",
-    "question": "Ders notlarına göre bir modelin varyansı (variance) neyi ölçer?",
+    "source": "Ders 1 sunumu, s. 16",
+    "question": "Ders gösteriminde x girdi, d hedef etikettir. Ayırıcı (discriminative) bir sınıflandırıcı istatistiksel olarak neyi tahmin eder?",
     "options": [
-      "Tahminlerinin ortalamasının gerçek değerden sistematik olarak ne kadar saptığını",
-      "Benzer eğitim setleriyle yeniden eğitildiğinde tahminlerinin ne kadar dalgalandığını",
-      "Eğitim setindeki hedef değişkenin (etiketlerin) kendi içinde ne kadar dağınık olduğunu",
-      "Girdi özelliklerinin birbiriyle ne kadar güçlü biçimde ilişkili (korelasyonlu) olduğunu"
+      "p(x): etiketten bağımsız olarak girdinin yoğunluğunu",
+      "p(d | x): girdi verildiğinde etiketin olasılığını",
+      "p(x | d): her sınıfın verisinin nasıl dağıldığını",
+      "p(d): girdiye bakmadan sınıfların önsel oranını"
     ],
     "answer": 1,
-    "explanation": "Varyans, model farklı ama benzer eğitim setleriyle eğitilirse görünmeyen veriye ilişkin tahminlerinin ne kadar dalgalandığıdır; yüksek varyans aşırı uyuma işaret eder. Tahminlerin ortalamasının ne kadar hatalı olduğu ise bias'tır ve yüksek bias az uyuma işaret eder."
+    "explanation": "Ayırıcı model doğrudan p(d | x)'i, yani bir gözlem verildiğinde hangi sınıfa ait olduğunun olasılığını tahmin eder; sınıflar arasındaki sınırı modellemek için bu yeterlidir. p(x | d) üretken (generative) modelin hedefidir: her sınıfın verisinin nasıl üretildiğini modeller. p(x) ise etiket kullanmayan denetimsiz öğrenmedeki yoğunluk tahminidir."
   },
   {
-    "id": "dsm5014-d1-04",
+    "id": "dsm5014-d1-k03",
     "course": "DSM 5014",
-    "source": "Ders 1 sunumu, s. 5",
-    "question": "Öğrenmenin bir tanımına göre bir program, P ile ölçülen T görevlerindeki performansı E deneyimiyle artıyorsa öğreniyordur. Bir spam filtresi geçmiş e-postalar ve bunların spam olup olmadığı bilgisiyle eğitiliyor; başarısı doğru sınıflandırılan e-postaların oranıyla ölçülüyor. Bu durumda E (deneyim) hangisidir?",
+    "source": "Ders 1 sunumu, s. 24",
+    "question": "Bir tarama veri setinde 1000 kaydın yalnızca 50'si pozitiftir. Bir model herkese 'negatif' diyerek %95 doğruluk elde ediyor. Bu sonucu en doğru yorumlayan ifade hangisidir?",
     "options": [
-      "Gelen e-postaları spam ya da normal olarak sınıflandırma işi",
-      "Spam olup olmadığı bilinen geçmiş e-postalar",
-      "Doğru sınıflandırılan e-postaların oranı",
-      "Filtrenin yeni e-postalar için ürettiği tahminler"
-    ],
-    "answer": 1,
-    "explanation": "Tanımda E deneyim, T görev, P performans ölçüsüdür: burada E spam olup olmadığı bilinen geçmiş e-postalar, T e-postaları sınıflandırma işi, P ise doğru sınıflandırma oranıdır. Filtrenin ürettiği tahminler deneyim değil, görevin çıktısıdır."
-  },
-  {
-    "id": "dsm5014-d1-05",
-    "course": "DSM 5014",
-    "source": "Ders 1 sunumu, s. 25",
-    "question": "Bir regresyon modelinin dört gözlemdeki hataları (y − ŷ) 2, −2, 0 ve 4'tür. MAE = (1/n) Σ |y − ŷ| ve MSE = (1/n) Σ (y − ŷ)² ise değerler nedir?",
-    "options": [
-      "MAE = 1, MSE = 6",
-      "MAE = 2, MSE = 4",
-      "MAE = 2, MSE = 6",
-      "MAE = 2, MSE = 24"
+      "Model az uyum yapmıştır; daha fazla epoch ile doğruluk %100'e çıkar",
+      "Model aşırı uyum yapmıştır; eğitim verisini ezberlediği için doğruluk yüksek",
+      "Pozitiflerin hiçbirini yakalamıyor; doğruluk sınıf oranından geliyor",
+      "Model başarılıdır; %95 doğruluk çoğu uygulama için yeterli bir düzeydir"
     ],
     "answer": 2,
-    "explanation": "MAE = (2 + 2 + 0 + 4)/4 = 2 ve MSE = (4 + 4 + 0 + 16)/4 = 6; MSE büyük hataları daha fazla ağırlıklandırdığı için en büyük hata (4) onu daha çok etkiler. MAE = 1 hataların işaretli ortalamasından, MSE = 4 MAE'nin karesinden, MSE = 24 ise 1/n ile bölmeyi unutmaktan gelir."
+    "explanation": "Pozitif sınıf için duyarlılık (recall) 0'dır: 50 pozitifin hiçbiri bulunmamıştır. Pozitifler çok az olduğu için 'herkes negatif' demek bile doğruluğu yüksek gösterir; bu yüzden dengesiz sınıflarda kesinlik, duyarlılık ve eşik analizine bakılır. Bu durumun ezberle (aşırı uyum) ilgisi yoktur; model girdiye hiç bakmadan da aynı sonucu verirdi."
   },
   {
-    "id": "dsm5014-d1-06",
+    "id": "dsm5014-d1-k04",
+    "course": "DSM 5014",
+    "source": "Ders 1 sunumu, s. 23",
+    "question": "Bir kanser tarama modelinde gerçek bir hastayı kaçırmak (yanlış negatif), sağlıklı birini ek teste göndermekten (yanlış pozitif) çok daha pahalıdır. Model seçerken öncelikle hangi ölçüte bakılmalıdır?",
+    "options": [
+      "Gerçek negatif sayısı: sağlıklıların ne kadarı doğru bilindi",
+      "Doğruluk (accuracy): bütün tahminlerin ne kadarı doğru",
+      "Duyarlılık (recall): gerçek hastaların ne kadarı yakalandı",
+      "Kesinlik (precision): 'kanser' denenlerin ne kadarı gerçekten hasta"
+    ],
+    "answer": 2,
+    "explanation": "Duyarlılık TP / (TP + FN)'dir ve paydasında kaçırılan hastalar (FN) vardır; FN pahalıysa öncelikle bu ölçüt yüksek tutulmalıdır. Kesinlik ise TP / (TP + FP) ile yanlış alarmları cezalandırır; yanlış pozitifin pahalı olduğu durumlarda (ör. önemli e-postayı spam'e atmak) öne çıkar. Hastaların az olduğu bir taramada doğruluk, kaçırılan hastaları kolayca gizleyebilir."
+  },
+  {
+    "id": "dsm5014-d1-k05",
     "course": "DSM 5014",
     "source": "Ders 1 sunumu, s. 26",
-    "question": "Bir ekip her denemeden sonra test kümesindeki sonuca bakıp modeli ve ayarlarını buna göre değiştiriyor. Ders notlarına göre bu uygulamanın sorunu nedir?",
+    "question": "Bir araştırmacı 30 farklı öğrenme oranı ve katman sayısı kombinasyonunu deniyor, her birini test kümesinde ölçüp en iyisini seçiyor ve o skoru raporluyor. Bu test skoru hakkında ne söylenebilir?",
     "options": [
-      "Sorun yoktur; test kümesi eğitimde kullanılmadığı sürece istendiği kadar bakılabilir",
-      "Yalnızca eğitim süresi uzar; modelin performans tahmini bundan etkilenmez",
-      "Test kümesi küçüldüğü için çapraz doğrulama yapılamaz hale gelir",
-      "Test kümesine dolaylı uyum oluşur; test sonucu artık tarafsız bir tahmin değildir"
+      "Çok deneme yapıldığı için skor olduğundan kötümserdir",
+      "Hiperparametreler öğrenilmediği için hangi küme kullanılsa fark etmez",
+      "Test verisiyle ağırlık öğrenilmediği için skor yansızdır",
+      "Test kümesi seçime katıldığı için skor iyimserdir"
     ],
     "answer": 3,
-    "explanation": "Tekrarlanan test kullanımı test kümesine dolaylı uyuma yol açar: seçimler test sonucuna göre yapıldıkça test performansı iyimser olur. Ayar ve eşik seçimleri doğrulama kümesiyle yapılmalı, test kümesi yalnızca seçimler bittikten sonra performansı tahmin etmek için kullanılmalıdır."
+    "explanation": "Test kümesi seçim kararlarına katıldığında model dolaylı olarak teste uydurulur ve en iyi çıkan skor şans payını da içerir; bu yüzden yeni veride daha düşük çıkması beklenir. Hiperparametre ve eşik seçimi doğrulama kümesiyle (ya da çapraz doğrulamayla) yapılmalı, test kümesi bütün seçimler bittikten sonra kullanılmalıdır. Test verisiyle ağırlık öğrenilmemiş olması skoru yansız yapmaz; 30 aday arasından seçim yapmak da bir tür öğrenmedir."
   },
   {
-    "id": "dsm5014-d1-07",
+    "id": "dsm5014-d1-k06",
+    "course": "DSM 5014",
+    "source": "Ders 1 sunumu, s. 29",
+    "question": "Bir veri setinin tamamı önce standartlaştırılıyor (ortalama 0, standart sapma 1), ardından eğitim ve test kümelerine bölünüyor. Bu sıralamanın sorunu nedir?",
+    "options": [
+      "Bölmeden önce yapılan her işlem sınıf dengesini bozar",
+      "Standartlaştırma yalnızca test kümesine uygulanmalıdır",
+      "Standartlaştırma ağırlıkları değiştirdiği için model yakınsamaz",
+      "Ortalama ve sapma test verisini de içerdiği için test bilgisi sızar"
+    ],
+    "answer": 3,
+    "explanation": "Ortalama ve standart sapma tüm veriden hesaplanınca eğitim kümesine uygulanan dönüşüm test gözlemlerinden de bilgi taşır; bu bir veri sızıntısıdır ve test skorunu iyimser yapar. Doğrusu önce bölmek, dönüşüm istatistiklerini yalnız eğitim kümesinden hesaplamak ve aynı dönüşümü teste uygulamaktır. Sorun standartlaştırmanın kendisinde değil, istatistiklerin hangi veriden hesaplandığındadır."
+  },
+  {
+    "id": "dsm5014-d1-k07",
     "course": "DSM 5014",
     "source": "Ders 1 sunumu, s. 28",
-    "question": "Bir veri setinde hastaların yalnızca %1'i kanserli. K katlı çapraz doğrulamada her katta (fold) kanserli oranının ana veriyle aynı kalmasını sağlamak için ders notlarında ne önerilir?",
+    "question": "Bir veri setinde gözlemlerin %1'i kanserli, %99'u sağlıklı. 5 katlı çapraz doğrulamada parçaları rastgele oluşturmak yerine tabakalı (stratified) K-fold kullanmanın amacı nedir?",
     "options": [
-      "Tabakalı (stratified) K katlı çapraz doğrulama kullanmak",
-      "K değerini 2'ye indirip her kata daha çok örnek düşürmek",
-      "Kanserli örneklerin hepsini yalnızca test kümesine koymak",
-      "Katları rastgele bölmek; oran kendiliğinden korunur"
+      "Her turda modeli yalnızca kanserli örneklerle doğrulamak",
+      "Her parçada kanserli oranının ana veriyle aynı kalmasını sağlamak",
+      "Her parçanın aynı sayıda gözlem içermesini garanti etmek",
+      "Kanserli örnekleri çoğaltarak sınıfları eşit büyüklüğe getirmek"
     ],
-    "answer": 0,
-    "explanation": "Dengesiz veride rastgele bölmede bazı katlara hiç kanserli hasta düşmeyebilir; tabakalı K katlı çapraz doğrulama her kattaki sınıf oranını ana veri kümesiyle aynı tutar. K'yi küçültmek ya da pozitifleri tek bir kümeye toplamak oranı korumaz."
+    "answer": 1,
+    "explanation": "Tabakalı K-fold her parçada sınıf prevalansını ana veriyle aynı tutar; böylece rastgele bölmede bir doğrulama parçasına hiç kanserli hasta düşmemesi önlenir. Örnekleri çoğaltıp sınıfları eşitlemek farklı bir tekniktir ve prevalansı değiştirir, tabakalama ise korur. Eşit büyüklükte parçalar sıradan K-fold'da da sağlanır; tabakalamanın farkı sınıf oranıdır."
   },
   {
-    "id": "dsm5014-d1-08",
+    "id": "dsm5014-d1-k08",
     "course": "DSM 5014",
-    "source": "Ders 1 sunumu, s. 40",
-    "question": "Model karmaşıklığı (ör. parametre sayısı) artırıldıkça ders notlarına göre bias ve varyans genellikle nasıl değişir?",
+    "source": "Ders 1 sunumu, s. 35",
+    "question": "Aynı model, birbirine benzeyen ama farklı eğitim setleriyle beş kez eğitiliyor. Görülmemiş verideki tahminler eğitimden eğitime çok değişiyor. Bu neyin işaretidir?",
     "options": [
-      "Bias artar, varyans azalır",
-      "İkisi de azalır",
-      "Bias azalır, varyans artar",
-      "İkisi de artar"
+      "Düşük varyans: model farklı verilerde tutarlı genelleme yapıyor",
+      "Veri sızıntısı: test bilgisi eğitim kümesine karışmış",
+      "Yüksek varyans: model eğitim verisinin ayrıntılarına fazla uyuyor",
+      "Yüksek bias: model ilişkiyi sistematik olarak yanlış kuruyor"
     ],
     "answer": 2,
-    "explanation": "Bias model karmaşıklığıyla birlikte azalır, varyans ise karmaşıklık arttıkça artar; bu yüzden az uyum ile aşırı uyum arasında bir denge aranır. Notlara göre daha basit bir model seçmek aşırı uyum riskini azaltabilir."
+    "explanation": "Varyans, benzer ama farklı eğitim setlerinde modelin görülmemiş veriye ilişkin tahminlerinin ne kadar dalgalandığını ölçer; yüksek varyans aşırı uyumun işaretidir, çünkü model her setin gürültüsünü öğrenmiştir. Bias ise bu tahminlerin ortalamasının ne kadar hatalı olduğudur; yüksek bias tutarlı ama hep aynı yönde yanlış tahminler üretir (az uyum). Burada görülen sistematik hata değil, tutarsızlıktır."
   },
   {
-    "id": "dsm5014-d1-09",
+    "id": "dsm5014-d1-k09",
     "course": "DSM 5014",
-    "source": "Ders 1 sunumu, s. 42",
-    "question": "Bir sinir ağında aşağıdakilerden hangisi eğitim sırasında veriden öğrenilen bir parametredir?",
+    "source": "Ders 1 sunumu, s. 39",
+    "question": "Gerçek ilişkisi belirgin biçimde eğrisel olan bir veriye doğrusal regresyon uyduruluyor. Hem eğitim hem test hatası yüksek çıkıyor. En uygun teşhis hangisidir?",
     "options": [
-      "Öğrenme oranı (learning rate)",
-      "Gizli katman sayısı",
-      "Düzenlileştirme gücü",
-      "Ağırlıklar ve bias'lar"
+      "Aşırı uyum; model eğitim verisindeki gürültüyü ezberlemiş",
+      "Yüksek bias; model ilişkiyi temsil edemeyecek kadar basit",
+      "Veri sızıntısı; test verisi eğitime karışmış",
+      "Yüksek varyans; model farklı örneklemlere aşırı duyarlı"
     ],
-    "answer": 3,
-    "explanation": "Öğrenme oranı, katman sayısı ve düzenlileştirme gücü eğitimden önce seçilen hiperparametrelerdir. Ağırlıklar ve bias'lar ise eğitim kümesinden öğrenilen parametrelerdir."
+    "answer": 1,
+    "explanation": "Doğrusal model eğrisel ilişkiyi yakalayamaz ve yanlış bir varsayımla sistematik hata yapar; bu yüksek bias, yani az uyumdur ve belirtisi hem eğitim hem test hatasının yüksek olmasıdır. Aşırı uyumda ise eğitim hatası düşük, test hatası yüksek olurdu. Bu durumda çözüm model karmaşıklığını artırmaktır, düzenlileştirme eklemek değil."
   },
   {
-    "id": "dsm5014-d1-10",
+    "id": "dsm5014-d1-k10",
     "course": "DSM 5014",
     "source": "Ders 1 sunumu, s. 52",
-    "question": "Ders notlarına göre klasik makine öğrenimiyle karşılaştırıldığında derin öğrenme için hangisi doğrudur?",
+    "question": "Klasik makine öğrenmesi ile derin öğrenme arasındaki 'özellik mühendisliği' farkını en iyi hangisi anlatır?",
     "options": [
-      "Özellikleri veriden kendisi öğrenir; elle özellik mühendisliğine az ihtiyaç duyar",
-      "Klasik yöntemlerden daha az veri ve hesaplama gücüyle daha iyi sonuç verir",
-      "Özellik mühendisliği, derin öğrenmede klasik yöntemlerden daha kritik bir adımdır",
-      "En iyi sonuçlarını küçük ve yapılandırılmış tablo verilerinde verir"
-    ],
-    "answer": 0,
-    "explanation": "Derin öğrenme özelliği elle tasarlamak yerine özellik çıkarmayı veriden öğrenir; bu yüzden özellik mühendisliği gereksinimi daha azdır. Buna karşılık büyük veri setleri ve yüksek hesaplama gücü (GPU) gerektirir ve özellikle görüntü, dil ve ses gibi karmaşık verilerde üstündür."
-  },
-  {
-    "id": "dsm5014-d2-01",
-    "course": "DSM 5014",
-    "source": "Ders 2 sunumu, s. 50",
-    "question": "Bir algılayıcının bias'ı w₀ = 1, ağırlıkları w₁ = 3 ve w₂ = −2'dir; çıktısı ŷ = σ(1 + 3x₁ − 2x₂), burada σ(z) = 1/(1 + exp(−z)) sigmoid fonksiyonudur. x₁ = 3, x₂ = 4 girdisi için ŷ yaklaşık kaçtır?",
-    "options": [
-      "0.12",
-      "0.73",
-      "0.88",
-      "0.96"
-    ],
-    "answer": 2,
-    "explanation": "z = 1 + 3·3 − 2·4 = 2 ve ŷ = σ(2) = 1/(1 + exp(−2)) ≈ 0.88; z > 0 olduğu için çıktı 0.5'in üzerindedir. 0.12 işaret hatasından (σ(−2)), 0.73 bias'ı unutmaktan (σ(1)), 0.96 ise sigmoid yerine tanh kullanmaktan gelir."
-  },
-  {
-    "id": "dsm5014-d2-02",
-    "course": "DSM 5014",
-    "source": "Ders 2 sunumu, s. 31",
-    "question": "Ders notlarındaki alternatif gösterimde algılayıcının bias'ı ayrı bir terim olarak yazılmaz, ağırlıkların içine katılır. Bu nasıl yapılır?",
-    "options": [
-      "Her girdiye sabit x₀ = 1 bileşeni eklenir ve bias, w₀ = b ağırlığı olarak öğrenilir",
-      "Her girdiye sabit x₀ = 0 bileşeni eklenir ve bias, w₀ = b ağırlığı olarak öğrenilir",
-      "Bias tüm ağırlıklara eşit olarak paylaştırılır ve ayrı bir parametre olarak kalmaz",
-      "Bias girdilerin ortalamasından hesaplanır ve eğitim sırasında hiç güncellenmez"
-    ],
-    "answer": 0,
-    "explanation": "Sıfır indeksi bias için kullanılır: x₀ = 1 sabit girdisi eklenince w₀·x₀ = b olur ve çıktı sign(Σ w_i·x_i, i = 0…n) biçiminde yazılır; tüm parametreler aynı şekilde işlendiği için algoritma sadeleşir. x₀ = 0 seçilseydi bias terimi her zaman sıfır olurdu."
-  },
-  {
-    "id": "dsm5014-d2-03",
-    "course": "DSM 5014",
-    "source": "Simple Perceptron notu, s. 11",
-    "question": "İki özellikli bir algılayıcının karar sınırı w₁x₁ + w₂x₂ + b = 0 doğrusudur. Ağırlık vektörü w = (w₁, w₂) ve bias b için hangisi doğrudur?",
-    "options": [
-      "w sınıra paraleldir; b değişince sınırın eğimi değişir",
-      "w sınıra diktir; b değişince sınırın eğimi değişir",
-      "w sınıra paraleldir; b değişince sınır kendine paralel kayar",
-      "w sınıra diktir; b değişince sınır kendine paralel kayar"
-    ],
-    "answer": 3,
-    "explanation": "Ağırlık vektörü karar sınırına diktir; bias ise sınırın konumunu değiştirir. w₂ ≠ 0 iken x₂ = −(w₁x₁ + b)/w₂ yazılırsa eğim −w₁/w₂'dir ve b'ye bağlı değildir; b yalnızca doğruyu kaydırır."
-  },
-  {
-    "id": "dsm5014-d2-04",
-    "course": "DSM 5014",
-    "source": "Ders 2 sunumu, s. 46",
-    "question": "İki sınıflı (C₁ ve C₂) bir problemde lojistik sigmoid çıkışlı bir ağ, bir x girdisi için y = 0.8 üretiyor. Ders notlarındaki yoruma göre hangisi doğrudur?",
-    "options": [
-      "P(x|C₁) = 0.8'dir: C₁ sınıfında x'in gözlenme olasılığıdır",
-      "Modelin bütün veri üzerindeki doğruluğu (accuracy) %80'dir",
-      "P(C₁|x) = 0.8 ve P(C₂|x) = 0.2'dir: x büyük olasılıkla C₁'dendir",
-      "x, iki sınıfı ayıran karar sınırının (ayırıcının) üzerindedir"
-    ],
-    "answer": 2,
-    "explanation": "Lojistik aktivasyonun çıktısı posterior olasılık olarak yorumlanır: y = P(C₁|x) ve 1 − y = P(C₂|x). Ayırıcı P(C₁|x) = P(C₂|x), yani y = 0.5 olan noktalardır; P(x|C₁) ise sınıfa koşullu olabilirliktir, ağın çıktısı değildir."
-  },
-  {
-    "id": "dsm5014-d2-05",
-    "course": "DSM 5014",
-    "source": "Ders 2 sunumu, s. 30",
-    "question": "Bir algılayıcıda w = (3, 4) ve b = −5'tir. x = (3, 2) noktasının hiperdüzleme işaretli (signed) uzaklığı r = (w·x + b) / ||w|| kaçtır?",
-    "options": [
-      "0.48",
-      "2.4",
-      "3.4",
-      "12"
+      "Derin öğrenme girdi özelliğine hiç ihtiyaç duymaz; yalnızca etiketten öğrenir",
+      "Derin ağlar özellikleri veriden kendisi öğrenir; klasikte elle çıkarma kritiktir",
+      "Derin öğrenmede özellikler elle tasarlanır, klasik yöntemlerde otomatik çıkarılır",
+      "İkisinde de özellik mühendisliği eşit derecede kritiktir; fark yalnızca hızdadır"
     ],
     "answer": 1,
-    "explanation": "w·x + b = 3·3 + 4·2 − 5 = 12 ve ||w|| = √(3² + 4²) = 5 olduğundan r = 12/5 = 2.4; pozitif işaret noktanın sınırın pozitif tarafında olduğunu gösterir. 12 normlamayı unutmaktan, 0.48 ||w||² ile bölmekten, 3.4 bias'ı atlamaktan gelir."
+    "explanation": "Derin öğrenmenin özü, özelliği kendin tasarlamak yerine özellik çıkarmayı öğrenmektir (temsil öğrenme); katmanlar ara temsilleri veriden kurar. Klasik makine öğrenmesinde ise anlamlı özellikleri elle çıkarmak model başarısını doğrudan belirler. Bu otomatik öğrenmenin bedeli, derin modellerin çok daha fazla veri ve hesaplama gücü istemesidir."
   },
   {
-    "id": "dsm5014-d2-06",
+    "id": "dsm5014-d2-k01",
+    "course": "DSM 5014",
+    "source": "Ders 2 sunumu, s. 34",
+    "question": "Algılayıcıda z = wᵀx + b'dir. Bias terimi b her zaman 0'a sabitlenirse karar sınırı için ne olur?",
+    "options": [
+      "Algılayıcı yalnızca tek bir girdi özelliğini kullanabilir",
+      "Karar sınırı w vektörüne paralel hâle gelir",
+      "Karar sınırı doğrusal olmaktan çıkar ve eğriye dönüşür",
+      "Karar sınırı orijinden geçmek zorunda kalır; kaydırılamaz"
+    ],
+    "answer": 3,
+    "explanation": "Karar sınırı wᵀx + b = 0 eşitliğini sağlayan noktalardır; b = 0 iken x = 0 bu eşitliği her zaman sağlar, yani sınır orijinden geçmek zorundadır. Slaytta b, karar sınırının konumunu belirleyen sabit terim olarak tanımlanır; w ise sınırın yönelimini belirler. b'yi kaldırmak sınırın şeklini değiştirmez; sınır yine düz bir doğru (hiperdüzlem) olarak kalır."
+  },
+  {
+    "id": "dsm5014-d2-k02",
+    "course": "DSM 5014",
+    "source": "Ders 2 sunumu, s. 35",
+    "question": "Algılayıcının karar sınırı wᵀx + b = 0'dır. w vektörü ve wᵀx + b ifadesinin işareti için hangisi doğrudur?",
+    "options": [
+      "w sınıra diktir; işaret yalnızca girdinin büyüklüğünü (normunu) gösterir",
+      "w sınıra paraleldir; işaret örneğin sınıra uzaklığını verir",
+      "w sınırın üzerindedir; işaret öğrenme oranının yönünü belirler",
+      "w sınıra diktir; işaret örneğin sınırın hangi tarafında olduğunu gösterir"
+    ],
+    "answer": 3,
+    "explanation": "w karar sınırına dik olan vektördür; wᵀx + b pozitifse örnek sınırın bir tarafında, negatifse diğer tarafındadır ve algılayıcı sınıfı buna göre verir. Sınıra uzaklık işaretle değil, ifadenin mutlak değeriyle ilgilidir. Bu yüzden w'nin yönü sınırın nasıl durduğunu, b ise nerede durduğunu belirler."
+  },
+  {
+    "id": "dsm5014-d2-k03",
+    "course": "DSM 5014",
+    "source": "Ders 2 sunumu, s. 57",
+    "question": "Algılayıcı öğrenme kuralıyla eğitim yapılırken bir örnek zaten doğru sınıflandırılmışsa ağırlıklar ne olur?",
+    "options": [
+      "Doğru sınıf yönünde biraz daha güçlendirilir",
+      "Öğrenme oranı kadar küçültülerek düzenlileştirilir",
+      "Değişmez; güncellemeyi yalnızca hatalı örnekler tetikler",
+      "Rastgele küçük bir miktar kaydırılarak çeşitlendirilir"
+    ],
+    "answer": 2,
+    "explanation": "Kuralda güncelleme (d − y) farkıyla çarpılır; doğru sınıflanan örnekte d = y olduğu için değişim sıfırdır. ±1 etiketli sürümde de yalnızca yᵢ(wᵀxᵢ + b) ≤ 0 olan, yani yanlış sınıflanan örnekler w'yi doğru sınıf yönüne taşır. Bu yüzden bir epoch boyunca hiç hata yapılmazsa ağırlıklar artık değişmez ve eğitim durdurulur."
+  },
+  {
+    "id": "dsm5014-d2-k04",
+    "course": "DSM 5014",
+    "source": "Ders 2 sunumu, s. 59",
+    "question": "Doğrusal ayrılabilir aynı veriyle algılayıcı iki kez eğitiliyor; ikinci seferde örneklerin sırası karıştırılmış. İki eğitim farklı w ve b ile bitiyor, ama ikisi de bütün örnekleri doğru ayırıyor. Bu nasıl açıklanır?",
+    "options": [
+      "Veri aslında doğrusal ayrılabilir değildir; sonuçlar rastlantısaldır",
+      "Ayıran çözüm tek değildir; örnek sırası güncelleme yolunu etkiler",
+      "Öğrenme oranı çok büyüktür; ağırlıklar salınım yapmaktadır",
+      "Eğitimlerden biri yakınsamamıştır; doğru çözüm tektir"
+    ],
+    "answer": 1,
+    "explanation": "Yakınsama teoremi, veri doğrusal ayrılabilirse algılayıcının sonlu sayıda hatadan sonra ayıran bir çözüm bulacağını söyler, ama bu çözüm tek olmak zorunda değildir. Güncellemeler sırayla karşılaşılan hatalı örneklere göre yapıldığı için örneklerin sırası hangi sınıra varılacağını belirler. Veri ayrılamaz olsaydı algoritma durmadan güncellemeye devam ederdi; iki eğitimin de hatasız bitmesi bunun tersini gösterir."
+  },
+  {
+    "id": "dsm5014-d2-k05",
+    "course": "DSM 5014",
+    "source": "Ders 2 sunumu, s. 56",
+    "question": "XOR probleminde pozitif örnekler (0,1) ve (1,0), negatif örnekler (0,0) ve (1,1)'dir. Bu problemi öğrenebilmek için tek bir algılayıcıya ne eklenmelidir?",
+    "options": [
+      "Doğrusal olmayan aktivasyonlu bir gizli katman",
+      "Daha büyük bir öğrenme oranı ve daha fazla epoch",
+      "Bias teriminin kaldırılması ve girdilerin ölçeklenmesi",
+      "Doğrusal aktivasyonlu birkaç ek katman"
+    ],
+    "answer": 0,
+    "explanation": "XOR sınıflarını tek bir doğru ayıramaz; algılayıcı yalnızca doğrusal sınır çizebildiği için ne kadar uzun eğitilirse eğitilsin başaramaz. Doğrusal olmayan aktivasyonlu bir gizli katmanda bir birim (1,0) bölgesini, diğeri (0,1) bölgesini ayırt eder ve çıkış birimi ikisini birleştirerek parçalı bir karar bölgesi kurar. Doğrusal aktivasyonlu katmanlar eklemek işe yaramaz, çünkü bileşkeleri yine tek bir doğrusal dönüşümdür."
+  },
+  {
+    "id": "dsm5014-d2-k06",
+    "course": "DSM 5014",
+    "source": "Ders 2 sunumu, s. 65",
+    "question": "Beş gizli katmanlı bir ağda bütün aktivasyonlar doğrusal (f(z) = z) seçiliyor. Bu ağın temsil gücü için ne söylenebilir?",
+    "options": [
+      "Her katman yeni bir doğrusal olmayan özellik ekler; derinlik gücü artırır",
+      "Doğrusal aktivasyon gradyanı sıfırladığı için ağ hiç öğrenemez",
+      "Katman sayısı yeterince artırılırsa eğri sınırlar da öğrenilebilir",
+      "Tek bir doğrusal dönüşüme denktir; XOR gibi problemleri çözemez"
+    ],
+    "answer": 3,
+    "explanation": "Doğrusal (affine) dönüşümlerin bileşkesi yine doğrusal bir dönüşümdür; beş katman tek bir Wx + b ile aynı işi yapar ve karar sınırı düz kalır. Doğrusal olmayan aktivasyon, katman bileşkesinin bu şekilde tek dönüşüme indirgenmesini engelleyen şeydir. Katman eklemek tek başına bir 'bükülme' getirmez; ağ öğrenir, ama yalnızca doğrusal ilişkileri."
+  },
+  {
+    "id": "dsm5014-d2-k07",
+    "course": "DSM 5014",
+    "source": "Ders 2 sunumu, s. 15, 39",
+    "question": "Basit algılayıcı Heaviside basamak fonksiyonu kullanır. Çok katmanlı ağları gradyan inişiyle eğitirken bunun yerine sigmoid, tanh veya ReLU gibi fonksiyonların tercih edilmesinin temel nedeni nedir?",
+    "options": [
+      "Basamak fonksiyonu çıktıyı sınırlamadığı ve değerler patladığı için",
+      "Basamak fonksiyonu yalnızca iki girdili problemlerde tanımlı olduğu için",
+      "Basamak fonksiyonu negatif çıktı üretemediği için",
+      "Basamak fonksiyonunun türevi bilgi taşımadığı için (hemen her yerde 0)"
+    ],
+    "answer": 3,
+    "explanation": "Slayt, aktivasyon fonksiyonunun geri yayılımda türevlenebilir olmasını şart koşar, çünkü ağırlıkları güncelleyecek gradyanlar bu türev üzerinden hesaplanır. Basamak fonksiyonu bu şartı karşılamaz: grafiği z = 0 dışında yataydır (eğimi 0), z = 0'da ise bir sıçrama yapar ve orada türevlenemez. Eğim sıfır olduğu için ağırlıkları hangi yöne değiştireceğimize dair geriye bir sinyal akmaz. Basamak çıktısı zaten yalnızca 0 ya da 1'dir; sorun sınırsızlık değil, kullanılabilir bir gradyanın olmamasıdır."
+  },
+  {
+    "id": "dsm5014-d2-k08",
     "course": "DSM 5014",
     "source": "Ders 2 sunumu, s. 45",
-    "question": "logistic(a) = 1/(1 + exp(−a)) ve tanh(a) = (exp(a) − exp(−a))/(exp(a) + exp(−a)) olsun. logistic(a) = 0.75 olan bir a için tanh(a/2) kaçtır?",
+    "question": "Sigmoid ve tanh aktivasyonları karşılaştırılıyor. Hangisi doğrudur?",
     "options": [
-      "0.50",
-      "0.75",
-      "0.80",
-      "1.50"
-    ],
-    "answer": 0,
-    "explanation": "Notlardaki ilişkiye göre tanh(a/2) = 2·logistic(a) − 1 = 2·0.75 − 1 = 0.5; yani iki fonksiyon birbirinin doğrusal dönüşümüdür. 0.80, a/2 yerine a kullanınca (tanh(ln 3)), 1.50 ise −1'i unutunca bulunur."
-  },
-  {
-    "id": "dsm5014-d2-07",
-    "course": "DSM 5014",
-    "source": "Ders 2 sunumu, s. 60",
-    "question": "Ders notlarındaki algılayıcı eğitim pseudo-code'unda eğitim ne zaman durdurulur?",
-    "options": [
-      "Her örnek bir kez işlendikten sonra, hata sayısına bakılmadan",
-      "Ağırlık vektörü sıfır vektörüne geri döndüğünde",
-      "Bir epoch boyunca hiçbir örnek yanlış sınıflanmadığında",
-      "İlk yanlış sınıflanan örnek bulunduğu anda"
+      "Sigmoid sıfır merkezlidir, tanh ise yalnızca pozitif değer üretir",
+      "İkisinin türevi de her z için 1 olduğundan gradyanı korurlar",
+      "Tanh sıfır merkezli çıktı verir, ama o da büyük |z| değerlerinde doyar",
+      "Tanh doymaz; kaybolan gradyan sorunu yalnızca sigmoid'e özgüdür"
     ],
     "answer": 2,
-    "explanation": "Pseudo-code her epoch'ta eğitim örneklerini gezer, yanlış sınıflanan örneklerde ağırlıkları günceller ve epoch içinde hiç hata yoksa durur; aksi hâlde sonraki epoch'a geçer. Pratikte buna ek olarak bir epoch sınırı da konur."
+    "explanation": "Tanh çıktısı (−1, 1) aralığındadır ve sıfır etrafında toplanır; bu, gradyanların daha dengeli akmasını kolaylaştırır. Ancak slaytta belirtildiği gibi tanh da kaybolan gradyan sorunu yaşar: büyük |z| değerlerinde düzleşir ve türevi küçülür. Sigmoid (0, 1) aralığında olduğu için sıfır merkezli değildir; ikili sınıflandırma çıkışında olasılık vermesi nedeniyle yaygındır."
   },
   {
-    "id": "dsm5014-d2-08",
+    "id": "dsm5014-d2-k09",
     "course": "DSM 5014",
-    "source": "Ders 2 sunumu, s. 68",
-    "question": "Ders notlarındaki mini grup eğitim döngüsünde doğrulama verisi nasıl kullanılır?",
+    "source": "Ders 2 sunumu, s. 47",
+    "question": "ReLU kullanan bir gizli nöronun girdisi (z) eğitim boyunca bütün örnekler için negatif kalıyor. Bu nöronun durumu nedir?",
     "options": [
-      "Her mini gruptan sonra doğrulama verisiyle de ağırlıklar güncellenir",
-      "Performans, doğrulama verisinde ağırlık güncellemesi yapılmadan ölçülür",
-      "Kayıp hesaplanırken doğrulama verisi eğitim mini grubuna eklenir",
-      "Geri yayılım, gradyanlar sıfırlanmadan önce doğrulama verisiyle çalıştırılır"
+      "Türevi çok büyür ve ağda patlayan gradyana yol açar",
+      "Çıktısı negatif kalır ama türevi 1 olduğu için öğrenmeye devam eder",
+      "Çıktısı ve türevi 0 olur; ağırlıkları güncellenmez, nöron 'ölür'",
+      "ReLU negatif girdiyi pozitife çevirdiği için nöron normal çalışır"
+    ],
+    "answer": 2,
+    "explanation": "ReLU negatif bölgede hem çıktıyı hem türevi 0 yapar; girdi hep negatifse bu nöron üzerinden geriye hiç gradyan akmaz ve ağırlıkları değişmez. Buna ölü nöron problemi denir. Pozitif bölgede ise türev 1 olduğu için ReLU gradyanı söndürmez; Leaky ReLU negatif bölgeye küçük bir eğim vererek ölü nöron sorununu hafifletir."
+  },
+  {
+    "id": "dsm5014-d2-k10",
+    "course": "DSM 5014",
+    "source": "Ders 2 sunumu, s. 63",
+    "question": "Gizli katmanlarında ReLU kullanan bir ağ, bir görüntüyü üç sınıftan birine atayacak. Çıkış katmanı için hangisi doğrudur?",
+    "options": [
+      "Doğrusal çıkış ve MSE; sınıflar 1, 2 ve 3 sayılarıyla kodlanır",
+      "Üç çıkış nöronu ve softmax; toplamı 1 olan olasılıklar verir",
+      "Gizli katmanlarla tutarlı olması için çıkış da ReLU olmalıdır",
+      "Tek sigmoid nöronu yeterlidir; çıktı 0, 0,5 ve 1'e yuvarlanır"
     ],
     "answer": 1,
-    "explanation": "Döngü mini grubu modele verip tahmin üretir, kaybı hesaplar, geri yayılımı çalıştırır ve optimizasyon adımıyla ağırlıkları günceller; son adımda performans doğrulama verisinde güncelleme yapılmadan ölçülür. Doğrulama verisi ağırlıkları değiştirmez."
+    "explanation": "Çok sınıflı sınıflandırmada sınıf sayısı kadar çıkış nöronu ve softmax kullanılır; softmax skorları toplamı 1 olan sınıf olasılıklarına çevirir ve en olası sınıf seçilir. Slaytta vurgulandığı gibi gizli katman aktivasyonu ile çıkış aktivasyonu aynı olmak zorunda değildir. Sınıfları 1, 2, 3 diye sayısal kodlayıp regresyon yapmak, sınıflar arasında gerçekte olmayan bir sıra ve uzaklık varsayar."
   },
   {
-    "id": "dsm5014-d2-09",
+    "id": "dsm5014-d3-k01",
     "course": "DSM 5014",
-    "source": "Ders 2 sunumu, s. 38, 63",
-    "question": "Gizli katmanlarında ReLU kullanılan bir ikili sınıflandırma ağının çıkış katmanı için ders notlarına göre hangisi doğrudur?",
+    "source": "Ders 3 sunumu, s. 6",
+    "question": "Yapay sinir ağı (ANN) ile çok katmanlı algılayıcı (MLP) arasındaki ilişkiyi en doğru hangisi anlatır?",
     "options": [
-      "Çıkışta da ReLU uygundur; negatif olmayan çıktısı doğrudan sınıf olasılığı olarak yorumlanır",
-      "Çıkışta tanh uygundur; [−1, 1] aralığındaki çıktısı doğrudan sınıf olasılığı olarak yorumlanır",
-      "Çıkışta softmax ile MSE kaybı yaygın bir eşleşmedir; sigmoid yalnızca gizli katmanlarda kullanılır",
-      "Çıkışta sigmoid ile ikili çapraz entropi yaygın bir eşleşmedir; gizli katmanlarla aynı aktivasyon gerekmez"
+      "ANN tek katmanlı ağları, MLP ise yalnızca evrişimli ağları ifade eder",
+      "MLP geri besleme döngüleri içerir, ANN ise içermez",
+      "İkisi tamamen aynı kavramdır; yalnızca adları farklıdır",
+      "MLP, ANN'nin ileri beslemeli ve gizli katmanlı bir alt türüdür"
     ],
     "answer": 3,
-    "explanation": "İkili sınıflandırmada 0 ile 1 arasında çıktı veren sigmoid ile ikili çapraz entropi yaygın bir eşleşmedir ve gizli katman aktivasyonu ile çıkış katmanı aktivasyonu aynı olmak zorunda değildir. ReLU'nun çıktısı 1'i aşabilir, tanh'ınki negatif olabilir; bu yüzden ikisi de doğrudan olasılık değildir. Softmax çok sınıflı problemler için kullanılır, MSE ise regresyonla eşleşir."
+    "explanation": "ANN daha geniş bir kavramdır ve MLP, CNN, RNN gibi farklı türleri kapsar; MLP ise bir veya daha fazla gizli katmanı olan, verinin yalnızca girdiden çıktıya aktığı ileri beslemeli ağdır. Bu yüzden her MLP bir ANN'dir, ama her ANN bir MLP değildir. MLP'de geri besleme döngüsü yoktur; 'geri' kelimesi yalnızca eğitimdeki geri yayılımı anlatır."
   },
   {
-    "id": "dsm5014-d2-10",
+    "id": "dsm5014-d3-k02",
     "course": "DSM 5014",
-    "source": "Ders 2 sunumu, s. 44",
-    "question": "Gizli katmanlarda işaret (sign) ya da Heaviside basamak fonksiyonu yerine sürekli ve türevlenebilir aktivasyonların tercih edilmesinin nedeni ders notlarına göre hangisidir?",
+    "source": "Ders 3 sunumu, s. 13",
+    "question": "Bir katmanın 'yoğun' (dense, tam bağlantılı) olması ne anlama gelir?",
     "options": [
-      "Basamak fonksiyonlarını hesaplamak sigmoid'e göre çok daha fazla işlem gerektirir",
-      "Basamak fonksiyonları yalnızca regresyon problemlerinde anlamlı çıktı üretir",
-      "Basamak fonksiyonlarındaki süreksizlik, gradyana dayalı optimizasyonu zorlaştırır",
-      "Basamak fonksiyonları negatif girdilerde tanımsız olduğundan bilgi kaybı oluşur"
-    ],
-    "answer": 2,
-    "explanation": "Notlara göre gizli katmanlardaki süreksizlikler optimizasyonu gerçekten zorlaştırır; geri yayılım gradyan hesapladığı için sürekli ve türevlenebilir aktivasyonlar tercih edilir. Basamak fonksiyonları negatif girdilerde de tanımlıdır (−1 ya da 0 verir) ve hesaplanmaları ucuzdur."
-  },
-  {
-    "id": "dsm5014-d3-01",
-    "course": "DSM 5014",
-    "source": "Ders 3 sunumu, s. 18",
-    "question": "Bir modele, aktivasyon argümanı verilmeden tf.keras.layers.Dense(4) katmanı ekleniyor. Ders notlarına göre bu katman için hangisi doğrudur?",
-    "options": [
-      "Önceki katmanın tüm nöronlarına bağlı 4 nöron içerir; aktivasyonu doğrusaldır",
-      "Önceki katmanın tüm nöronlarına bağlı 4 nöron içerir; varsayılan aktivasyonu ReLU'dur",
-      "Önceki katmandaki yalnızca 4 nörona bağlanır; aktivasyonu doğrusaldır",
-      "4 boyutlu girdi bekler ve tek boyutlu çıktı üretir; aktivasyonu sigmoid'dir"
-    ],
-    "answer": 0,
-    "explanation": "Dense(n), her nöronu bir önceki katmandaki tüm nöronlara bağlı n nöronlu tam bağlantılı bir katman oluşturur ve n boyutlu çıktı üretir. Aktivasyon belirtilmezse doğrusal (lineer) alınır."
-  },
-  {
-    "id": "dsm5014-d3-02",
-    "course": "DSM 5014",
-    "source": "Ders 3 sunumu, s. 68",
-    "question": "Üç sınıflı bir ağın çıkış katmanı softmax öncesinde a = (2, 1, 1) skorlarını üretiyor ve softmax(a)_k = exp(a_k) / Σ_l exp(a_l) uygulanıyor. Birinci sınıfın olasılığı yaklaşık kaçtır?",
-    "options": [
-      "0.50",
-      "0.58",
-      "0.73",
-      "0.88"
-    ],
-    "answer": 1,
-    "explanation": "p₁ = exp(2) / (exp(2) + exp(1) + exp(1)) = 7.39 / (7.39 + 2.72 + 2.72) ≈ 0.58. 0.50 skorları doğrudan oranlamaktan (2/4), 0.73 paydada diğer iki sınıftan yalnız birini saymaktan, 0.88 ise tek başına sigmoid uygulamaktan (σ(2)) gelir."
-  },
-  {
-    "id": "dsm5014-d3-03",
-    "course": "DSM 5014",
-    "source": "Ders 3 sunumu, s. 67",
-    "question": "Elma, portakal ve muz sınıflarından oluşan bir problemde etiketler neden 1, 2, 3 gibi skaler sayılar yerine (1, 0, 0), (0, 1, 0), (0, 0, 1) one-hot vektörleriyle kodlanır?",
-    "options": [
-      "One-hot kodlama sınıf sayısını azaltır ve böylece eğitimi belirgin biçimde hızlandırır",
-      "Sınıf indekslerinin sırası bilgi taşımaz; skaler kodlama olmayan bir sıra varsayar",
-      "One-hot kodlama bir örneğin aynı anda birden çok sınıfa ait olabilmesini sağlar",
-      "Skaler etiketlerle hiçbir kayıp fonksiyonu tanımlanamaz; one-hot kodlama zorunludur"
-    ],
-    "answer": 1,
-    "explanation": "Notlar sınıf indeksinin doğrudan skaler etiket olarak kullanılmamasını söyler, çünkü etiket sırası bilgilendirici değildir: 1, 2, 3 kodlaması sınıflar arasında gerçekte olmayan bir sıra ve uzaklık dayatır. One-hot vektörde yalnız ait olunan sınıfın bileşeni 1'dir."
-  },
-  {
-    "id": "dsm5014-d3-04",
-    "course": "DSM 5014",
-    "source": "Ders 3 sunumu, s. 26, 29",
-    "question": "Sinir ağı eğitiminde kullanılan deneysel (empirical) kayıp için hangisi doğrudur?",
-    "options": [
-      "Tek bir eğitim örneğinin kaybıdır; eğitim her örnek için ayrı ağırlıklar bulur",
-      "Eğitim sırasında kullanılmaz; eğitim bittikten sonra başarıyı raporlamak için hesaplanır",
-      "Eğitim örneklerinin kayıplarının ortalamasıdır; eğitim bu kaybı en küçük yapan ağırlıkları arar",
-      "Eğitim örneklerinin kayıplarının ortalamasıdır; eğitim bu kaybı en küçük yapan girdileri arar"
-    ],
-    "answer": 2,
-    "explanation": "Deneysel kayıp J(W) = (1/n) Σ L(f(x_i; W), y_i), tüm eğitim örneklerinin kayıplarının ortalamasıdır; amaç fonksiyonu, maliyet fonksiyonu ya da deneysel risk olarak da adlandırılır. Eğitimde veri sabit tutulur ve bu kaybı en küçük yapan ağırlıklar aranır: W* = argmin_W J(W). Bu yüzden kayıp ağırlıkların fonksiyonu olarak ele alınır; girdiler değiştirilmez."
-  },
-  {
-    "id": "dsm5014-d3-05",
-    "course": "DSM 5014",
-    "source": "Ders 3 sunumu, s. 4",
-    "question": "Ders notlarına göre yapay nöronu basit algılayıcıdan (perceptron) ayıran özellik hangisidir?",
-    "options": [
-      "Ağırlıklı toplam yerine girdilerin en büyüğünü seçerek çıktı üretir",
-      "Bias terimi içermez; çıktısı yalnızca ağırlıklı girdilere bağlıdır",
-      "Yalnızca 0 ve 1 üretebildiği için sınıflandırmayla sınırlı kalır",
-      "Uygun aktivasyon (g) seçilerek regresyon için de kullanılabilir"
+      "Katmandaki ağırlıkların çoğu sıfırdan farklı tutulur",
+      "Katmandaki her nöron yalnızca komşu birkaç nörona bağlanır",
+      "Katmandaki nöron sayısı girdi özelliklerinin sayısından fazladır",
+      "Katmandaki her nöron önceki katmandaki bütün nöronlardan girdi alır"
     ],
     "answer": 3,
-    "explanation": "Yapay nöron ağırlıklı girdileri bias ile toplar ve sonucu bir aktivasyon fonksiyonu g'den geçirir; notlara göre algılayıcıdan farklı olarak uygun g seçimiyle regresyon için de kullanılabilir. Yalnızca 0/1 (ya da ±1) üreten eşik çıkışı basit algılayıcının özelliğidir."
+    "explanation": "Yoğun katmanda her nöron önceki katmandaki tüm nöronlara bağlıdır; bu tam bağlantı sayesinde her nöron önceki katmanın bütün çıktılarını görür. Nöron sayısı ayrı bir tasarım seçimidir (hiperparametre) ve 'yoğun' olmayı belirlemez. 'Yoğun' adı bağlantıların tamlığını anlatır; ağırlıkların değerleriyle ilgili değildir."
   },
   {
-    "id": "dsm5014-d3-06",
+    "id": "dsm5014-d3-k03",
     "course": "DSM 5014",
-    "source": "Ders 3 sunumu, s. 7",
-    "question": "Konuşma tanıma gibi zaman dizisi verileri için ders notlarında hangi ağ türü önerilir?",
+    "source": "Ders 3 sunumu, s. 26",
+    "question": "Tek bir örneğin kaybı ile deneysel (empirical) kayıp arasındaki fark nedir?",
     "options": [
-      "Döngüsüz, bilginin tek yönde aktığı ileri beslemeli ağ",
-      "Döngüler içeren tekrarlayan (recurrent) sinir ağı",
-      "Gizli katmanı olmayan tek katmanlı algılayıcı",
-      "Boyut indirgeme için kullanılan otomatik kodlayıcı"
+      "Deneysel kayıp test kümesinde, tek örnek kaybı eğitim kümesinde hesaplanır",
+      "Deneysel kayıp yalnızca yanlış sınıflandırılan örneklerin sayısıdır",
+      "Deneysel kayıp ağırlıklara bağlı değildir; yalnızca veriye bağlıdır",
+      "Tek örnek kaybı bir tahminin hatası; deneysel kayıp tüm setin toplamı"
     ],
-    "answer": 1,
-    "explanation": "Notlarda ileri beslemeli (döngüsüz) ağlar bilginin tek yönde aktığı en basit tür olarak, döngülü tekrarlayan ağlar ise zaman dizileri ve konuşma tanıma için kullanılan tür olarak verilir."
+    "answer": 3,
+    "explanation": "Kayıp fonksiyonu tek bir tahminin ne kadar yanlış olduğunu ölçer; deneysel kayıp bunu bütün eğitim örnekleri üzerinden toplar (ya da ortalar) ve eğitimde en küçük yapılmaya çalışılan amaç odur. Deneysel kayıp ağırlıkların bir fonksiyonudur; eğitim, onu en küçük yapan ağırlıkları arar. Test kümesiyle ilgisi yoktur: 'deneysel' sözcüğü, kaybın eldeki örneklerle hesaplandığını anlatır."
   },
   {
-    "id": "dsm5014-d3-07",
+    "id": "dsm5014-d3-k04",
     "course": "DSM 5014",
-    "source": "Ders 3 sunumu, s. 16",
-    "question": "Tek gizli katmanlı bir ağda gizli birimler z_j = w0_j + Σ_i x_i·w_ij ile hesaplanıyor; çıkış katmanının bias'ı v0, ağırlıkları v_j'dir ve aktivasyon fonksiyonu her katmanda g'dir. Ders notlarına göre çıktı ŷ nasıl hesaplanır?",
+    "source": "Ders 3 sunumu, s. 28",
+    "question": "Bir öğrencinin final puanını (0–100 arasında sürekli bir sayı) tahmin eden bir ağ kuruluyor. Hangi kayıp fonksiyonu en uygundur?",
     "options": [
-      "ŷ = g(v0 + Σ_j z_j·v_j)",
-      "ŷ = v0 + Σ_j g(z_j)·v_j",
-      "ŷ = g(v0 + Σ_j g(z_j)·v_j)",
-      "ŷ = g(v0 + Σ_i g(x_i)·v_i)"
+      "Kategorik çapraz entropi; her puan ayrı bir sınıf sayılır",
+      "İkili çapraz entropi; çünkü puan sınırlı bir aralıktadır",
+      "Doğruluk (accuracy); tahminin tam isabet edip etmediğine bakılır",
+      "Ortalama hata kareler (MSE); çünkü çıktı sürekli bir sayıdır"
+    ],
+    "answer": 3,
+    "explanation": "Çıktı sürekli bir gerçel sayı olduğunda problem regresyondur ve ortalama hata kareler (MSE) kaybı kullanılır. İkili çapraz entropi, 0 ile 1 arasındaki bir olasılığı, yani bir olayın gerçekleşme olasılığını modellemek içindir; hedefin sınırlı bir aralıkta olması tek başına onu uygun yapmaz. Doğruluk ise bir başarı ölçüsüdür; sürekli tahminde neredeyse hiç tam isabet olmaz ve türevlenemediği için kayıp olarak kullanılamaz."
+  },
+  {
+    "id": "dsm5014-d3-k05",
+    "course": "DSM 5014",
+    "source": "Ders 3 sunumu, s. 32",
+    "question": "Gradyan inişinde ağırlıklar neden gradyanın tersi yönünde (W ← W − η ∂J/∂W) güncellenir?",
+    "options": [
+      "Gradyan kaybın en hızlı azaldığı yönü gösterir; eksi işareti adımı küçültür",
+      "Eksi işareti ağırlıkların negatif değerlere düşmesini engellemek içindir",
+      "Gradyan kaybın en hızlı arttığı yönü gösterir; ters yöne gitmek kaybı azaltır",
+      "Gradyanın yönü önemsizdir; güncellemede yalnızca büyüklüğü kullanılır"
     ],
     "answer": 2,
-    "explanation": "Gizli birimlerin çıktısı g(z_j)'dir ve çıkış katmanı bu aktive edilmiş değerleri kullanır: ŷ = g(v0 + Σ_j g(z_j)·v_j). Gizli aktivasyonu atlamak, çıkıştaki g'yi düşürmek ya da g'yi doğrudan girdilere uygulayıp gizli katmanı atlamak farklı bir model verir."
+    "explanation": "Gradyan, kayıp yüzeyinde eğimin arttığı, yani kaybın en hızlı yükseldiği yönü gösterir; kaybı azaltmak için bunun tersine küçük bir adım atılır ve bu, yakınsayana kadar tekrarlanır. Gradyanın kaybın azaldığı yönü gösterdiğini sanmak yaygın bir hatadır; öyle olsaydı eksi işareti kaybı artırırdı. Adımın büyüklüğünü ise öğrenme oranı η belirler."
   },
   {
-    "id": "dsm5014-d3-08",
+    "id": "dsm5014-d3-k06",
     "course": "DSM 5014",
-    "source": "Ders 3 sunumu, s. 27",
-    "question": "İkili çapraz entropi J(W) = −(1/n) Σ [y·ln f + (1 − y)·ln(1 − f)] olarak tanımlanıyor (ln: doğal logaritma). İki örnekte gerçek etiketler y = (1, 0), model çıktıları f = (0.8, 0.4) ise J yaklaşık kaçtır?",
+    "source": "Ders 3 sunumu, s. 42",
+    "question": "Eğitim boyunca kayıp çok yavaş azalıyor ve sonunda yüksek bir değerde takılıp kalıyor; hiç salınım yok. Öğrenme oranıyla ilgili en olası açıklama nedir?",
     "options": [
-      "0.37",
-      "0.57",
-      "0.73",
-      "1.26"
+      "Öğrenme oranının kaybın ulaştığı seviyeye hiçbir etkisi yoktur",
+      "Öğrenme oranı çok küçük; adımlar küçük, model yerel minimuma sıkışmış",
+      "Öğrenme oranı çok büyük; adımlar minimumun üzerinden atlıyor",
+      "Öğrenme oranı uygun; kaybın yüksek kalması aşırı uyumu gösterir"
     ],
-    "answer": 0,
-    "explanation": "J = −(1/2)[ln 0.8 + ln(1 − 0.4)] = (0.223 + 0.511)/2 ≈ 0.37. 0.57 ikinci örnekte ln 0.4 kullanmaktan, 0.73 1/n ile bölmeyi unutmaktan, 1.26 ise f ile 1 − f'yi karıştırmaktan gelir."
+    "answer": 1,
+    "explanation": "Küçük öğrenme oranı küçük adımlar demektir: kayıp yavaş azalır ve model karşılaştığı bir yerel minimumdan çıkamayabilir. Çok büyük öğrenme oranının tipik görüntüsü ise kaybın salınması ya da büyümesidir; burada salınım olmaması bunu dışlar. Kararlı (uygun) bir öğrenme oranı düzgün yakınsar ve yerel minimumlardan kaçınabilir."
   },
   {
-    "id": "dsm5014-d3-09",
+    "id": "dsm5014-d3-k07",
     "course": "DSM 5014",
     "source": "Ders 3 sunumu, s. 45",
-    "question": "Ders notlarına göre uyarlanabilir öğrenme oranı (adaptive learning rate) kullanan yöntemlerde öğrenme oranı neye bağlı olarak büyüyüp küçülebilir?",
+    "question": "Uyarlanabilir öğrenme oranı (adaptive learning rate) kullanan yöntemleri sabit öğrenme oranından ayıran özellik nedir?",
     "options": [
-      "Mini grup boyutuna ve eğitim setindeki toplam örnek sayısına",
-      "Yalnızca geçen epoch sayısına göre önceden belirlenmiş bir takvime",
-      "Ağdaki katman sayısına ve katmanlardaki nöron sayısına",
-      "Gradyanın büyüklüğüne, öğrenmenin hızına ve ağırlıklara"
-    ],
-    "answer": 3,
-    "explanation": "Notlara göre uyarlanabilir yöntemlerde öğrenme oranı sabit değildir; gradyanın büyüklüğüne, öğrenmenin ne kadar hızlı ilerlediğine ve ağırlıklara bağlı olarak büyüyüp küçülebilir. Mini grup boyutu, örnek sayısı ve ağ mimarisi eğitim boyunca sabittir; yalnızca epoch sayısına bağlı, önceden belirlenmiş bir takvim de gradyan bilgisini kullanmadığı için uyarlanabilir sayılmaz."
-  },
-  {
-    "id": "dsm5014-d3-10",
-    "course": "DSM 5014",
-    "source": "Ders 3 sunumu, s. 64",
-    "question": "Hata kareleri kaybıyla eğitilen bir regresyon ağı yeterince esnekse ve eğitim seti sonsuz büyürse, ders notlarına göre ağın çıktısı f(x; W*) neye yaklaşır?",
-    "options": [
-      "x verildiğinde hedefin koşullu beklenen değerine, E[d|x]",
-      "x verildiğinde hedefin koşullu medyanına (ortancasına)",
-      "x verildiğinde hedefin en olası değerine (moduna)",
-      "Hedefin x'ten bağımsız ortalamasına, E[d]"
-    ],
-    "answer": 0,
-    "explanation": "Ağ yeterince esnek ve eğitim seti sonsuz büyükse hata kareleri kaybını en küçük yapan çözüm y* = f(x; W*) = E[d|x]'tir, yani posterior ortalamadır. Koşullu medyan ya da mod bu kaybın çözümü değildir; E[d] ise girdiyi hiç kullanmaz."
-  },
-  {
-    "id": "dsm5014-d4-01",
-    "course": "DSM 5014",
-    "source": "Ders 4 sunumu, s. 7",
-    "question": "10 girdili bir ağda 16 nöronlu bir gizli katman (ReLU) ve 3 nöronlu bir çıkış katmanı (softmax) var; katmanlar tam bağlantılı ve her nöronun bir bias'ı var. Ağdaki toplam öğrenilebilir parametre (ağırlık + bias) sayısı kaçtır?",
-    "options": [
-      "208",
-      "210",
-      "227",
-      "237"
-    ],
-    "answer": 2,
-    "explanation": "Her nöron z_j = Σ w_ij·x_i + b_j hesapladığından bir katmanın parametre sayısı (girdi sayısı × nöron sayısı) + nöron sayısıdır: 10·16 + 16 = 176 ve 16·3 + 3 = 51, toplam 227. 208 bias'ları unutmaktan, 210 katman başına tek bias saymaktan, 237 girdi katmanına da bias eklemekten gelir."
-  },
-  {
-    "id": "dsm5014-d4-02",
-    "course": "DSM 5014",
-    "source": "Ders 4 sunumu, s. 22",
-    "question": "Çok katmanlı bir sinir ağında eğitim kaybı E(W) için ders notlarına göre hangisi doğrudur?",
-    "options": [
-      "E(W) dışbükeydir (convex); gradyan inişi her başlangıçtan aynı küresel minimuma iner",
-      "E(W) dışbükey değildir; yakınsama garanti değildir, çözüm başlangıca ve adım boyuna bağlıdır",
-      "E(W) için kapalı formda bir çözüm vardır; bu yüzden gradyan inişine hiç gerek yoktur",
-      "E(W) dışbükey değildir; ancak başlangıç ağırlıkları bulunan çözümü hiçbir şekilde etkilemez"
+      "Öğrenme oranı tamamen kaldırılır; adımı yalnızca gradyan belirler",
+      "Adım büyüklüğü gradyanın büyüklüğüne ve ağırlıklara göre değişir",
+      "Öğrenme oranı yalnızca doğrulama kümesine göre bir kez ayarlanır",
+      "Oran eğitim başında bir kez rastgele seçilir ve sonra sabit kalır"
     ],
     "answer": 1,
-    "explanation": "Çok katmanlı ağda E(W) ağırlıkların dışbükey bir fonksiyonu değildir; bu yüzden yakınsama garanti edilemez ve yakınsama olsa bile çözüm başlatmaya ve adım boyutuna (öğrenme oranına) bağlıdır. Kapalı formda çözüm de olmadığından (stokastik) gradyan inişi kullanılır."
+    "explanation": "Uyarlanabilir yöntemlerde öğrenme oranı sabit değildir; gradyanın büyüklüğüne, öğrenmenin hızına ve ağırlıklara bağlı olarak büyüyüp küçülebilir. Böylece tek bir sabit değeri elle doğru tutturma zorunluluğu azalır; Adam bu fikrin yaygın bir örneğidir. Yöntem öğrenme oranını kaldırmaz: bir başlangıç değeri vardır ve eğitim sırasında ayarlanır."
   },
   {
-    "id": "dsm5014-d4-03",
+    "id": "dsm5014-d3-k08",
     "course": "DSM 5014",
-    "source": "Ders 4 sunumu, s. 33",
-    "question": "PyTorch ile yazılmış bir eğitim döngüsünde her optimizasyon adımından önce optimizer.zero_grad() çağrılmazsa ne olur?",
+    "source": "Ders 3 sunumu, s. 52",
+    "question": "Tam grup (batch) gradyan inişi ile tek örnekli stokastik gradyan inişi (SGD) karşılaştırılıyor. Hangisi doğrudur?",
     "options": [
-      "Gradyanlar hiç hesaplanmaz; ağırlıklar başlangıçtaki değerlerinde kalır",
-      "Ağırlıklar her adımda sıfırlanır; model her adımda baştan öğrenmeye başlar",
-      "Öğrenme oranı sıfıra iner; bu yüzden optimizasyon adımları etkisiz kalır",
-      "Yeni gradyanlar eskilerin üzerine birikir; güncelleme birikmiş gradyanla yapılır"
+      "SGD'nin adımı ucuz ama gürültülü; tam grup kesin ama pahalıdır",
+      "Tam grup gürültülüdür, çünkü çok örneğin hatası birbirini bozar",
+      "İkisi her adımda aynı gradyanı hesaplar; fark öğrenme oranındadır",
+      "SGD her adımda tüm veriyi kullanır; daha kesin ama daha yavaştır"
     ],
-    "answer": 3,
-    "explanation": "Birçok otomatik türev sistemi gradyanları parametrelerin .grad alanında biriktirir; temizlenmezse her geri geçişin gradyanı öncekilere eklenir ve güncelleme yanlış (birikmiş) gradyanla yapılır. Bu yüzden her optimizasyon adımından önce eski gradyanlar optimizer.zero_grad() ile temizlenir."
+    "answer": 0,
+    "explanation": "Tam grup gradyan inişi her adımda bütün eğitim verisiyle gradyanı hesaplar; kesindir ama büyük veride her adım çok pahalıdır. SGD gradyanı tek bir örnekten tahmin eder; hesaplaması kolay ve hızlıdır ama adımlar gürültülüdür. Çok örneğin ortalamasını almak gürültüyü artırmaz, azaltır; mini grup bu iki uç arasındaki pratik dengedir."
   },
   {
-    "id": "dsm5014-d4-04",
+    "id": "dsm5014-d3-k09",
+    "course": "DSM 5014",
+    "source": "Ders 3 sunumu, s. 59",
+    "question": "Eğitim kaybı epoch'lar boyunca düşmeye devam ederken doğrulama kaybı bir noktada en düşük değerine ulaşıyor ve sonra yükselmeye başlıyor. Erken durdurma mantığına göre hangi model tutulmalıdır?",
+    "options": [
+      "Henüz ezber başlamadığı için ilk epoch'taki model",
+      "Doğrulama kaybının en düşük olduğu epoch'taki model",
+      "Eğitim kaybının en düşük olduğu son epoch'taki model",
+      "Eğitim ve doğrulama kayıplarının eşit olduğu ilk epoch'taki model"
+    ],
+    "answer": 1,
+    "explanation": "Doğrulama kaybının yükselmeye başladığı yer, modelin eğitim verisini ezberlemeye (aşırı uyuma) geçtiği yerdir; erken durdurma eğitimi bu noktada keser ve doğrulama kaybının en düşük olduğu modeli tutar. Eğitim kaybı aşırı uyum konusunda iyimserdir; bu yüzden son epoch'u seçmek ezberlemiş modeli seçmek olur. İlk epoch'lar ise genelde az uyum bölgesindedir."
+  },
+  {
+    "id": "dsm5014-d3-k10",
+    "course": "DSM 5014",
+    "source": "Ders 3 sunumu, s. 66",
+    "question": "Bir tıp çalışmasında her hasta için hem diyabet (var/yok) hem yüksek tansiyon (var/yok) tahmin edilecek; bir hastada ikisi birden olabilir. Bu problem hangi yapıya karşılık gelir?",
+    "options": [
+      "Çok sınıflı (multinomial) sınıflandırma; her hasta tek bir sınıfa atanır",
+      "Regresyon; iki hastalığın olasılığı tek bir sürekli sayıda toplanır",
+      "Çok değişkenli lojistik regresyon; her ikili hedef için ayrı model kurulur",
+      "Kümeleme; hastalar etiket kullanılmadan gruplara ayrılır"
+    ],
+    "answer": 2,
+    "explanation": "Burada iki ayrı ikili bağımlı değişken vardır ve bir hasta ikisine birden sahip olabilir; bu, her hedef için ayrı bir lojistik model kurulan çok değişkenli (multivariate) lojistik regresyondur. Çok sınıflı sınıflandırmada ise tek bir etiket ikiden fazla sınıftan birini alır (elma, portakal, muz gibi) ve gözlem en yüksek olasılıklı tek sınıfa atanır. Etiketler mevcut olduğu için kümeleme de uygun değildir."
+  },
+  {
+    "id": "dsm5014-d4-k01",
+    "course": "DSM 5014",
+    "source": "Ders 4 sunumu, s. 30",
+    "question": "Aynı ağ önce SGD, sonra Adam ile eğitiliyor. Geri yayılımın ve optimizer'ın rolleri için hangisi doğrudur?",
+    "options": [
+      "Gradyan ikisinde de aynı hesaplanır; değişen güncelleme kuralıdır",
+      "Adam kendi geri yayılımını kullandığı için gradyanlar farklı hesaplanır",
+      "SGD geri yayılım gerektirir, Adam ise gradyan kullanmadan öğrenir",
+      "Geri yayılım ağırlıkları günceller; optimizer yalnızca kaybı hesaplar"
+    ],
+    "answer": 0,
+    "explanation": "Geri yayılım, zincir kuralıyla kaybın parametrelere göre gradyanını hesaplar; tek başına bir optimizasyon algoritması değildir. Optimizer (SGD, Adam) bu aynı gradyanı farklı güncelleme kurallarıyla kullanarak ağırlıkları değiştirir. Ağırlıkları geri yayılımın güncellediğini sanmak yaygın bir karışıklıktır: geri yayılım yalnızca yönü bulur, adımı optimizer atar."
+  },
+  {
+    "id": "dsm5014-d4-k02",
     "course": "DSM 5014",
     "source": "Ders 4 sunumu, s. 54",
-    "question": "Ders notlarına göre geri yayılımı (backpropagation) hesaplama açısından verimli kılan temel özellik hangisidir?",
+    "question": "İleri yayılımda her katmanın aₖ (doğrusal birim) ve hₖ (aktivasyon) değerleri neden bellekte saklanır?",
     "options": [
-      "İleri geçişte hesaplanan ara değerleri geri geçişte yeniden kullanması",
-      "Her ağırlığı ayrı ayrı oynatıp kaybı yeniden hesaplayarak gradyanı bulması",
-      "Gradyanı yalnızca son katman için hesaplayıp önceki katmanları sabit tutması",
-      "Ara değerleri hiç saklamadan her katmanın çıktısını baştan hesaplaması"
-    ],
-    "answer": 0,
-    "explanation": "Geri yayılım, ileri geçişte hesaplanıp saklanan ara değerleri geri geçişte yeniden kullanır; böylece hesap maliyeti yaygın ağlarda ileri grafiğin büyüklüğüyle aynı mertebede kalır. Bazı ara değerlerin yeniden hesaplanması yalnızca bellek azaltmak için yapılan bir ödünleşimdir."
-  },
-  {
-    "id": "dsm5014-d4-05",
-    "course": "DSM 5014",
-    "source": "Ders 4 sunumu, s. 11",
-    "question": "İkili sınıflandırma yapan bir ağın son katmanı aktivasyonsuz tek bir değer üretiyor (ör. 2.7). Ders notlarına göre bu değer için hangisi doğrudur?",
-    "options": [
-      "Bir olasılıktır; 1'den büyük olduğu için model hatalı eğitilmiştir",
-      "Bir kayıp değeridir; eğitim ilerledikçe sıfıra yaklaşması beklenir",
-      "Bir logittir; sınırsız bir skordur, sigmoid ile [0, 1] aralığına dönüştürülür",
-      "Bir logittir; kayıp hesaplanmadan önce mutlaka softmax ile normalize edilmelidir"
-    ],
-    "answer": 2,
-    "explanation": "Logit, aktivasyon öncesindeki sınırsız model skorudur; sigmoid tek logiti [0, 1] aralığına, softmax ise K logiti toplamı 1 olan bir dağılıma dönüştürür. Sayısal kararlılık için birçok kayıp fonksiyonu logitleri doğrudan kabul eder, yani önceden normalize etmek zorunlu değildir."
-  },
-  {
-    "id": "dsm5014-d4-06",
-    "course": "DSM 5014",
-    "source": "Ders 4 sunumu, s. 15",
-    "question": "Keras'ta kurulacak bir modelde katmanlar arasında artık (residual) bağlantılar var. Ders notlarına göre hangisi doğrudur?",
-    "options": [
-      "Functional API tercih edilir; Sequential tek giriş-çıkışlı doğrusal yığınlar içindir",
-      "Sequential uygundur; katmanlar sırayla eklendiği sürece bağlantı türü önemli değildir",
-      "Sequential uygundur; artık bağlantılar her zaman otomatik olarak eklenir",
-      "İki yöntem de kullanılamaz; artık bağlantılar Keras'ta tanımlanamaz"
-    ],
-    "answer": 0,
-    "explanation": "Sequential model, katmanlar tek giriş ve tek çıkışlı doğrusal bir yığın oluşturuyorsa uygundur. Birden fazla giriş, birden fazla çıkış veya artık bağlantı varsa Functional API tercih edilir; seçim veri akışının topolojisine göre yapılır."
-  },
-  {
-    "id": "dsm5014-d4-07",
-    "course": "DSM 5014",
-    "source": "Ders 4 sunumu, s. 17",
-    "question": "3 girdili bir katmanda 4 nöron var ve çıktı h = g(W·x + b) ile hesaplanıyor (x: 3 boyutlu sütun vektörü). W ve b'nin boyutları nedir?",
-    "options": [
-      "W: 3×4, b: 3",
-      "W: 3×4, b: 4",
-      "W: 4×3, b: 3",
-      "W: 4×3, b: 4"
+      "Test sırasında modelin hangi örnekleri ezberlediğini izlemek için",
+      "Bir sonraki epoch'ta aynı örneğin tahminini yeniden hesaplamamak için",
+      "Kayıp değerini her katman için ayrı ayrı raporlamak için",
+      "Geri yayılımda gradyanları hesaplarken yeniden kullanmak için"
     ],
     "answer": 3,
-    "explanation": "W'nin her satırı bir nöronun ağırlıklarıdır: h_i = g(w_i1·x1 + w_i2·x2 + w_i3·x3 + b_i). Bu yüzden W 4×3 (nöron sayısı × girdi sayısı), b ise 4 boyutludur ve W·x çarpımı 4 boyutlu bir vektör verir."
+    "explanation": "Geri yayılım formülleri ileri geçişin ara değerlerine ihtiyaç duyar: ağırlık gradyanı için hₖ₋₁, aktivasyon türevi için aₖ. Bu değerler saklanıp yeniden kullanıldığı için geri yayılımın maliyeti ileri geçişle aynı mertebede kalır. Ağırlıklar her adımda değiştiği için bu değerler sonraki epoch'ta işe yaramaz; saklama yalnızca aynı adımın geri geçişi içindir."
   },
   {
-    "id": "dsm5014-d4-08",
+    "id": "dsm5014-d4-k03",
     "course": "DSM 5014",
-    "source": "Ders 4 sunumu, s. 29",
-    "question": "Gradyan inişinde parametreler neden gradyanın tersi yönünde güncellenir?",
+    "source": "Ders 4 sunumu, s. 48",
+    "question": "Geri yayılımda ağırlık gradyanı ∇_Wₖ E = δₖ hₖ₋₁ᵀ biçimindedir. Önceki katmandaki bir nöronun çıktısı belli bir örnek için tam 0 ise (ör. ReLU kapalı), o nörondan çıkan ağırlıkların bu örnekten aldığı gradyan ne olur?",
     "options": [
-      "Gradyan kaybın en hızlı azaldığı yönü gösterir; tersi adımları daha kararlı kılar",
-      "Gradyan kaybın en hızlı arttığı yönü gösterir; tersi yerel olarak kaybı azaltır",
-      "Gradyanın tersi her zaman doğrudan küresel minimumu gösterir",
-      "Gradyanın işareti yalnızca öğrenme oranının işaretini belirler"
+      "Tanımsız olur; çünkü sıfır girdiyle türev alınamaz",
+      "δₖ'ya eşit olur; çünkü bias gradyanıyla aynı formüle sahiptir",
+      "En büyük değeri alır; hatanın çoğu bu ağırlıklara yüklenir",
+      "Sıfır olur; bu örnekte o ağırlıklar çıktıyı hiç etkilememiştir"
     ],
-    "answer": 1,
-    "explanation": "Gradyan, kaybın parametre uzayındaki en hızlı artış yönünü gösterir; negatif gradyan ise yerel olarak kaybı azaltan yöndür. Gradyanın büyüklüğü de güncellemenin duyarlılığı hakkında bilgi verir."
+    "answer": 3,
+    "explanation": "Gradyanın her elemanı [δₖ]ᵢ ile [hₖ₋₁]ⱼ'nin çarpımıdır: bir ağırlık ne kadar büyük bir girdiyle çarpıldıysa hatadaki payı o kadar büyüktür. Girdi 0 ise o ağırlık bu örnekte çıktıyı hiç etkilememiştir ve bu örnekten gradyan almaz. Bias gradyanı ise δₖ'nın kendisidir, çünkü bias hep 1 olan bir girdiyle çarpılmış gibi davranır."
   },
   {
-    "id": "dsm5014-d4-09",
+    "id": "dsm5014-d4-k04",
     "course": "DSM 5014",
-    "source": "Ders 4 sunumu, s. 31",
-    "question": "1500 örneklik bir eğitim seti 50 örneklik mini gruplarla 20 epoch boyunca eğitiliyor ve her mini gruptan sonra bir ağırlık güncellemesi yapılıyor. Toplam kaç güncelleme yapılır?",
+    "source": "Ders 4 sunumu, s. 50",
+    "question": "Geri yayılımda eₖ₋₁ = ∇_hₖ₋₁ E = Wₖᵀ δₖ adımının işlevi nedir?",
     "options": [
-      "30",
-      "600",
-      "1000",
-      "30000"
+      "Aktivasyon fonksiyonunun türevini hesaplar",
+      "Wₖ ağırlıklarını doğrudan günceller ve yeni değerlerini verir",
+      "Çıkış katmanındaki kaybı hesaplar ve tahmini düzeltir",
+      "Hatayı aynı ağırlıklar üzerinden bir önceki katmana geri taşır"
     ],
-    "answer": 1,
-    "explanation": "Bir epoch bütün eğitim örneklerinin bir kez işlenmesidir: 1500/50 = 30 mini grup, yani epoch başına 30 güncelleme ve 20 epoch'ta 30·20 = 600 güncelleme. 30 yalnızca bir epoch'u, 30000 her örnekten sonra güncellemeyi, 1000 ise grup boyutu × epoch çarpımını verir."
+    "answer": 3,
+    "explanation": "Wₖᵀ ile çarpmak, ileri yönde geçilen doğrusal katmandan ters sırada geçmek demektir: k. katmanın hatası, onu üreten bağlantıların ağırlıklarına göre önceki katmanın nöronlarına paylaştırılır. Bu adım bir güncelleme değildir; yalnızca önceki katmanın gradyanını verir, ağırlıkları optimizer günceller. Aktivasyon türevi ise sonraki adımda, δₖ₋₁ hesaplanırken bileşen bazında çarpılır."
   },
   {
-    "id": "dsm5014-d4-10",
+    "id": "dsm5014-d4-k05",
     "course": "DSM 5014",
-    "source": "Ders 4 sunumu, s. 55",
-    "question": "Tekrarlayan (sıralı) bir modelin eğitiminde gradyanlar bazı adımlarda aşırı büyüyor. Ders notlarında özellikle sıralı modellerde büyük gradyanları sınırlamak için önerilen teknik hangisidir?",
+    "source": "Ders 4 sunumu, s. 9, 48",
+    "question": "Geri yayılımda δₖ = ∇_hₖ E ⊙ g′ₖ(aₖ) hesaplanır. Sigmoid kullanan bir nöron |aₖ| çok büyük olduğu için doymuşsa bu nöron için ne beklenir?",
     "options": [
-      "Doğrulama kümesini büyütmek",
-      "Activation checkpointing",
-      "Gradyan kırpma (gradient clipping)",
-      "Mini grup boyutunu 1'e indirmek"
+      "δ işaret değiştirir ve ağırlıklar ters yönde güncellenir",
+      "Doygunluk yalnızca ileri yayılımı etkiler; gradyan değişmez",
+      "g′ sıfıra yakındır; δ küçülür ve ağırlıklar neredeyse değişmez",
+      "g′ çok büyür, δ patlar ve ağırlıklar aşırı büyük adımlar atar"
     ],
     "answer": 2,
-    "explanation": "Büyük türevlerin katmanlar boyunca tekrarlı çarpımı gradyanı büyütebilir (patlayan gradyan); notlara göre gradyan kırpma özellikle sıralı modellerde büyük gradyanları sınırlar. Diğer seçenekler gradyanın büyüklüğünü sınırlamaz."
+    "explanation": "Aynı sunumda belirtildiği gibi sigmoid büyük mutlak girdilerde doygunlaşır: eğrisi düzleşir ve türevi sıfıra yaklaşır. δ bu türevle bileşen bazında çarpıldığı için o nöronun hatası neredeyse sıfırlanır ve ağırlıkları çok az değişir. Bu küçülme Wᵀδ üzerinden önceki katmanlara da taşınır; kaybolan gradyanın kaynağı budur. Doygunluk gradyanı patlatmaz, tersine söndürür: düz bir eğrinin eğimi büyük olamaz."
+  },
+  {
+    "id": "dsm5014-d4-k06",
+    "course": "DSM 5014",
+    "source": "Ders 4 sunumu, s. 56",
+    "question": "Bellek yetmediği için eğitimde 'activation checkpointing' açılıyor. Bu teknik için hangisi doğrudur?",
+    "options": [
+      "En iyi doğrulama skorundaki modeli dosyaya kaydedip eğitimi dondurur",
+      "Aktivasyonları düşük duyarlıkla saklar, gradyanı da yuvarlar",
+      "Gradyanı yaklaşık hesaplayarak bellek kazanır; sonuç biraz değişir",
+      "Bazı aktivasyonları geri geçişte yeniden hesaplar; gradyan aynı kalır"
+    ],
+    "answer": 3,
+    "explanation": "Standart geri yayılım ara aktivasyonları bellekte tutar; checkpointing bunların bir kısmını atıp geri geçişte yeniden hesaplar, yani bellek kazancını ek hesaplamayla öder. Slaytta vurgulandığı gibi bu, gradyanın matematiksel tanımını değiştirmez; yaklaşık bir yöntem değildir. Adı benzese de en iyi modeli dosyaya kaydeden ModelCheckpoint ile ilgisi yoktur."
+  },
+  {
+    "id": "dsm5014-d4-k07",
+    "course": "DSM 5014",
+    "source": "Ders 4 sunumu, s. 33",
+    "question": "PyTorch eğitim döngüsünde her optimizasyon adımından önce optimizer.zero_grad() çağrısı unutulursa ne olur?",
+    "options": [
+      "Ağırlıklar sıfırlanır ve model her adımda baştan başlar",
+      "Gradyanlar hiç hesaplanmaz ve ağırlıklar güncellenmez",
+      "Kayıp fonksiyonu sıfır döner ve eğitim hemen durur",
+      "Yeni gradyanlar eskilerin üzerine eklenip birikir"
+    ],
+    "answer": 3,
+    "explanation": "Otomatik türev sistemleri her geri geçişte hesaplanan gradyanı parametrelerin .grad alanındaki değere ekler, üzerine yazmaz. Adımlar arasında temizlenmezse her yeni batch'in gradyanı önceki batch'lerinkine eklenir; güncelleme yalnızca o batch'e göre değil, geçmişin toplamına göre yapılır ve adımlar yanlış yönde, giderek büyür. zero_grad() ağırlıkları değil, yalnızca biriken gradyanları sıfırlar; gradyanlar hesaplanmaya devam ettiği için 'hiç güncelleme olmaz' seçeneği de yanlıştır."
+  },
+  {
+    "id": "dsm5014-d4-k08",
+    "course": "DSM 5014",
+    "source": "Ders 4 sunumu, s. 11",
+    "question": "Logit ile olasılık arasındaki fark için hangisi doğrudur?",
+    "options": [
+      "Logit aktivasyon öncesi ham skordur; sigmoid/softmax olasılığa çevirir",
+      "Logit ile olasılık aynıdır; logit yalnızca yüzde olarak yazılmış hâlidir",
+      "Logit, sigmoid veya softmax'tan sonra elde edilen 0–1 arası değerdir",
+      "Logit yalnızca regresyonda, olasılık yalnızca sınıflandırmada kullanılır"
+    ],
+    "answer": 0,
+    "explanation": "Logit, çıkış aktivasyonundan önceki sınırsız ham skordur; sigmoid tek logiti [0, 1] aralığına, softmax K logiti toplamı 1 olan bir dağılıma çevirir. Birçok kayıp fonksiyonu sayısal kararlılık için logitleri doğrudan kabul eder ve dönüşümü kendi içinde yapar. Bu yüzden çıktıya önce sigmoid uygulayıp sonucu logit bekleyen bir kayba vermek, yani dönüşümü iki kez yapmak yaygın bir hatadır."
+  },
+  {
+    "id": "dsm5014-d4-k09",
+    "course": "DSM 5014",
+    "source": "Ders 4 sunumu, s. 58",
+    "question": "Eğitim sırasında kayıp ilk epoch'tan itibaren hiç değişmiyor; NaN da çıkmıyor. Derste bu belirti için önerilen ilk kontroller hangileridir?",
+    "options": [
+      "Kopuk hesaplama grafiği, doygun aktivasyon veya sıfır gradyan",
+      "Veri sızıntısı ve sınıf dengesizliği; sınıf ağırlıkları ayarlanmalı",
+      "Aşırı uyum; dropout ve L2 düzenlileştirmesi eklenmeli",
+      "Test kümesinin boyutu ve karışıklık matrisindeki hatalar"
+    ],
+    "answer": 0,
+    "explanation": "Kayıp hiç kıpırdamıyorsa parametrelere gradyan ulaşmıyor demektir: hesaplama grafiği kopmuş olabilir (gradyan geri akmaz), aktivasyonlar doymuş olabilir ya da gradyanlar sıfırdır. Aşırı uyumda ise eğitim kaybı düşer, sorun doğrulama tarafında görünür. Veri sızıntısı eğitim kaybını durdurmaz; değerlendirme skorunu gerçekte olduğundan iyi gösterir."
+  },
+  {
+    "id": "dsm5014-d4-k10",
+    "course": "DSM 5014",
+    "source": "Ders 4 sunumu, s. 57",
+    "question": "Derin bir ağda son katmanların iyi öğrendiğinden ama ilk katmanların neredeyse hiç değişmediğinden şüpheleniyorsunuz. Eğitim sırasında izlenmesi önerilen sinyallerden hangisi bunu doğrudan gösterir?",
+    "options": [
+      "Yalnızca toplam eğitim kaybının epoch'lara göre grafiği",
+      "Katman bazında gradyan normları",
+      "Test kümesindeki doğruluk",
+      "Toplam optimizasyon adımı sayısı"
+    ],
+    "answer": 1,
+    "explanation": "Katman bazında gradyan normları, her katmana ne kadar güncelleme sinyali ulaştığını ayrı ayrı gösterir; ilk katmanların normları son katmanlarınkinden çok küçükse gradyan geriye giderken sönüyor demektir. Toplam kayıp eğrisi yalnızca genel ilerlemeyi gösterir, hangi katmanın öğrenmediğini ayırt edemez. Test kümesi ise eğitim sırasında izlenmez; en sona saklanır."
+  },
+  {
+    "id": "dsm5014-d5-k01",
+    "course": "DSM 5014",
+    "source": "Ders 5 sunumu, s. 14",
+    "question": "20 katmanlı, gizli katmanlarında sigmoid kullanan bir ağda son katmanların ağırlıkları değişirken ilk katmanlarınki neredeyse sabit kalıyor. Teşhis ve uygun çözüm hangisidir?",
+    "options": [
+      "Kaybolan gradyan; ReLU ailesi ve He başlatma kullanılmalı",
+      "Patlayan gradyan; öğrenme oranı artırılmalı",
+      "Aşırı uyum; dropout oranı artırılmalı",
+      "Kaybolan gradyan; ağa daha fazla sigmoid katmanı eklenmeli"
+    ],
+    "answer": 0,
+    "explanation": "Geri yayılımda türevler katmanlar boyunca çarpılır; doygun sigmoid türevleri küçük olduğu için çarpım ilk katmanlara gelene kadar sıfıra yaklaşır ve bu katmanlar güncellenemez. ReLU pozitif bölgede türevi 1 tuttuğu için sinyali söndürmez; He başlatma, normalizasyon ve artık bağlantılar da sinyalin katmanlar boyunca korunmasına yardım eder. Patlayan gradyanda tablo tersidir: normlar hızla büyür ve kayıp NaN olabilir."
+  },
+  {
+    "id": "dsm5014-d5-k02",
+    "course": "DSM 5014",
+    "source": "Ders 5 sunumu, s. 13",
+    "question": "Bir ağın bütün ağırlıkları başlangıçta 0 ile başlatılıyor. Bu neden önerilmez?",
+    "options": [
+      "Sıfır başlatmada bias terimleri kullanılamaz hâle gelir",
+      "Aynı katmandaki nöronlar aynı gradyanı alır ve hep aynı özelliği öğrenir",
+      "Sıfır başlatma gradyanları patlatır ve kayıp NaN olur",
+      "Sıfır ağırlıklar aşırı uyuma yol açar; model eğitim verisini ezberler"
+    ],
+    "answer": 1,
+    "explanation": "Bütün ağırlıklar eşitse bir katmandaki nöronların hepsi aynı çıktıyı üretir, aynı gradyanı alır ve aynı şekilde güncellenir; simetri hiç bozulmaz ve katman tek bir nöron gibi davranır. Bu yüzden ağırlıklar rastgele ve uygun ölçekte başlatılır: tanh/sigmoid için Xavier, ReLU ailesi için He. Sorun ezber ya da patlama değil, nöronların birbirinden farklılaşamamasıdır."
+  },
+  {
+    "id": "dsm5014-d5-k03",
+    "course": "DSM 5014",
+    "source": "Ders 5 sunumu, s. 18",
+    "question": "Gradyan normu bazı adımlarda aşırı büyüdüğü için global norm clipping, g ← g · min(1, τ / ‖g‖₂), uygulanıyor. Bu yöntem için hangisi doğrudur?",
+    "options": [
+      "Eşiği aşan gradyan bileşenlerini sıfırlar; böylece yön de değişir",
+      "Her adımda normu τ'ya eşitler; küçük gradyanları da büyütür",
+      "Patlayan gradyanın nedenini ortadan kaldırır; başka önlem gerekmez",
+      "Yönü korur, yalnızca büyük normu τ'ya indirir; kök nedeni çözmez"
+    ],
+    "answer": 3,
+    "explanation": "Formülde norm eşiğin altındaysa çarpan 1'dir ve gradyan hiç değişmez; üstündeyse gradyan aynı yönde kalır ama normu τ olacak şekilde kısaltılır. Böylece kararsız dev adımlar ve NaN riski azalır. Ancak slaytta belirtildiği gibi clipping sorunun kök nedenini (başlatma, öğrenme oranı, normalizasyon) tek başına çözmez; bir emniyet önlemidir."
+  },
+  {
+    "id": "dsm5014-d5-k04",
+    "course": "DSM 5014",
+    "source": "Ders 5 sunumu, s. 24",
+    "question": "SGD'ye momentum eklemek (vₜ = βvₜ₋₁ + gₜ, Wₜ₊₁ = Wₜ − ηvₜ), kayıp yüzeyinde zikzak çizen bir eğitimi nasıl etkiler?",
+    "options": [
+      "Gradyanın normunu bir eşik değeriyle sınırlayıp kısaltır",
+      "Gradyanların ortak yönünü biriktirir; zıt salınımlar söner",
+      "Her parametreye gradyan geçmişine göre ayrı öğrenme oranı verir",
+      "Yalnızca son gradyanı kullandığı için zikzak daha da artar"
+    ],
+    "answer": 1,
+    "explanation": "Momentum önceki adımların yönünü vₜ'de taşır: gradyanlar hep aynı yöne işaret ediyorsa birikip hızlanır, sağa sola dönen bileşenler ise birbirini götürür ve zikzak azalır. Her parametreye ayrı adım boyu vermek Adam gibi uyarlanabilir yöntemlerin işidir; normu eşikle sınırlamak ise gradient clipping'dir. Momentumsuz SGD'de güncelleme yalnızca o anki gradyana bağlıdır."
+  },
+  {
+    "id": "dsm5014-d5-k05",
+    "course": "DSM 5014",
+    "source": "Ders 5 sunumu, s. 78",
+    "question": "Eğitim kaybı epoch'tan epoch'a büyük dalgalanmalar yapıyor, zaman zaman da yükseliyor. Derste bu durum için önerilen ilk müdahale hangisidir?",
+    "options": [
+      "Dropout oranını artırmak; dalgalanma aşırı uyumdan gelir",
+      "Öğrenme oranını artırmak; model daha hızlı yakınsar",
+      "Katman eklemek; dalgalanma az uyumun işaretidir",
+      "Öğrenme oranını azaltmak ya da gradient clipping denemek"
+    ],
+    "answer": 3,
+    "explanation": "Kaybın salınması ya da büyümesi, adımların minimumun üzerinden atlayacak kadar büyük olduğunun tipik işaretidir; bu yüzden ilk iş öğrenme oranını düşürmek, batch boyutunu gözden geçirmek ya da clipping ile dev adımları sınırlamaktır. Öğrenme oranını artırmak sorunu büyütür. Aşırı uyum eğitim kaybında dalgalanma olarak değil, eğitim ile doğrulama eğrileri arasında açılan bir fark olarak görünür."
+  },
+  {
+    "id": "dsm5014-d5-k06",
+    "course": "DSM 5014",
+    "source": "Ders 5 sunumu, s. 45",
+    "question": "Dropout oranı 0,5 olan bir ağ eğitildi ve test verisinde tahmin yapılacak. Çıkarım (test) sırasında dropout nasıl davranır?",
+    "options": [
+      "Eğitimde en sık kapatılan nöronlar kalıcı olarak ağdan silinir",
+      "Nöronların sabit bir yarısı seçilir ve hep o nöronlar kullanılır",
+      "Eğitimdeki gibi nöronların yarısı rastgele kapatılır; tahmin her seferinde değişir",
+      "Bütün nöronlar kullanılır; ölçekleme eğitim kuralıyla uyumlu biçimde yapılır"
+    ],
+    "answer": 3,
+    "explanation": "Dropout yalnızca eğitimde, düzenlileştirme için nöron çıktılarının bir bölümünü rastgele sıfırlar; böylece model tek bir yola bağımlı kalmaz. Çıkarımda bütün nöronlar çalışır ve tahmin deterministik olur; eğitimde kapatılan nöronların etkisini telafi etmek için ölçekleme eğitim kuralıyla uyumlu yapılır. Testte de rastgele kapatmak her çalıştırmada farklı tahmin üretir ve ağın öğrendiklerinin bir kısmını boşa harcar."
+  },
+  {
+    "id": "dsm5014-d5-k07",
+    "course": "DSM 5014",
+    "source": "Ders 5 sunumu, s. 63",
+    "question": "Yüzlerce özelliği olan bir modelde, gereksiz özelliklerin ağırlıklarının tam olarak sıfıra inmesi isteniyor. Hangi düzenlileştirme bu amaca uygundur?",
+    "options": [
+      "L1 (Lasso); bazı ağırlıkları sıfıra indirip seyreklik sağlar",
+      "Batch normalization; ölçekleme ile etkisiz özellikleri eler",
+      "L2 (Ridge); bütün ağırlıkları küçültür ve gereksizleri sıfırlar",
+      "Dropout; gereksiz nöronları eğitim sonunda kalıcı olarak siler"
+    ],
+    "answer": 0,
+    "explanation": "L1 kayba ağırlıkların mutlak değerlerinin toplamını ekler ve bazı ağırlıkları tam sıfıra iter; bu seyreklik özellik seçimine benzer bir davranış verir. L2 ağırlıkların karelerinin toplamını ekler; büyük ağırlıkları cezalandırıp hepsini küçültür ama sıfır yapmaz. Dropout ise nöronları yalnızca eğitim adımlarında geçici olarak kapatır, kalıcı bir eleme yapmaz."
+  },
+  {
+    "id": "dsm5014-d5-k08",
+    "course": "DSM 5014",
+    "source": "Ders 5 sunumu, s. 56",
+    "question": "Batch normalization eğitim ve çıkarım (tahmin) sırasında hangi ortalama ve varyansı kullanır?",
+    "options": [
+      "Eğitimde batch istatistikleri, çıkarımda hareketli ortalamalar",
+      "Her iki aşamada da o anki batch'in ortalaması ve varyansı",
+      "Yalnızca öğrenilen γ ve β; ortalama ve varyans kullanılmaz",
+      "Eğitimde hareketli ortalamalar, çıkarımda test batch'inin istatistikleri"
+    ],
+    "answer": 0,
+    "explanation": "Eğitimde her nöronun girdileri o mini-batch'in ortalaması ve varyansıyla standartlaştırılır, sonra öğrenilen γ ve β ile yeniden ölçeklenip kaydırılır. Çıkarımda tek bir örnek ya da küçük bir batch gelebileceği için eğitim boyunca biriktirilen hareketli ortalamalar kullanılır; böylece bir örneğin tahmini aynı batch'teki diğer örneklere bağlı olmaz. γ ve β normalizasyonun yerini tutmaz; standartlaştırmadan sonra uygulanırlar."
+  },
+  {
+    "id": "dsm5014-d5-k09",
+    "course": "DSM 5014",
+    "source": "Ders 5 sunumu, s. 68",
+    "question": "El yazısı rakam tanıma (0–9) modeli için eğitim verisi artırılıyor. Aşağıdaki dönüşümlerden hangisi risklidir?",
+    "options": [
+      "Görüntüyü birkaç derece döndürmek",
+      "Görüntüyü birkaç piksel kaydırmak",
+      "Görüntüye hafif gürültü eklemek",
+      "Görüntüyü 180 derece döndürmek"
+    ],
+    "answer": 3,
+    "explanation": "Veri artırma etiketi koruyan dönüşümler kullanmalıdır; 180 derece döndürülen bir 6 artık 9'a benzer, yani dönüşüm etiketi değiştirir ve modele yanlış bilgi öğretir. Küçük döndürme, öteleme ve hafif gürültü ise rakamın kimliğini korur ve gerçek kullanımda karşılaşılacak çeşitliliği taklit eder. Bir dönüşümün uygunluğu veri türüne ve göreve bağlıdır; aynı dönüşüm başka bir görevde zararsız olabilir."
+  },
+  {
+    "id": "dsm5014-d5-k10",
+    "course": "DSM 5014",
+    "source": "Ders 5 sunumu, s. 44",
+    "question": "Eğitim doğruluğu her epoch artarken doğrulama kaybı bir noktadan sonra yükselmeye başlıyor. EarlyStopping (monitor = \"val_loss\", restore_best_weights = TRUE) kullanıldığında eğitim bittiğinde modelde hangi ağırlıklar kalır?",
+    "options": [
+      "Eğitim doğruluğunun en yüksek olduğu epoch'un ağırlıkları",
+      "Doğrulama kaybının en düşük olduğu epoch'un ağırlıkları",
+      "Bütün epoch'ların ağırlıklarının ortalaması",
+      "Eğitimin durduğu son epoch'un ağırlıkları"
+    ],
+    "answer": 1,
+    "explanation": "Doğrulama kaybı iyileşmeyince EarlyStopping sabır (patience) süresi kadar bekler ve eğitimi durdurur; durduğu epoch en iyi epoch değildir, çünkü o arada model aşırı uyuma devam etmiştir. restore_best_weights = TRUE, izlenen ölçütün (val_loss) en iyi olduğu epoch'un ağırlıklarını geri yükler; ModelCheckpoint de aynı mantıkla en iyi modeli dosyada saklar. Eğitim doğruluğunun en yüksek olduğu nokta ise en çok ezberlenmiş modeldir."
   }
 ]
